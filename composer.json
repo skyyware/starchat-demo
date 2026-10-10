@@ -1,0 +1,27 @@
+{
+  "name": "skyyware/starchat-demo",
+  "description": "The Stage chat installation with reviewed public website knowledge.",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.4",
+    "skyyware/starchat": "^0.2.6"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/skyyware/starchat"
+    }
+  ],
+  "config": {
+    "allow-plugins": false,
+    "sort-packages": true,
+    "preferred-install": "dist"
+  },
+  "scripts": {
+    "check": [
+      "@composer validate --strict",
+      "@php bin/check"
+    ]
+  }
+}

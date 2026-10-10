@@ -1,0 +1,160 @@
+{
+  "source": "https://stage.dev",
+  "prepared_at": "2026-10-10T16:18:34+00:00",
+  "documents": [
+    {
+      "file": "knowledge/stage/chat.md",
+      "id": "stage-chat",
+      "source": "https://stage.dev/resources/chat",
+      "sha256": "29f72cf90a3f3d64d1204b18b2334a4db5e1767e1641fd7ab68ed92f1036b8e1",
+      "body_sha256": "761f73777ec252f332358b81791b6d04067e192c9ccb347884bca9890aca0b22"
+    },
+    {
+      "file": "knowledge/stage/cms-api.md",
+      "id": "stage-cms-api",
+      "source": "https://stage.dev/resources/cms-api",
+      "sha256": "8ea2b9c693e222d1e0580468a0b976aafa7451bf28330885c5a1287218698c44",
+      "body_sha256": "75ab4830f5928fb283d8f124e48b78b17c685e7a24d080799dc34b66ffc7f6af"
+    },
+    {
+      "file": "knowledge/stage/cms-operations.md",
+      "id": "stage-cms-operations",
+      "source": "https://stage.dev/resources/cms-operations",
+      "sha256": "81be84d1e03a6c345cd0f050d612e9a312fe23263a39ec3658aee3c887940b78",
+      "body_sha256": "a6528cf0ce09312c5a068f571cf79d4d9ad1d5ec26d4a8bdecbfeb70461d8113"
+    },
+    {
+      "file": "knowledge/stage/cms.md",
+      "id": "stage-cms",
+      "source": "https://stage.dev/resources/cms",
+      "sha256": "cabcff2d4013d741bdbcbb00580822b9b2cba3c4fbf9cbb51cdc93d2c833a4ac",
+      "body_sha256": "135b2b7e31466ec33ddf59d29170b4a1a7d5c9bc2714f75135fc13c6a023cf51"
+    },
+    {
+      "file": "knowledge/stage/codex-connector.md",
+      "id": "stage-codex-connector",
+      "source": "https://stage.dev/resources/codex-connector",
+      "sha256": "d9688d032cd6bf22e063919ea7821514c46b32a059e9677aaf7e009ccc67a2b3",
+      "body_sha256": "ea43676eb16d77769923be14fcc382edcf5e8ede29bda23c88a54abf601e43cc"
+    },
+    {
+      "file": "knowledge/stage/extensions.md",
+      "id": "stage-extensions",
+      "source": "https://stage.dev/resources/extensions",
+      "sha256": "e5a68857e619174c87fa15b1a5e8ae029c405e2d2db215cd5fdf31a35a948485",
+      "body_sha256": "379da59211ab7cf6606c33578c40958a405d63231e0dc66c26d11a98cc738a85"
+    },
+    {
+      "file": "knowledge/stage/files.md",
+      "id": "stage-files",
+      "source": "https://stage.dev/resources/files",
+      "sha256": "fc53a732917fd7b6624cadd2edd93175ce78cf64f7c05e9e370b035e55b0d8c2",
+      "body_sha256": "b607189a03bd0dc94a3b66844ae37515ea6e58f5cad05665992cb8e9db301cc7"
+    },
+    {
+      "file": "knowledge/stage/framework.md",
+      "id": "stage-framework",
+      "source": "https://stage.dev/resources/framework",
+      "sha256": "9e6bed72f59720a642cf8c072ca2cf913677ec5f3a553a17f9b4c71c5181b61e",
+      "body_sha256": "01cf377084bb7c493dfc8ef72defbdba593870c6b6b7de630623b50a4a0471c1"
+    },
+    {
+      "file": "knowledge/stage/getting-started.md",
+      "id": "stage-getting-started",
+      "source": "https://stage.dev/resources/getting-started",
+      "sha256": "16fb3352622d737699835355a3a12ebec960bce39406b6bd8973fae81a3b1dca",
+      "body_sha256": "89c7add72bb07ae7c1673b6d71be62cd8fa066fdc42ee01e108efd7977ca72be"
+    },
+    {
+      "file": "knowledge/stage/http.md",
+      "id": "stage-http",
+      "source": "https://stage.dev/resources/http",
+      "sha256": "11cefdc0bfb03f5057255390275371a831c1ca209f0a8a3076160d88b361a28f",
+      "body_sha256": "15d67d73c154030f9cf1d869b0b4e8fe30a1784212399ca5d9a9709615779882"
+    },
+    {
+      "file": "knowledge/stage/packages.md",
+      "id": "stage-packages",
+      "source": "https://stage.dev/resources/packages",
+      "sha256": "077d787e07a6c53c64a6abb7acfa4390835e60b9ae952c8189f8b50d24ceb380",
+      "body_sha256": "0899b59df6e420e53f65611a7f462de895146d4ebe26e498cea541f5b295ef34"
+    },
+    {
+      "file": "knowledge/stage/first-http-application.md",
+      "id": "stage-tutorial",
+      "source": "https://stage.dev/resources/first-http-application",
+      "sha256": "650785be7cc1380521309d624dfee7c5780c3b953922b73c437802e1a8b1740c",
+      "body_sha256": "f54007a17150b21e7b8ebae968368a3407c05687fbd9854bb433c7042f6e33e2"
+    },
+    {
+      "file": "knowledge/stage/features.md",
+      "id": "stage-features",
+      "source": "https://stage.dev/resources/features",
+      "sha256": "1da1710ff082d692ec21769d642c326ae4c066abbcb7416b5977a3d7d1bd2304",
+      "body_sha256": "d1283a785a5b52a4fca450af3b1fbafbbffabcbb53d8acc3178285d2d8c4b5b8"
+    },
+    {
+      "file": "knowledge/stage/cms-themes.md",
+      "id": "stage-cms-themes",
+      "source": "https://stage.dev/resources/cms-themes",
+      "sha256": "593f9d6a3700839ae214fa4ef98a93e3a90d32a0fb1fb8d1ef46cc505c94349a",
+      "body_sha256": "929608bfc2f7edee84fcf47af1cd38f3490e85044008148f2479a5dbf26cef43"
+    },
+    {
+      "file": "knowledge/stage/cms-publication.md",
+      "id": "stage-cms-publication",
+      "source": "https://stage.dev/resources/cms-publication",
+      "sha256": "b367570c353993eaf5d8a761887354d891163cf2af6e7570d8e1bce9d178aafd",
+      "body_sha256": "3b0d033e0d01b3ef76c5e6578258cba79afc4e975972c5e364e727ff14773b54"
+    },
+    {
+      "file": "knowledge/stage/codex-operations.md",
+      "id": "stage-codex-operations",
+      "source": "https://stage.dev/resources/codex-operations",
+      "sha256": "ee83c85936a55ec5a03b49da9980d632a26abce647de7bf56671e8e8a7e31731",
+      "body_sha256": "218437cb898e1aee29fae3644def425126a4decce4b81f4b2fa14d2de68d509e"
+    },
+    {
+      "file": "knowledge/starchat/overview.md",
+      "id": "starchat",
+      "source": "https://stage.dev/resources/starchat",
+      "sha256": "8112c28b5f1fd9ec86caa37ce0570ab933ff42772af3332cdbfb63c5f94def4f",
+      "body_sha256": "588b65b4159816daa10c9f1ae3b03167109aa6a5d7265775f2efeba201467c3b"
+    },
+    {
+      "file": "knowledge/starchat/installation.md",
+      "id": "starchat-installation",
+      "source": "https://stage.dev/resources/starchat-installation",
+      "sha256": "719ca8f9252b997678f770749d42b6b8eed7e2a321581f6a43c981ddcf3166a8",
+      "body_sha256": "f832e7ee49323758da86dda333b032d00f496d78ef903117548e9de5a1036798"
+    },
+    {
+      "file": "knowledge/starchat/knowledge.md",
+      "id": "starchat-knowledge",
+      "source": "https://stage.dev/resources/starchat-knowledge",
+      "sha256": "ec8d39136518b86e60a27884a5e7b0b7c8bcdf28ea39cf0e5f2f5d2fbb384e9d",
+      "body_sha256": "801ff7901a0f0508c730ecd4ace4575660d6325e0d0b6b2a4662c4da5947880a"
+    },
+    {
+      "file": "knowledge/starchat/operations.md",
+      "id": "starchat-operations",
+      "source": "https://stage.dev/resources/starchat-operations",
+      "sha256": "25ea1c898baa41152c63b38376f448ac425af73430961c8d59ef4cd080b47a78",
+      "body_sha256": "0af377cc40b0c88f49f3757e190846f08410b75d6cb08eb47048a22e37b141d5"
+    },
+    {
+      "file": "knowledge/stage/application-ideas.md",
+      "id": "stage-application-ideas",
+      "source": "https://stage.dev/resources/application-ideas",
+      "sha256": "f949152358df3a56b7ecb0d4d780432c004cc410a53fce5958331d90338369e5",
+      "body_sha256": "cdcec5e68fae35c87671bc6891c4ca79ac83f099e9b2f5eba8a32440a0f08412"
+    },
+    {
+      "file": "knowledge/stage/game-backend.md",
+      "id": "stage-game-backend",
+      "source": "https://stage.dev/resources/game-backend",
+      "sha256": "6951ef108052d7ac9d7ad2dbaf866364c1cfefe95572ff6c0d75538cca3eaa7c",
+      "body_sha256": "86d2172c7dadb68ac3ca101b20fd6685d85a5c5a409f3e0d44c3de9a5922a5e4"
+    }
+  ]
+}

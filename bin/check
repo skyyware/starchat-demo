@@ -1,0 +1,75 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use Stage\Http\Request;
+use Starchat\App;
+use Starchat\Document;
+use Starchat\Installation;
+use Starchat\Knowledge;
+
+$root = dirname(__DIR__);
+$fail = static function (bool $condition, string $message): void {
+    if (!$condition) { throw new RuntimeException($message); }
+};
+$installation = Installation::fromFile($root . '/installation.json');
+$fail($installation->id() === 'stage', 'Stage identity changed');
+$fail($installation->data['brand']['asset_origin'] === 'https://stage.dev', 'Shared theme owner changed');
+$manifest = json_decode(file_get_contents($root . '/knowledge/sources.json'), true, flags: JSON_THROW_ON_ERROR);
+$files = [];
+$paths = [];
+foreach ($manifest['documents'] as $source) {
+    $relative = $source['file'];
+    $fail(preg_match('~^knowledge/(stage|starchat)/[a-z0-9-]+\.md$~D', $relative) === 1, 'Invalid snapshot path');
+    $file = $root . '/' . $relative;
+    $fail(!isset($files[$file]), 'Duplicate snapshot');
+    $files[$file] = true;
+    $fail(hash_file('sha256', $file) === $source['sha256'], 'Snapshot changed after review: ' . $relative);
+    $document = Document::read($file, 'stage');
+    $fail($document->meta['id'] === $source['id'] && $document->meta['review_status'] === 'reviewed', 'Snapshot identity or review mismatch');
+    $fail(hash('sha256', $document->body) === $source['body_sha256'], 'Reviewed body changed: ' . $relative);
+    $fail($source['source'] === 'https://stage.dev' . $document->meta['public_path'], 'Missing canonical website source');
+    foreach ([$document->meta['source'], ...array_column($document->meta['links'] ?? [], 'url')] as $url) {
+        $fail(!preg_match('~^https://github\.com/skyyware/starchat(?:/|$)~', $url), 'Private core used as a public citation');
+    }
+    $paths[] = $document->meta['public_path'];
+}
+$actual = glob($root . '/knowledge/*/*.md');
+$fail(count($files) === count($actual) && array_diff($actual, array_keys($files)) === [], 'Unreviewed or missing knowledge');
+$fail(count($paths) === count(array_unique($paths)), 'Duplicate resource route');
+$runtime = $root . '/.runtime/check-' . bin2hex(random_bytes(6));
+mkdir($runtime, 0700, true);
+$previous = getenv('STARCHAT_RUNTIME');
+putenv('STARCHAT_RUNTIME=' . $runtime);
+try {
+    $knowledge = new Knowledge($installation, $runtime . '/knowledge.sqlite');
+    $fail($knowledge->rebuild() === count($files), 'Index count mismatch');
+    $fail(count($knowledge->catalogue(true)) === count($files), 'Ineligible reviewed snapshot');
+    foreach (['Starchat installation' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication'] as $query => $expected) {
+        $ids = array_map(static fn (Document $document): string => $document->meta['id'], $knowledge->search($query));
+        $fail(in_array($expected, $ids, true), 'Retrieval regression: ' . $query);
+    }
+    $app = new App($root, 'chat.stage.dev');
+    $page = $app->handle(new Request('GET', '/'));
+    $fail(str_contains($page->body, 'href="https://stage.dev/branding/stage.css"'), 'Shared stylesheet absent');
+    $fail(str_contains($page->body, 'class="brand" href="https://stage.dev"'), 'Website return link absent');
+    $fail(str_contains($page->body, 'data-history-key="starchat:stage:conversation"') && str_contains($page->body, 'data-migration-origin="https://stage.dev"'), 'Stage history migration changed');
+    $fail(str_contains($page->headers['content-security-policy'], "script-src 'self';") && str_contains($page->headers['content-security-policy'], "connect-src 'self';"), 'Shared theme expanded executable access');
+    foreach (['/', '/legal', '/sources', ...$paths] as $path) {
+        $fail($app->handle(new Request('GET', $path))->status === 200, 'Public route failed: ' . $path);
+    }
+    foreach (['/installation.json', '/knowledge/sources.json', '/vendor/autoload.php', '/.env', '/.runtime/check'] as $path) {
+        $fail($app->handle(new Request('GET', $path))->status === 404, 'Private path exposed: ' . $path);
+    }
+    try {
+        new App($root, 'esslingen.chat.stage.dev');
+        throw new RuntimeException('Other installation host accepted');
+    } catch (InvalidArgumentException) {}
+} finally {
+    putenv($previous === false ? 'STARCHAT_RUNTIME' : 'STARCHAT_RUNTIME=' . $previous);
+    foreach (glob($runtime . '/*') as $file) { unlink($file); }
+    rmdir($runtime);
+}
+echo count($files), " public source snapshots, retrieval, shared design, history and isolation verified\n";

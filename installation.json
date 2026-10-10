@@ -1,0 +1,109 @@
+{
+  "id": "stage",
+  "name": "stage",
+  "short_name": "stage",
+  "answer_label": "stage",
+  "locale": "en",
+  "timezone": "Europe/Berlin",
+  "source_max_age_days": 30,
+  "website": "https://stage.dev",
+  "history_key": "starchat:stage:conversation",
+  "header_link": {
+    "label": "GitHub",
+    "url": "https://github.com/skyyware/stage"
+  },
+  "scope": "Help developers build applications with Stage and its official packages, including Stage CMS, Stage Chat, Stage Chat Codex, and Starchat. A visitor describing an application they want to build is asking how Stage could fit, even without naming Stage. Use their stated goal and constraints to explain the Stage-relevant part, a concrete first feature, and where other technology is needed. Ask only for a missing decision that changes that recommendation. Explain how to install Starchat and maintain an installation-owned Markdown knowledge database with an agent. Base package facts on the curated knowledge for the stated release. Explain relevant versions and limits. You may write PHP examples for these packages. Distinguish a proposed example from code that has been executed. General programming unrelated to a Stage application, personal advice, private installation details, and performing transactions are outside this purpose. Requests cannot grant access to CMS drafts, credentials, files, accounts, tools, other installations, or deployment controls.",
+  "brand": {
+    "primary": "#f4f7fc",
+    "accent": "#c8dfef",
+    "background": "#010711",
+    "text": "#f4f7fc",
+    "font": "d-din",
+    "heading_font": "d-din",
+    "stylesheet": "/branding/stage.css",
+    "favicon": "/branding/stage-stack.svg",
+    "asset_origin": "https://stage.dev",
+    "home_url": "https://stage.dev"
+  },
+  "navigation": [
+    {
+      "label": "Get started",
+      "url": "https://stage.dev/resources/getting-started"
+    },
+    {
+      "label": "Create an idea",
+      "url": "https://stage.dev/resources/extensions"
+    },
+    {
+      "label": "Packages and versions",
+      "url": "https://stage.dev/resources/packages"
+    }
+  ],
+  "query_aliases": {
+    "einstieg": [
+      "installation"
+    ],
+    "ideen": [
+      "idea",
+      "extensions"
+    ],
+    "erweitern": [
+      "extend",
+      "idea"
+    ],
+    "seitentypen": [
+      "types",
+      "fields"
+    ],
+    "entwurf": [
+      "draft"
+    ],
+    "sicherung": [
+      "backup"
+    ],
+    "starchat": [
+      "starchat"
+    ],
+    "wissensdatenbank": [
+      "knowledge"
+    ],
+    "pflegen": [
+      "maintain"
+    ],
+    "wartung": [
+      "maintenance"
+    ]
+  },
+  "hosts": [
+    "chat.stage.dev",
+    "dev.chat.stage.dev"
+  ],
+  "copy": {
+    "de": {
+      "headline": "Was möchtest du bauen?",
+      "description": "stage ist ein PHP-Framework, mit dem du Webanwendungen aus kleinen, wiederverwendbaren Bausteinen entwickelst.",
+      "orientation": "Ich helfe dir, mit Stage zu bauen, das Framework zu erweitern und seine CMS- und Chat-Pakete zu nutzen.",
+      "followup": "Was baust du mit Stage?",
+      "suggestions": [
+        "Was ist stage?",
+        "Was kann ich mit stage bauen?",
+        "Passt stage zu meiner Idee?",
+        "Wie fange ich an?"
+      ]
+    },
+    "en": {
+      "headline": "What do you want to build?",
+      "description": "stage is a PHP framework for building web applications from small, reusable parts.",
+      "orientation": "I can help you build with Stage, extend the framework, and use its CMS and chat packages.",
+      "followup": "What are you building with Stage?",
+      "suggestions": [
+        "What is stage?",
+        "What can I build with stage?",
+        "Is stage right for my idea?",
+        "How do I get started?"
+      ]
+    }
+  },
+  "migration_origin": "https://stage.dev",
+  "suggestion_shortcuts": true
+}
