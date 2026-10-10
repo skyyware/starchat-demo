@@ -1,8 +1,9 @@
 ## Impressum
 
-**Skyyware UG (haftungsbeschränkt)**\
+**SKYYWARE UG (haftungsbeschränkt)**\
 Aichenbachstraße 27\
-73614 Schorndorf, Deutschland
+73614 Schorndorf\
+Deutschland
 
 Vertreten durch Sascha Dobrochynskyy.\
 [office@skyyware.com](mailto:office@skyyware.com)

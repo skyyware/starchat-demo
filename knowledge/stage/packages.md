@@ -66,10 +66,10 @@ These are the versions covered by the guides. Your application's
 | `skyyware/stage-cms` | 0.5.3 | Page editing, drafts, publication, media, and revision history |
 | `skyyware/stage-chat` | 0.1.1 | A PHP interface for stateless chat providers |
 | `skyyware/stage-chat-codex` | 0.2.3 | A Codex CLI implementation of the chat interface |
-| `skyyware/starchat` | 0.2.5 | A chat application with installation-owned knowledge and answer review |
+| `skyyware/starchat` | 0.2.7 | A chat application with installation-owned knowledge and answer review |
 
 Stage, Stage CMS, Stage Chat, and Stage Chat Codex are public and MIT licensed.
-The Starchat core repository is private; its reviewed 0.2.5 release retains
+The Starchat core repository is private; its reviewed 0.2.7 release retains
 the MIT license. The public example installation is
 [starchat-demo](https://github.com/skyyware/starchat-demo), whose private core
 dependency requires authorized access. Their Composer PHP requirement

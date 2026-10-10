@@ -1,8 +1,9 @@
 ## Legal notice
 
-**Skyyware UG (haftungsbeschränkt)**\
+**SKYYWARE UG (haftungsbeschränkt)**\
 Aichenbachstraße 27\
-73614 Schorndorf, Germany
+73614 Schorndorf\
+Germany
 
 Represented by Sascha Dobrochynskyy.\
 [office@skyyware.com](mailto:office@skyyware.com)

@@ -104,6 +104,5 @@
       ]
     }
   },
-  "migration_origin": "https://stage.dev",
-  "suggestion_shortcuts": true
+  "migration_origin": "https://stage.dev"
 }
