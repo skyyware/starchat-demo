@@ -14,7 +14,10 @@ topic_terms:
   - 'keyboard shortcuts'
   - 'keyboard shortcut'
   - 'suggestion shortcuts'
+  - 'number shortcuts'
+  - 'suggested questions'
   - 'tastenkürzel'
+  - 'fragevorschläge'
 phrase_terms:
   - 'install starchat'
   - 'set up starchat'
@@ -24,7 +27,10 @@ keywords:
   - 'starchat setup'
   - keyboard
   - shortcuts
+  - 'number shortcuts'
+  - 'suggested questions'
   - 'tastenkürzel'
+  - 'fragevorschläge'
 links:
   -
     label: 'Install Starchat'

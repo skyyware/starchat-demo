@@ -50,7 +50,7 @@ try {
     $knowledge = new Knowledge($installation, $runtime . '/knowledge.sqlite');
     $fail($knowledge->rebuild() === count($files), 'Index count mismatch');
     $fail(count($knowledge->catalogue(true)) === count($files), 'Ineligible reviewed snapshot');
-    foreach (['Starchat installation' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication'] as $query => $expected) {
+    foreach (['Starchat installation' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7? Are there number shortcuts?' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication'] as $query => $expected) {
         $ids = array_map(static fn (Document $document): string => $document->meta['id'], $knowledge->search($query));
         $fail(in_array($expected, $ids, true), 'Retrieval regression: ' . $query);
     }
