@@ -9,7 +9,7 @@ both surfaces on their next load.
 
 `installation.json` uses `brand.asset_origin=https://stage.dev`,
 `brand.stylesheet=/branding/stage.css` and
-`brand.favicon=/branding/stage-stack.svg`. Public fonts are loaded relative to
+`brand.favicon=/branding/stage-star.svg`. Public fonts are loaded relative to
 the shared stylesheet and allow cross-origin reads. No font or brand asset is
 copied into this repository. Shared URLs revalidate; do not add immutable caching
 or a pinned integrity hash that would prevent the two surfaces updating together.

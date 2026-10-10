@@ -7,7 +7,7 @@ account metadata, CMS dumps and operational host files. Stage's regular website
 lives separately at stage.dev; its public guides are the chat's source material.
 
 stage.dev and chat.stage.dev have one design owner: the regular website's
-/branding/stage.css, /branding/stage-stack.svg and public fonts. The chat loads
+/branding/stage.css, /branding/stage-star.svg and public fonts. The chat loads
 these directly through brand.asset_origin=https://stage.dev after engine CSS.
 Change shared design at that owner, then test both website and chat, desktop and
 mobile. Do not add a duplicate theme here, a copy job or an automatic pipeline.
