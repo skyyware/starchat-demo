@@ -1,6 +1,6 @@
 {
   "source": "https://stage.dev",
-  "prepared_at": "2026-10-10T17:25:53+00:00",
+  "prepared_at": "2026-10-10T17:27:26+00:00",
   "documents": [
     {
       "file": "knowledge/stage/chat.md",
@@ -125,7 +125,7 @@
       "file": "knowledge/starchat/installation.md",
       "id": "starchat-installation",
       "source": "https://stage.dev/resources/starchat-installation",
-      "sha256": "f972b080d18b5ba54ebcb9f21047bcda0f5b2690743ee168b38985c222ce7f25",
+      "sha256": "a2faa182e51a230871b1037098c2c724f637fe50c2954b884c46c43a39aa1d20",
       "body_sha256": "444f675fcbe1df800fde13abd3614558cbf48c36af6fb96997142b9861fc8ca4"
     },
     {
@@ -157,5 +157,5 @@
       "body_sha256": "86d2172c7dadb68ac3ca101b20fd6685d85a5c5a409f3e0d44c3de9a5922a5e4"
     }
   ],
-  "source_commit": "2f9fd5cd556140fc79e9ecb2d46ffcb5c30dca93"
+  "source_commit": "1667a18eab80236cc3495444c00ece4feb304c3c"
 }

@@ -15,6 +15,7 @@ topic_terms:
   - 'keyboard shortcut'
   - 'suggestion shortcuts'
   - 'number shortcuts'
+  - 'suggested question'
   - 'suggested questions'
   - 'tastenkürzel'
   - 'fragevorschläge'
@@ -28,6 +29,7 @@ keywords:
   - keyboard
   - shortcuts
   - 'number shortcuts'
+  - 'suggested question'
   - 'suggested questions'
   - 'tastenkürzel'
   - 'fragevorschläge'
