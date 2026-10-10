@@ -9,7 +9,13 @@ source_version: "skyyware/stage-cms v0.5.3"
 public_path: "/resources/cms-themes"
 topic_terms: ["themes", "types", "fields", "templates"]
 keywords: ["themes", "types", "fields", "templates"]
-links: [{"label": "CMS page types and themes source", "url": "https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/themes.md"}]
+links:
+  -
+    label: 'CMS page types and themes — Stage guide'
+    url: 'https://stage.dev/resources/cms-themes'
+  -
+    label: 'CMS page types and themes source'
+    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/themes.md'
 based_on: []
 ---
 

@@ -28,6 +28,9 @@ keywords:
   - scaling
 links:
   -
+    label: 'What Stage does — Stage guide'
+    url: 'https://stage.dev/resources/framework'
+  -
     label: 'Stage design and limits'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
   -

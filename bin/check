@@ -7,6 +7,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 use Stage\Http\Request;
 use Starchat\App;
 use Starchat\Document;
+use Starchat\Evidence;
 use Starchat\Installation;
 use Starchat\Knowledge;
 
@@ -31,6 +32,8 @@ foreach ($manifest['documents'] as $source) {
     $fail($document->meta['id'] === $source['id'] && $document->meta['review_status'] === 'reviewed', 'Snapshot identity or review mismatch');
     $fail(hash('sha256', $document->body) === $source['body_sha256'], 'Reviewed body changed: ' . $relative);
     $fail($source['source'] === 'https://stage.dev' . $document->meta['public_path'], 'Missing canonical website source');
+    $evidence = new Evidence([$document], $installation);
+    $fail(in_array($source['source'], array_column($evidence->links, 'url'), true), 'Website guide unavailable to answers: ' . $relative);
     foreach ([$document->meta['source'], ...array_column($document->meta['links'] ?? [], 'url')] as $url) {
         $fail(!preg_match('~^https://github\.com/skyyware/starchat(?:/|$)~', $url), 'Private core used as a public citation');
     }

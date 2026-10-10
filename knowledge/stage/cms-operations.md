@@ -26,6 +26,9 @@ keywords:
   - deployment
 links:
   -
+    label: 'Stage CMS storage, recovery, and limits — Stage guide'
+    url: 'https://stage.dev/resources/cms-operations'
+  -
     label: 'Storage, deployment, and recovery'
     url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/operations.md'
   -

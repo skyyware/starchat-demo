@@ -28,6 +28,9 @@ keywords:
   - setup
 links:
   -
+    label: 'Create a Stage application — Stage guide'
+    url: 'https://stage.dev/resources/getting-started'
+  -
     label: 'Stage installation'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/README.md'
   -

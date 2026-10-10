@@ -9,7 +9,13 @@ source_version: "skyyware/stage-chat-codex v0.2.3"
 public_path: "/resources/codex-operations"
 topic_terms: ["codex", "connector", "configuration", "timeouts"]
 keywords: ["codex", "connector", "configuration", "timeouts"]
-links: [{"label": "Operate the Codex connector source", "url": "https://github.com/skyyware/stage-chat-codex/blob/488b26c68a4358ea08c62290dd8c159b395783b6/docs/operations.md"}]
+links:
+  -
+    label: 'Operate the Codex connector — Stage guide'
+    url: 'https://stage.dev/resources/codex-operations'
+  -
+    label: 'Operate the Codex connector source'
+    url: 'https://github.com/skyyware/stage-chat-codex/blob/488b26c68a4358ea08c62290dd8c159b395783b6/docs/operations.md'
 based_on: []
 ---
 

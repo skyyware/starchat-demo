@@ -4,6 +4,8 @@ stage.dev owns the public guide content. This installation contains a reviewed
 snapshot for retrieval, recorded in `knowledge/sources.json`. Each manifest entry
 names the public website page, source document and body hashes. The underlying
 article preserves its own package version and original evidence links.
+Each snapshot also offers the corresponding website guide as an answer link;
+adding that destination does not change the reviewed body or upstream evidence.
 
 When an article, package contract or relevant fact changes, inspect the public
 source and affected behavior, then update the corresponding Markdown here.

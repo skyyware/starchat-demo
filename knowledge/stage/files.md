@@ -26,6 +26,9 @@ keywords:
   - streaming
 links:
   -
+    label: 'File uploads and downloads — Stage guide'
+    url: 'https://stage.dev/resources/files'
+  -
     label: 'File transfer guide'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/files.md'
   -

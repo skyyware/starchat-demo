@@ -27,11 +27,17 @@ keywords:
   - requirements
   - storage
 links:
-  - label: 'Stage application boundaries'
+  -
+    label: 'Turn an application idea into a first feature — Stage guide'
+    url: 'https://stage.dev/resources/application-ideas'
+  -
+    label: 'Stage application boundaries'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
-  - label: 'Compose application features'
+  -
+    label: 'Compose application features'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md'
-  - label: 'First HTTP application'
+  -
+    label: 'First HTTP application'
     url: 'https://stage.dev/resources/first-http-application'
 based_on: []
 ---

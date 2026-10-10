@@ -9,7 +9,13 @@ source_version: "skyyware/stage-cms v0.5.3"
 public_path: "/resources/cms-publication"
 topic_terms: ["publish", "draft", "revision", "preview"]
 keywords: ["publish", "draft", "revision", "preview"]
-links: [{"label": "CMS publication and revisions source", "url": "https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/publication.md"}]
+links:
+  -
+    label: 'CMS publication and revisions — Stage guide'
+    url: 'https://stage.dev/resources/cms-publication'
+  -
+    label: 'CMS publication and revisions source'
+    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/publication.md'
 based_on: []
 ---
 

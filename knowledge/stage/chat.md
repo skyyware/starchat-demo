@@ -28,6 +28,9 @@ keywords:
   - streaming
 links:
   -
+    label: 'Stage Chat and its connectors — Stage guide'
+    url: 'https://stage.dev/resources/chat'
+  -
     label: 'Stage Chat contract and limits'
     url: 'https://github.com/skyyware/stage-chat/blob/7fef0ddb693625f41760bf24074463d7c9d9bf3f/README.md'
   -

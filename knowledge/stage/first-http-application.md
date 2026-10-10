@@ -9,7 +9,13 @@ source_version: "skyyware/stage v0.1.5"
 public_path: "/resources/first-http-application"
 topic_terms: ["first application", "tutorial", "getting started", "json", "routing"]
 keywords: ["first application", "tutorial", "getting started", "json", "routing"]
-links: [{"label": "Build your first HTTP application source", "url": "https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md"}]
+links:
+  -
+    label: 'Build your first HTTP application — Stage guide'
+    url: 'https://stage.dev/resources/first-http-application'
+  -
+    label: 'Build your first HTTP application source'
+    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md'
 based_on: []
 ---
 

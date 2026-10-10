@@ -30,6 +30,9 @@ keywords:
   - editorial
 links:
   -
+    label: 'Stage CMS API and private content — Stage guide'
+    url: 'https://stage.dev/resources/cms-api'
+  -
     label: 'CMS API operations and conflicts'
     url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/api.md'
   -

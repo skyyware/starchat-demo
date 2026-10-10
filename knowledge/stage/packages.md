@@ -27,6 +27,9 @@ keywords:
   - pakete
 links:
   -
+    label: 'Stage packages and versions — Stage guide'
+    url: 'https://stage.dev/resources/packages'
+  -
     label: 'Stage requirements and license'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/composer.json'
   -

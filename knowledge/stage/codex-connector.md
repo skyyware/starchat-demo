@@ -26,6 +26,9 @@ keywords:
   - cli
 links:
   -
+    label: 'Codex connector configuration and limits — Stage guide'
+    url: 'https://stage.dev/resources/codex-connector'
+  -
     label: 'Connector overview'
     url: 'https://github.com/skyyware/stage-chat-codex/blob/488b26c68a4358ea08c62290dd8c159b395783b6/README.md'
   -

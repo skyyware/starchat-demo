@@ -28,6 +28,9 @@ keywords:
   - http
 links:
   -
+    label: 'HTTP routing and request limits — Stage guide'
+    url: 'https://stage.dev/resources/http'
+  -
     label: 'HTTP reference'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/http.md'
   -

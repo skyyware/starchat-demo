@@ -9,7 +9,13 @@ source_version: "skyyware/stage v0.1.5"
 public_path: "/resources/features"
 topic_terms: ["features", "permissions", "services", "contracts"]
 keywords: ["features", "permissions", "services", "contracts"]
-links: [{"label": "Compose features source", "url": "https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md"}]
+links:
+  -
+    label: 'Compose features — Stage guide'
+    url: 'https://stage.dev/resources/features'
+  -
+    label: 'Compose features source'
+    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md'
 based_on: []
 ---
 

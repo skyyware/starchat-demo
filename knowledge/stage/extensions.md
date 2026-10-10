@@ -26,6 +26,9 @@ keywords:
   - 'composer package'
 links:
   -
+    label: 'Extend Stage with an idea — Stage guide'
+    url: 'https://stage.dev/resources/extensions'
+  -
     label: 'Share an idea'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/ideas.md'
   -
