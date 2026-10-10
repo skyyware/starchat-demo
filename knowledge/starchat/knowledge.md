@@ -5,7 +5,7 @@ title: 'Maintain Starchat knowledge with an agent'
 source: 'https://stage.dev/resources/starchat-knowledge'
 retrieved_at: '2026-10-09'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.2.7'
+source_version: 'skyyware/starchat v0.2.8'
 public_path: /resources/starchat-knowledge
 topic_terms:
   - knowledge
