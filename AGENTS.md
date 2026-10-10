@@ -11,7 +11,7 @@ stage.dev and chat.stage.dev have one design owner: the regular website's
 these directly through brand.asset_origin=https://stage.dev after engine CSS.
 Change shared design at that owner, then test both website and chat, desktop and
 mobile. Do not add a duplicate theme here, a copy job or an automatic pipeline.
-Keep the website's Chat menu link next to GitHub, opening in the same tab.
+The website's Start building action opens the chat in the same tab.
 
 The active installations are Esslingen, Stage chat and Sonnenzeit. Sonnenzeit
 remains actively developed by its owner and currently runs locally. Do not revive

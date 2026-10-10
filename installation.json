@@ -93,7 +93,7 @@
     },
     "en": {
       "headline": "What do you want to build?",
-      "description": "stage is a PHP framework for building web applications from small, reusable parts.",
+      "description": "stage is a lightweight framework for the age of agents.",
       "orientation": "I can help you build with Stage, extend the framework, and use its CMS and chat packages.",
       "followup": "What are you building with Stage?",
       "suggestions": [

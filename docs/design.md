@@ -9,7 +9,8 @@ both surfaces on their next load.
 
 `installation.json` uses `brand.asset_origin=https://stage.dev`,
 `brand.stylesheet=/branding/stage.css` and
-`brand.favicon=/branding/stage-star.svg`. Public fonts are loaded relative to
+`brand.favicon=/branding/stage-star.svg`. The shared star is black in light mode
+and white in dark mode. Public fonts are loaded relative to
 the shared stylesheet and allow cross-origin reads. No font or brand asset is
 copied into this repository. Shared URLs revalidate; do not add immutable caching
 or a pinned integrity hash that would prevent the two surfaces updating together.
@@ -17,7 +18,7 @@ or a pinned integrity hash that would prevent the two surfaces updating together
 For local joint work use the Stage website's local HTTPS origin, dev.stage.dev,
 and set the local installation's asset origin accordingly. Keep production
 configuration on stage.dev. Verify computed colors, fonts, focus states, mobile
-layout and the Chat menu's same-tab destination on both surfaces.
+layout and the website's Start building action opening the chat in the same tab.
 
 The allowed external origin grants stylesheet, image and font access only.
 Scripts and chat requests remain same-origin. Visitors cannot choose the theme
