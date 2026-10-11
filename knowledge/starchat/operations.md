@@ -5,7 +5,7 @@ title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
 retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.3.0'
+source_version: 'skyyware/starchat v0.3.1'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -56,10 +56,12 @@ conversation, with a 192 KiB total request limit. Ordinary chat retains its
 per serialized project. Oversized conversations are rejected, without silently
 dropping earlier requirements.
 
-Allow at least 55 seconds at the proxy and PHP worker. Each model call has a
-25-second limit; selection, answering, and review share a 45-second deadline.
-The browser gives up at 50 seconds. A disconnected browser does not prove that
-provider work stops immediately.
+Allow at least 55 seconds at the proxy and PHP worker. Selection, answering,
+and review calls have a 25-second limit. Project generation has a 35-second
+limit. Each answer or project shares a 45-second deadline across its phases,
+so project review also stops when the remaining time runs out. The browser
+gives up at 50 seconds. A disconnected browser does not prove that provider
+work stops immediately.
 
 The browser keeps the visible conversation until it is reset or cleared.
 The model provider receives a bounded history and relevant knowledge. Verify

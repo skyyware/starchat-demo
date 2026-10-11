@@ -1,6 +1,6 @@
 {
   "source": "https://stage.dev",
-  "prepared_at": "2026-10-11T08:45:12+00:00",
+  "prepared_at": "2026-10-11T09:18:26+00:00",
   "documents": [
     {
       "file": "knowledge/stage/chat.md",
@@ -76,8 +76,8 @@
       "file": "knowledge/stage/packages.md",
       "id": "stage-packages",
       "source": "https://stage.dev/resources/packages",
-      "sha256": "3fedb84f93e25456ca733f85c6e7f5a54b7bad382ec640cf8d6ad71eb7255a45",
-      "body_sha256": "81358a3ba047d16403a403d08950ed78fc3cae3cfc571bd7825fc72fc2567644"
+      "sha256": "68bff0470526a0719ff8d3f5b0c8c08afec2a4921aa7fdf859427ff17746e099",
+      "body_sha256": "b431eacacd8e70644c2081a698a71765d9906ff7be01cad90e9f6f330524b04c"
     },
     {
       "file": "knowledge/stage/first-http-application.md",
@@ -118,29 +118,29 @@
       "file": "knowledge/starchat/overview.md",
       "id": "starchat",
       "source": "https://stage.dev/resources/starchat",
-      "sha256": "2d8523722c495119c972f4e604f7d5e13ef6f6619fc4202edc240711bf914b59",
+      "sha256": "dda0b5fb9f5a768a8d0bb883ac46e8877a2048120b8edf6b66cfae6be441d34e",
       "body_sha256": "690411c554a63f3cd93b57bc667f96ef098b224bd3a761b9ed6453eb5739d5e3"
     },
     {
       "file": "knowledge/starchat/installation.md",
       "id": "starchat-installation",
       "source": "https://stage.dev/resources/starchat-installation",
-      "sha256": "dffec9042fe43f255388d2d8aad7c8250110ce67a01fef7203efbc179412fbc3",
+      "sha256": "0f78555b7448100d093a3b57d98c92e3969ca8985ae452d45f70f1558148a8b7",
       "body_sha256": "bb1b3e9024b0df4365ea4f7f010709d2432c9986827d97d2c073f8267bf621a0"
     },
     {
       "file": "knowledge/starchat/knowledge.md",
       "id": "starchat-knowledge",
       "source": "https://stage.dev/resources/starchat-knowledge",
-      "sha256": "f7238e145bf78f6cfa29600a94688a24ba3a92736494328b4b5dcb4a0efe09e4",
+      "sha256": "8ab1420c1c0f02947792752141ac535590b41661e4d6147615d0c15a0c254b52",
       "body_sha256": "801ff7901a0f0508c730ecd4ace4575660d6325e0d0b6b2a4662c4da5947880a"
     },
     {
       "file": "knowledge/starchat/operations.md",
       "id": "starchat-operations",
       "source": "https://stage.dev/resources/starchat-operations",
-      "sha256": "5310b851766383d5402e34f9d52dd24375be0e0617aecb9eeff924e7af52fc64",
-      "body_sha256": "612dac45e9b313baa38c5372a8754751474e02eac8986ed56a82feebc14d65ee"
+      "sha256": "e5b640d03830c10e1ca975119b686ff00474e43aeceb514fd755d17cf8085ec4",
+      "body_sha256": "e617354f87f3f50e42d01cc51a5400b607266f3d63b5282861f3a1f91625aaea"
     },
     {
       "file": "knowledge/stage/application-ideas.md",

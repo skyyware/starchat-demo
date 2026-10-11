@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.3.0'
+source_version: 'skyyware/starchat v0.3.1'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
