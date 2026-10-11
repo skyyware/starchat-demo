@@ -3,15 +3,17 @@ id: starchat-operations
 entity: stage
 title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
-retrieved_at: '2026-10-10'
+retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.2.8'
+source_version: 'skyyware/starchat v0.3.0'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
   - 'starchat deploy'
   - 'question handoff'
   - 'starchat limits'
+  - 'project limits'
+  - 'zip privacy'
 phrase_terms:
   - 'starchat operations'
   - 'starchat deployment'
@@ -21,6 +23,8 @@ keywords:
   - 'starchat deploy'
   - 'question handoff'
   - 'starchat limits'
+  - 'project limits'
+  - 'zip privacy'
 links:
   -
     label: 'Operate a Starchat installation'
@@ -45,6 +49,13 @@ twenty-requests-per-minute limit per installation and PHP pool. Verify
 `aggregate_rate_limit: true` in `/health` and configure an appropriate edge
 limit for a public deployment. Rate limits are not a spending cap.
 
+When enabled, project generation shares these limits and the same connector
+profile with chat. It accepts up to 80 messages and 24 KiB of serialized
+conversation, with a 192 KiB total request limit. Ordinary chat retains its
+64 KiB request limit. Output allows 40 UTF-8 files, 16 KiB each, and 32 KiB
+per serialized project. Oversized conversations are rejected, without silently
+dropping earlier requirements.
+
 Allow at least 55 seconds at the proxy and PHP worker. Each model call has a
 25-second limit; selection, answering, and review share a 45-second deadline.
 The browser gives up at 50 seconds. A disconnected browser does not prove that
@@ -54,6 +65,13 @@ The browser keeps the visible conversation until it is reset or cleared.
 The model provider receives a bounded history and relevant knowledge. Verify
 the actual server, connector, and provider settings before making retention
 claims. Never put private records in public answering knowledge.
+
+Project generation also sends the previous generated files when revising a
+project. The browser stores the latest successful project until reset or cleared.
+The application deletes temporary ZIP files after each request and keeps no
+server-side project archive. These facts do not establish provider retention.
+Update the installation's notices before enabling building. Review generated
+files and run their checks locally; the service does not execute them.
 
 ## Recover an interrupted answer
 

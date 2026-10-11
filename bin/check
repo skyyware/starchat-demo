@@ -17,6 +17,9 @@ $fail = static function (bool $condition, string $message): void {
 };
 $installation = Installation::fromFile($root . '/installation.json');
 $fail($installation->id() === 'stage', 'Stage identity changed');
+$fail($installation->building(), 'Project building must be enabled for this installation');
+$fail(class_exists(ZipArchive::class), 'Project downloads require the zip extension');
+foreach (['answer', 'source-selection', 'review', 'project', 'project-review'] as $purpose) { $installation->instructions($purpose); }
 $fail($installation->data['brand']['asset_origin'] === 'https://stage.dev', 'Shared theme owner changed');
 $manifest = json_decode(file_get_contents($root . '/knowledge/sources.json'), true, flags: JSON_THROW_ON_ERROR);
 $files = [];
@@ -60,6 +63,8 @@ try {
     $fail(str_contains($page->body, 'class="brand" href="https://stage.dev"'), 'Website return link absent');
     $fail(str_contains($page->body, 'data-history-key="starchat:stage:conversation"') && str_contains($page->body, 'data-migration-origin="https://stage.dev"'), 'Stage history migration changed');
     $fail(str_contains($page->headers['content-security-policy'], "script-src 'self';") && str_contains($page->headers['content-security-policy'], "connect-src 'self';"), 'Shared theme expanded executable access');
+    $fail(str_contains($page->body, 'id="project"'), 'Project download control absent');
+    $fail($app->handle(new Request('GET', '/starchat/project.js'))->status === 200, 'Project browser module absent');
     foreach (['/', '/legal', '/sources', ...$paths] as $path) {
         $fail($app->handle(new Request('GET', $path))->status === 200, 'Public route failed: ' . $path);
     }

@@ -1,6 +1,6 @@
 ## Impressum
 
-**SKYYWARE UG (haftungsbeschränkt)**\
+**SKYYWARE UG**\
 Aichenbachstraße 27\
 73614 Schorndorf\
 Deutschland
@@ -8,6 +8,7 @@ Deutschland
 Vertreten durch Sascha Dobrochynskyy.\
 [office@skyyware.com](mailto:office@skyyware.com)
 
+SKYYWARE UG (haftungsbeschränkt).\
 Handelsregister: Amtsgericht Stuttgart, HRB 740570.\
 Umsatzsteuer-Identifikationsnummer: DE281935680.
 
@@ -47,6 +48,17 @@ nachdem er ihn als bearbeitbaren Entwurf geladen hat. Erst beim Absenden wird
 das Modell aufgerufen. Die ursprüngliche Adresse erreicht vorher den Server
 und möglicherweise weitere Infrastruktur. Verwenden Sie in solchen Links keine
 personenbezogenen oder vertraulichen Informationen.
+
+### Projekt-Downloads
+
+Wenn Sie **Projekt-ZIP** wählen, senden wir das aktuelle, begrenzte Gespräch und
+gegebenenfalls die zuvor erzeugten Projektdateien an denselben Anbieter, um
+einen neuen Stand zu erstellen und zu prüfen. Der Dienst führt diesen Quellcode
+nicht aus. Ihr Browser speichert das letzte Projekt neben dem Gespräch, damit
+Sie es erneut herunterladen oder weiterentwickeln können. **Neues Gespräch**
+löscht auch dieses Projekt. Der Server erstellt eine temporäre ZIP-Datei zur
+Auslieferung und entfernt sie nach der Anfrage. Er führt kein Projektarchiv.
+Änderungen nach dem Herunterladen werden nicht in den Chat zurückgeladen.
 
 ### Betrieb der Website
 

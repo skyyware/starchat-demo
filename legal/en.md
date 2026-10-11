@@ -1,6 +1,6 @@
 ## Legal notice
 
-**SKYYWARE UG (haftungsbeschränkt)**\
+**SKYYWARE UG**\
 Aichenbachstraße 27\
 73614 Schorndorf\
 Germany
@@ -8,6 +8,7 @@ Germany
 Represented by Sascha Dobrochynskyy.\
 [office@skyyware.com](mailto:office@skyyware.com)
 
+SKYYWARE UG (haftungsbeschränkt).\
 Commercial register: Amtsgericht Stuttgart, HRB 740570.\
 VAT identification number: DE281935680.
 
@@ -43,6 +44,17 @@ Question links can contain text in the address. The browser removes it after
 loading an editable draft; no model request happens until you submit. The
 original address still reaches the server and may pass through other
 infrastructure. Keep personal and confidential information out of these links.
+
+### Project downloads
+
+When you choose **Project ZIP**, we send the current bounded conversation and,
+if available, the previously generated project files to the same provider to
+prepare and review a new snapshot. The service does not execute that source.
+Your browser stores the latest project alongside the conversation so you can
+download it again or refine it. **New conversation** also clears this project.
+The server creates a temporary ZIP for delivery and removes that temporary file
+after the request. It keeps no project archive. Changes made after downloading
+are not uploaded back to the chat.
 
 ### Website operation
 

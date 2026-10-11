@@ -3,7 +3,7 @@ id: stage-packages
 entity: stage
 title: 'Stage packages and versions'
 source: 'https://stage.dev/packages.json'
-retrieved_at: '2026-10-10T00:00:00+02:00'
+retrieved_at: '2026-10-11'
 review_status: reviewed
 public_path: /resources/packages
 topic_terms:
@@ -27,6 +27,9 @@ keywords:
   - pakete
 links:
   -
+    label: 'Stage packages and versions'
+    url: 'https://stage.dev/resources/packages'
+  -
     label: 'Stage requirements and license'
     url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/composer.json'
   -
@@ -47,16 +50,14 @@ links:
   -
     label: 'Public example installation'
     url: 'https://github.com/skyyware/starchat-demo'
-  -
-    label: 'Stage packages and versions — Stage guide'
-    url: 'https://stage.dev/resources/packages'
 based_on: {  }
 follow_ups: {  }
 ---
 
 # Stage packages and versions
 
-Checked on 10 October 2026 against the released packages and their Composer metadata.
+Starchat 0.3.0 was checked on 11 October 2026 against its released source and
+Composer metadata. The other package checks remain dated 10 October 2026.
 These are the versions covered by the guides. Your application's
 `composer.lock` records the versions it installs.
 
@@ -66,10 +67,10 @@ These are the versions covered by the guides. Your application's
 | `skyyware/stage-cms` | 0.5.3 | Page editing, drafts, publication, media, and revision history |
 | `skyyware/stage-chat` | 0.1.1 | A PHP interface for stateless chat providers |
 | `skyyware/stage-chat-codex` | 0.2.3 | A Codex CLI implementation of the chat interface |
-| `skyyware/starchat` | 0.2.8 | A chat application with installation-owned knowledge and answer review |
+| `skyyware/starchat` | 0.3.0 | A chat application with owned knowledge, answer review, and optional project ZIPs |
 
 Stage, Stage CMS, Stage Chat, and Stage Chat Codex are public and MIT licensed.
-The Starchat core repository is private; its reviewed 0.2.8 release retains
+The Starchat core repository is private; its reviewed 0.3.0 release retains
 the MIT license. The public example installation is
 [starchat-demo](https://github.com/skyyware/starchat-demo), whose private core
 dependency requires authorized access. Their Composer PHP requirement

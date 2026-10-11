@@ -3,14 +3,15 @@ id: starchat
 entity: stage
 title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
-retrieved_at: '2026-10-10'
+retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.2.8'
+source_version: 'skyyware/starchat v0.3.0'
 public_path: /resources/starchat
 topic_terms:
   - starchat
   - capabilities
   - purpose
+  - 'project building'
 phrase_terms:
   - 'what is starchat'
   - 'what can starchat do'
@@ -18,10 +19,14 @@ keywords:
   - starchat
   - capabilities
   - purpose
+  - 'project building'
 links:
   -
     label: 'What Starchat provides'
     url: 'https://stage.dev/resources/starchat'
+  -
+    label: 'Install Starchat'
+    url: 'https://stage.dev/resources/starchat-installation'
   -
     label: 'Maintain knowledge with an agent'
     url: 'https://stage.dev/resources/starchat-knowledge'
@@ -74,6 +79,14 @@ Opening questions introduce the chat's purpose and possible uses without
 assuming the visitor's role or technical knowledge. Once a conversation starts,
 suggestions should answer the open clarification or advance the stated goal.
 An unselected suggestion is never a confirmed fact about the visitor.
+
+An installation can enable optional project building. Visitors can download a
+project ZIP and revise it through the conversation. The operator's scope and
+building settings define the permitted work and technologies. Generated projects
+can use languages other than PHP. The service reviews the text files but does
+not execute them. Building is off by default. See
+[Install Starchat](https://stage.dev/resources/starchat-installation) for settings,
+archive contents, and limits.
 
 Starchat cannot execute an example, submit a form, deploy an application,
 book an appointment, or grant access to another installation. Public answers

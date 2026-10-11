@@ -3,9 +3,9 @@ id: starchat-installation
 entity: stage
 title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
-retrieved_at: '2026-10-10'
+retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.2.8'
+source_version: 'skyyware/starchat v0.3.0'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -17,8 +17,15 @@ topic_terms:
   - 'number shortcuts'
   - 'suggested question'
   - 'suggested questions'
-  - tastenkürzel
-  - fragevorschläge
+  - 'tastenkürzel'
+  - 'fragevorschläge'
+  - building
+  - 'project zip'
+  - 'project export'
+  - 'python project'
+  - 'java project'
+  - 'projekt zip'
+  - 'projekt export'
 phrase_terms:
   - 'install starchat'
   - 'set up starchat'
@@ -31,8 +38,15 @@ keywords:
   - 'number shortcuts'
   - 'suggested question'
   - 'suggested questions'
-  - tastenkürzel
-  - fragevorschläge
+  - 'tastenkürzel'
+  - 'fragevorschläge'
+  - building
+  - 'project zip'
+  - 'project export'
+  - 'python project'
+  - 'java project'
+  - 'projekt zip'
+  - 'projekt export'
 links:
   -
     label: 'Install Starchat'
@@ -43,106 +57,138 @@ links:
   -
     label: 'Public example installation'
     url: 'https://github.com/skyyware/starchat-demo'
+  -
+    label: 'Operate Starchat'
+    url: 'https://stage.dev/resources/starchat-operations'
 based_on: {  }
 ---
 
 # Install Starchat
 
-Create a separate project for your installation. Starchat 0.2.8 requires PHP
-8.4 or a later PHP 8 release, Composer, and the extensions declared by its
-packages. Its knowledge index uses SQLite FTS5. Serve only `public/` through HTTPS.
+Starchat 0.3.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
+outside Git and the public directory.
 
 ## Create the project
 
-The Starchat core repository is private. The public example installation lives
-at [starchat-demo](https://github.com/skyyware/starchat-demo). Its source can be
-read publicly, but installing the private Composer dependency requires existing
-authorized repository access. The public demo does not grant that access.
+The core repository is private. The public
+[example installation](https://github.com/skyyware/starchat-demo) requires
+existing authorized access to that Composer dependency. It does not grant access.
 
-With access to Starchat 0.2.8, copy `examples/installation` from that release
-into an empty project directory. Run these commands in that directory:
+With access to Starchat 0.3.0, copy `examples/installation` from that release
+into an empty project directory. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.2.8 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.3.0 --no-plugins --no-scripts
 ```
 
-The repository setting is needed because this package is distributed through
-its private GitHub repository. Configure Composer authentication outside the
-repository; never commit credentials. Keep both `composer.json` and `composer.lock`.
-The starter's `public/index.php` calls `Starchat\App::run()` with the project
-root. Configure the web server to route non-file requests to that entry point.
+Keep Composer authentication outside Git and retain both Composer files.
+The starter calls `Starchat\App::run()` with the project root. Route requests
+that do not match public files to `public/index.php`.
 
 ## Set the purpose and knowledge
 
 Edit `installation.json`. Set a unique `id`, allowed HTTPS `hosts`, `website`,
-`scope`, interface `copy`, and `brand`. Keep the purpose narrow enough that a
-visitor can understand what the chat covers. The host and knowledge owner
-must agree; a visitor cannot select another installation.
+`scope`, interface `copy`, and `brand`. Define what the chat helps with.
+The host and knowledge owner must agree. Visitors cannot select another installation.
 
-Use broad starter questions: what the chat is about, what it can help with,
-whether it fits the visitor's idea, and how to begin. Do not assume a technical
-background or a chosen project. Later suggestions follow the conversation.
+Use broad starter questions without assuming a technical background or chosen
+project. Later suggestions follow the visitor's stated goal.
 
-Set `brand.home_url` to your HTTPS homepage. The logo or wordmark leads there
-in the same tab. Without this setting, it leads to `/`. The header has no
-additional Home link. Supply your own fonts, logo, favicon, and
-stylesheet through the supported branding settings.
+Set `brand.home_url` to your HTTPS homepage. The logo or wordmark opens it in
+the same tab, or `/` when unset. There is no additional Home link. Supply your
+fonts, logo, favicon, and stylesheet through `brand`.
 
-To share your website's design, set `brand.asset_origin` to its trusted HTTPS
-origin and keep the stylesheet and image paths under `/branding/`. That origin
-must serve the styles with revalidation and allow cross-origin font reads.
-It receives permission for styles, fonts, and images, not scripts or API calls.
-Without this setting, branding assets remain local to the installation.
+For shared branding, set `brand.asset_origin` to a trusted HTTPS origin with
+paths under `/branding/`. Revalidate styles and allow cross-origin font reads.
+Permission covers styles, fonts, and images, excluding scripts and APIs.
+Without this setting, assets stay local.
 
-Optional `header_link` adds a labelled HTTPS link with an external-link icon
-beside the language selector. Suggestions fit their text and wrap to another
-line when needed. An installation can supply a different layout in its stylesheet.
+Optional `header_link` adds a labelled HTTPS destination beside the language
+selector. Suggestions fit their text and wrap unless your stylesheet changes it.
 
-Suggestions are ordinary buttons with no custom keyboard shortcuts or numbered
-labels. Use Tab to focus a button and Enter or Space to activate it. Clicking
-or tapping works too. Number keys do not select suggestions. Remove the obsolete
-`suggestion_shortcuts` setting when upgrading; it no longer enables shortcuts.
+Suggestions have no custom keyboard shortcuts or numbered labels. Use Tab to
+focus, then Enter or Space to activate. Clicking and tapping work too.
+Number keys do not select suggestions. Remove `suggestion_shortcuts` when
+upgrading. It no longer enables shortcuts.
 
-Replace the starter's example article with reviewed Markdown under
-`knowledge/<category>/`. Set each document's `entity` to your installation ID.
-Supply your own legal notices and assets. Keep credentials and runtime files
-outside Git and the public directory.
+Replace the starter article with reviewed Markdown under `knowledge/<category>/`.
+Set each document's `entity` to your installation ID. Supply your legal notices.
 
-From the project directory, build the index:
+Build the index from the project directory:
 
 ```sh
 vendor/bin/starchat index
 ```
 
-Expect the installation ID and indexed document count. A failed validation
-keeps the previous index. The command checks structure; it does not fact-check
-the articles or mark them reviewed.
+Expect the installation ID and document count. Validation preserves the previous
+index on failure and does not fact-check articles.
 
 ## Connect the model
 
-The default provider adapter is Stage Chat Codex. Prepare an approved Codex
-executable, a dedicated authenticated service home, and an empty private working
-directory. A human completes account setup. Configure `STARCHAT_CODEX_BINARY`,
-`STARCHAT_CODEX_HOME`, and `STARCHAT_CODEX_WORK` for the service.
+Stage Chat Codex is the default adapter. Configure `STARCHAT_CODEX_BINARY`,
+`STARCHAT_CODEX_HOME`, and `STARCHAT_CODEX_WORK` for an approved executable,
+dedicated authenticated service home, and empty private working directory.
+A human completes account setup.
 
-Set `STARCHAT_RUNTIME` to the installation's private writable runtime.
-`STARCHAT_MODEL` and `STARCHAT_REASONING_EFFORT` select the supported model
-and reasoning level. `STARCHAT_SERVICE_TIER` and `STARCHAT_MODEL_CATALOG`
-control the verified tier request. These settings cannot buy or grant access.
-Starchat 0.2.8 defaults to Astra (`gpt-6-astra`), `low`, and `fast`. Existing
-environment overrides still apply; set `STARCHAT_SERVICE_TIER=fast` explicitly
-when replacing an earlier `auto` configuration. Explicit `auto` can still select
-catalogue-verified Ultrafast. No provider rejection triggers a tier fallback.
-See the operating guide for deadlines, permissions, rate limits, and verification.
+Set `STARCHAT_RUNTIME` to private writable storage. `STARCHAT_MODEL` and
+`STARCHAT_REASONING_EFFORT` select the model and reasoning level.
+Defaults are Astra (`gpt-6-astra`), `low`, and `fast`. Existing overrides apply.
+Set `STARCHAT_SERVICE_TIER=fast` when replacing `auto`; explicit `auto` can select
+catalogue-verified Ultrafast through `STARCHAT_MODEL_CATALOG`. These settings
+grant no access. A provider rejection does not trigger a tier fallback.
+
+## Enable project ZIP downloads
+
+Building is optional and off by default. It can generate projects in any language
+allowed by your installation, including Python or Java. Stage and PHP are not
+required in the generated project. Install PHP's zip extension on the chat server.
+
+Adapt these fields in `installation.json` to the work you support:
+
+```json
+{
+	"scope": "Help visitors build small Python command-line tools.",
+	"building": {
+		"enabled": true,
+		"instructions": "Use Python's standard library. Document setup and checks."
+	}
+}
+```
+
+`building.instructions` cannot widen `scope`. These are operator settings;
+visitor messages cannot replace them. Rebuild the index to validate the settings
+and zip extension. Set `building.enabled` to `false`, or remove `building`,
+to disable the control and project generation.
+
+After describing a goal, select **Project ZIP**. Missing essential decisions
+produce a question. A ready ZIP contains source files, a README with setup and
+checks, `PROJECT.md`, `.gitignore`, and a fresh Git repository on `main` with
+no commits or remote. Install dependencies locally. The service generates and
+reviews files but does not execute generated code or deploy it.
+
+The browser saves the latest successful project. Downloading it again without
+conversation changes reuses that snapshot. After new decisions, **Update project
+ZIP** uses the previous files and conversation to create a replacement snapshot.
+External file edits cannot be uploaded or synchronized. **New conversation**
+clears the saved project. If browser storage fails, the current download remains
+available in memory.
+
+Exports allow 40 UTF-8 text files, 16 KiB per file, and 32 KiB per serialized
+project. Conversation input is limited to 80 messages and 24 KiB. Oversized input
+is rejected visibly. Generation and review share the installation's model profile
+and request capacity. Describe this processing and browser storage in your notices.
+Review the files and run their documented checks locally. Model review does not
+establish that the generated code works.
 
 ## Check the installation
 
-Open `/health` through the configured HTTPS host. Check the installation ID,
-document count, and `aggregate_rate_limit` value. Check a public guide, a real
-synthetic question, an unrelated question, and the interface on mobile and desktop.
-Read the answer and its sources; HTTP 200 alone does not establish correctness.
+Check the installation ID, document count, and `aggregate_rate_limit` at `/health`.
+Try a guide, synthetic and unrelated questions, and desktop and mobile layouts.
+Read the answers and sources.
 
-Keep the previous code release and matching index for rollback. Do not copy
-development credentials or data onto a public host. Installing Starchat does
-not provision hosting, accounts, a spending cap, or your organization's policies.
+Keep previous code and index for rollback. Preserve production data and credentials.
+Installation grants no hosting, accounts, spending cap, or organizational policies.
+See [operations](https://stage.dev/resources/starchat-operations) for deployment
+checks, deadlines, and rate limits.
