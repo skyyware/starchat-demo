@@ -5,7 +5,7 @@ title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
 retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.3'
+source_version: 'skyyware/starchat v0.4.5'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -14,6 +14,7 @@ topic_terms:
   - 'starchat limits'
   - 'project limits'
   - 'zip privacy'
+  - 'starter cache'
   - 'context privacy'
 phrase_terms:
   - 'starchat operations'
@@ -26,6 +27,7 @@ keywords:
   - 'starchat limits'
   - 'project limits'
   - 'zip privacy'
+  - 'starter cache'
   - 'context privacy'
 links:
   -
@@ -41,7 +43,6 @@ links:
     label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # Operate a Starchat installation
@@ -53,7 +54,7 @@ and recovery procedure.
 
 ## Check limits and privacy
 
-Starchat permits three concurrent requests per runtime. APCu enables an aggregate
+Chat and custom projects share three concurrent requests per runtime. APCu enables an aggregate
 twenty-requests-per-minute limit per installation and PHP pool. Verify
 `aggregate_rate_limit: true` in `/health` and configure an appropriate edge
 limit for a public deployment. Rate limits are not a spending cap.
@@ -76,14 +77,12 @@ The model provider receives a bounded history and relevant knowledge. Verify
 the actual server, connector, and provider settings before making retention
 claims. Never put private records in public answering knowledge.
 
-When building is enabled, completed answers trigger automatic project preparation.
-The model receives the conversation and previous generated files when available.
+Custom project preparation sends the conversation and previous files to the model.
 Describe this processing and browser storage in the notices before enabling it.
-See [project downloads](https://stage.dev/resources/starchat-building) for archive
-replacement and manual retry. Temporary ZIPs are removed after each request.
-Starchat keeps no server-side project archive. These facts do not establish
-provider retention. The service does not run generated code. Review and test
-files locally.
+Temporary ZIPs are removed after each request. Visitor-generated archives are
+not kept on the server. A configured public starter has one runtime cache,
+replaced atomically when its source changes. Fetching it needs no generation
+model call. The service does not run generated code. Review and test files locally.
 
 ## Recover an interrupted answer
 
@@ -103,7 +102,7 @@ cached child modules from retaining old behavior after an update.
 Optional [session context](https://stage.dev/resources/starchat-request-context)
 uses RAM-only history. A scope change or failed session check clears it.
 It disables automatic recovery and cannot coexist with building or origin
-migration in 0.4.3. Its notices must identify the context provider, transmitted
+migration in 0.4.5. Its notices must identify the context provider, transmitted
 facts, and actual retention. Memory-only browser history makes no provider
 retention promise.
 

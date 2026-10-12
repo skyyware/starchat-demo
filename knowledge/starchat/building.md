@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.3'
+source_version: 'skyyware/starchat v0.4.5'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -15,6 +15,12 @@ topic_terms:
   - 'project preparation'
   - 'prepare again'
   - 'automatic preparation'
+  - 'ready starter'
+  - 'prepared starter'
+  - 'first answer'
+  - 'starter cache'
+  - 'fertige starter app'
+  - 'erste antwort'
   - 'python project'
   - 'java project'
   - 'projekt zip'
@@ -32,6 +38,12 @@ keywords:
   - 'project preparation'
   - 'prepare again'
   - 'automatic preparation'
+  - 'ready starter'
+  - 'prepared starter'
+  - 'first answer'
+  - 'starter cache'
+  - 'fertige starter app'
+  - 'erste antwort'
   - 'python project'
   - 'java project'
   - 'projekt zip'
@@ -50,7 +62,6 @@ links:
     label: 'Operate Starchat'
     url: 'https://stage.dev/resources/starchat-operations'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # Build and download a project
@@ -70,19 +81,43 @@ the configuration example.
 
 Projects can use any language allowed by your installation, including Python or
 Java. The generated project does not need Stage or PHP. Define the intended
-users, a first useful behavior, and constraints in the conversation. Suggestions
-are proposals until the visitor chooses them.
+users, a first useful behavior, and constraints for custom work. Suggestions are
+proposals until the visitor chooses them.
+
+## Offer a ready starting point
+
+An operator can set `building.starter` to `starters/minimal.json`. This file is
+a complete project object with `status: "ready"`, `name`, `summary`,
+`open_questions`, and `files`. Each file supplies `path` and `content`.
+The operator reviews and runs this application before release. Its summary must
+match its technology and behavior. Starchat does not supply a built-in Stage app.
+A disabled building configuration cannot declare a starter.
+
+The answer and independent answer reviewer can select it for a compatible
+introductory or nonspecific request. It can appear with the first answer, without
+a project name, audience, or first feature. An explicit different technology or
+custom feature uses normal preparation. A later answer cannot reset a saved
+custom project to the starter. Revising a starter passes its files into custom work.
+
+`starchat index` prepackages the configured application. The browser fetches it
+through `GET /project/starter`, which returns project data and a base64 ZIP
+without a generation or review model call. Chat answers still use the model.
+The server keeps one runtime cache of this public starter, containing no
+conversation. It rebuilds a missing or changed cache from validated source and
+replaces the older artifact atomically. Keep the source and cache outside
+`public/`. The same file and archive limits apply.
 
 ## Download when preparation finishes
 
-After a completed answer, the browser automatically prepares the current project
+After a completed answer, the browser automatically prepares custom work
 in the background. The generator and an independent reviewer use the actual
-conversation and any previous generated files. The visitor can keep chatting.
+conversation and any previous files. The visitor can keep chatting.
 
 **Download project ZIP** appears only after generation, review, and ZIP creation
 succeed. Clicking downloads that prepared archive without a model request.
-Repeating the download reuses the same archive. Missing essential decisions or
-an out-of-scope result produce no download.
+Repeating the download reuses the same archive. Missing essential decisions
+produce no download without a suitable starter. Out-of-scope results never
+produce a download.
 
 A preparation failure offers **Prepare again**. It retries the current state
 only when the visitor selects it. Ordinary redraws do not repeat failed attempts.
@@ -122,7 +157,7 @@ run the documented checks locally before relying on the result.
 
 ## Account for automatic processing and limits
 
-Automatic preparation uses the installation's model account, profile, and request
+Custom preparation uses the installation's model account, profile, and request
 capacity in addition to the chat answer. The model receives the conversation
 and previous generated files when available. Before enabling building, describe
 this processing and browser storage in the installation's privacy notice.
@@ -133,6 +168,6 @@ per serialized project. Oversized input is rejected without dropping earlier
 requirements. See [operations](https://stage.dev/resources/starchat-operations)
 for request capacity and generation deadlines. Rate limits are not a spending cap.
 
-Temporary ZIP files are removed after each server request. Starchat keeps no
-server-side project archive. This does not establish how long the model provider
+Temporary ZIP files are removed after each server request. Visitor-generated
+archives are not retained on the server; the public starter cache is separate. This does not establish how long the model provider
 retains submitted data. Verify the actual provider settings and terms.

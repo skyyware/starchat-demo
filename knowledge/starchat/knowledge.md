@@ -5,7 +5,7 @@ title: 'Maintain Starchat knowledge with an agent'
 source: 'https://stage.dev/resources/starchat-knowledge'
 retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.3'
+source_version: 'skyyware/starchat v0.4.5'
 public_path: /resources/starchat-knowledge
 topic_terms:
   - knowledge
@@ -33,7 +33,6 @@ links:
     label: 'Use verified session context'
     url: 'https://stage.dev/resources/starchat-request-context'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # Maintain Starchat knowledge with an agent

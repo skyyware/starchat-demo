@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.3'
+source_version: 'skyyware/starchat v0.4.5'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -45,7 +45,6 @@ links:
     label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # What Starchat provides
@@ -89,9 +88,12 @@ assuming the visitor's role or technical knowledge. Once a conversation starts,
 suggestions should answer the open clarification or advance the stated goal.
 An unselected suggestion is never a confirmed fact about the visitor.
 
-An installation can enable optional project building. After a completed answer,
-the browser prepares a project from the conversation. A download appears only
-when the ZIP is ready and independently reviewed. Clicking downloads that archive
+An installation can enable optional project building. A reviewed, configured
+starter can appear with the first compatible introductory answer, without asking
+for a project name or first feature. Explicit other technologies and custom
+features use normal generation and independent review. A custom project cannot
+be reset to the starter. After a completed answer, the browser prepares the
+selected project. A download appears only when its ZIP is ready. Clicking downloads that archive
 without a model request. New decisions hide the obsolete download and prepare a
 replacement. The latest successful archive replaces the older one in browser
 storage. Previously downloaded files remain on the visitor's device.
@@ -110,7 +112,7 @@ retrieval, scope, and answer review remain. These facts stay out of the public
 index. The browser keeps this conversation only in RAM. A session check clears
 it if the account, company, permissions, or verified session changed or context
 is unavailable.
-In 0.4.3, this mode cannot be combined with project building or origin migration.
+In 0.4.5, this mode cannot be combined with project building or origin migration.
 See [verified session context](https://stage.dev/resources/starchat-request-context)
 for the provider contract and privacy limits.
 
