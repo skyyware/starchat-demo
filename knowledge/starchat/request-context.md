@@ -5,7 +5,7 @@ title: 'Use verified session context'
 source: 'https://stage.dev/resources/starchat-request-context'
 retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.5'
+source_version: 'skyyware/starchat v0.4.6'
 public_path: /resources/starchat-request-context
 topic_terms:
   - 'request context'
@@ -55,7 +55,7 @@ based_on: {  }
 
 # Use verified session context
 
-Starchat 0.4.5 can use verified facts from a signed-in application for one answer.
+Starchat 0.4.6 can use verified facts from a signed-in application for one answer.
 For example, an operator could provide the current account's permitted features
 or cart total. This optional mode requires an installation-owned context provider.
 Ordinary chat remains the default. It does not connect external Markdown folders.
@@ -101,7 +101,7 @@ cookies with `credentials: 'same-origin'`. Keep those cookies HttpOnly.
 They do not supply verified application facts. The separate context endpoint
 continues to use `credentials: 'include'` for its application's session.
 
-In 0.4.5, request context cannot be combined with enabled project building or
+In 0.4.6, request context cannot be combined with enabled project building or
 `migration_origin`. Ordinary project ZIP installations keep their existing
 behavior. Enabling context is a separate integration decision.
 

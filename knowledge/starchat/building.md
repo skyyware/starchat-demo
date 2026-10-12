@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.5'
+source_version: 'skyyware/starchat v0.4.6'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -19,6 +19,8 @@ topic_terms:
   - 'prepared starter'
   - 'first answer'
   - 'starter cache'
+  - 'download disappears'
+  - 'starter recovery'
   - 'fertige starter app'
   - 'erste antwort'
   - 'python project'
@@ -27,10 +29,16 @@ topic_terms:
   - 'projekt vorbereiten'
   - 'erneut vorbereiten'
 phrase_terms:
+  - 'last ready project'
+  - 'starter download'
+  - 'previous zip'
+  - 'zip verschwindet'
   - 'download project zip'
   - 'build a project'
   - 'projekt zip herunterladen'
 keywords:
+  - 'last ready project'
+  - 'starter download'
   - building
   - 'project zip'
   - 'project download'
@@ -42,6 +50,10 @@ keywords:
   - 'prepared starter'
   - 'first answer'
   - 'starter cache'
+  - 'download disappears'
+  - 'previous zip'
+  - 'zip verschwindet'
+  - 'starter recovery'
   - 'fertige starter app'
   - 'erste antwort'
   - 'python project'
@@ -116,31 +128,32 @@ conversation and any previous files. The visitor can keep chatting.
 **Download project ZIP** appears only after generation, review, and ZIP creation
 succeed. Clicking downloads that prepared archive without a model request.
 Repeating the download reuses the same archive. Missing essential decisions
-produce no download without a suitable starter. Out-of-scope results never
-produce a download.
+or an out-of-scope result produce no new archive. An existing ready ZIP remains
+available.
 
-A preparation failure offers **Prepare again**. It retries the current state
-only when the visitor selects it. Ordinary redraws do not repeat failed attempts.
-Attempt tracking is local to the open page. A reload or another tab can start
-preparation again when no matching ready archive is saved.
+A failed preparation offers **Prepare again**. It retries only when selected.
+Ordinary redraws do not repeat failed attempts. This guard lasts for the open
+page; reloading or opening another tab can prepare again without a matching ZIP.
 
 ## Keep the archive aligned with the conversation
 
-A new question hides the obsolete download. After the answer, preparation uses
-the previous files and updated conversation to create a complete replacement.
-The browser stores the latest successful project under the installation's
-separate `:project` key. Saving a replacement overwrites the older archive under
-that key. Obsolete Blob URLs, the browser's temporary download addresses, are
-released.
+The last ready ZIP stays available while you ask another question or wait for
+changes. **Download last ready ZIP** identifies the earlier version until a
+replacement is ready. Later changes are not included yet.
 
-Missing-details and out-of-scope results remove the saved archive.
-**New conversation** clears it too. Files already downloaded onto the visitor's
-device remain there. The website cannot update or delete those local copies.
+Missing details, out-of-scope results, and preparation failures preserve that
+ZIP. A successful replacement overwrites the previous project under the
+installation's separate `:project` browser-storage key. Obsolete Blob URLs,
+the browser's temporary download addresses, are released.
 
-A new question, language change, or reset cancels preparation in progress.
-Late results cannot replace the current state. If browser storage fails, a ready
-download remains available in memory. Changes made to files outside the chat
-cannot be uploaded or synchronized.
+A saved starter selection can restore the configured starter when its archive
+is missing. This recovery cannot restore lost custom files.
+
+**New conversation** clears the saved project. Files already downloaded onto
+the visitor's device remain there. A new question, language change, or reset
+cancels preparation in progress. Late results cannot replace the current state.
+If browser storage fails, the ready ZIP remains available in memory. Changes
+to files outside the chat cannot be uploaded or synchronized.
 
 ## Inspect the project before using it
 
@@ -169,5 +182,5 @@ requirements. See [operations](https://stage.dev/resources/starchat-operations)
 for request capacity and generation deadlines. Rate limits are not a spending cap.
 
 Temporary ZIP files are removed after each server request. Visitor-generated
-archives are not retained on the server; the public starter cache is separate. This does not establish how long the model provider
-retains submitted data. Verify the actual provider settings and terms.
+archives are not retained on the server; the public starter cache is separate.
+This does not establish provider retention. Verify the actual settings and terms.

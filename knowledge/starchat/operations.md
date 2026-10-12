@@ -5,7 +5,7 @@ title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
 retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.5'
+source_version: 'skyyware/starchat v0.4.6'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -102,7 +102,7 @@ cached child modules from retaining old behavior after an update.
 Optional [session context](https://stage.dev/resources/starchat-request-context)
 uses RAM-only history. A scope change or failed session check clears it.
 It disables automatic recovery and cannot coexist with building or origin
-migration in 0.4.5. Its notices must identify the context provider, transmitted
+migration in 0.4.6. Its notices must identify the context provider, transmitted
 facts, and actual retention. Memory-only browser history makes no provider
 retention promise.
 

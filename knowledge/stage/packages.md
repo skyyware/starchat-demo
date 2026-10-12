@@ -56,7 +56,7 @@ follow_ups: {  }
 
 # Stage packages and versions
 
-Starchat 0.4.5 was checked on 12 October 2026 against its released source and
+Starchat 0.4.6 was checked on 12 October 2026 against its released source and
 Composer metadata. The other package checks remain dated 10 October 2026.
 These are the versions covered by the guides. Your application's
 `composer.lock` records the versions it installs.
@@ -67,10 +67,10 @@ These are the versions covered by the guides. Your application's
 | `skyyware/stage-cms` | 0.5.3 | Page editing, drafts, publication, media, and revision history |
 | `skyyware/stage-chat` | 0.1.1 | A PHP interface for stateless chat providers |
 | `skyyware/stage-chat-codex` | 0.2.3 | A Codex CLI implementation of the chat interface |
-| `skyyware/starchat` | 0.4.5 | Owned knowledge and answer review, with optional session context or project ZIPs |
+| `skyyware/starchat` | 0.4.6 | Owned knowledge and answer review, with optional session context or project ZIPs |
 
 Stage, Stage CMS, Stage Chat, and Stage Chat Codex are public and MIT licensed.
-The Starchat core repository is private; its reviewed 0.4.5 release retains
+The Starchat core repository is private; its reviewed 0.4.6 release retains
 the MIT license. The public example installation is
 [starchat-demo](https://github.com/skyyware/starchat-demo), whose private core
 dependency requires authorized access. Their Composer PHP requirement

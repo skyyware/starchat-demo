@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.5'
+source_version: 'skyyware/starchat v0.4.6'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -71,7 +71,7 @@ based_on: {  }
 
 # Install Starchat
 
-Starchat 0.4.5 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.4.6 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -81,12 +81,12 @@ The core is private. The public
 [example installation](https://github.com/skyyware/starchat-demo) requires
 authorized access to that dependency and grants none.
 
-With authorized access, copy `examples/installation` from Starchat 0.4.5
+With authorized access, copy `examples/installation` from Starchat 0.4.6
 into an empty project. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.4.5 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.4.6 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -185,7 +185,7 @@ The service does not execute generated code or deploy it.
 
 For optional account facts, see
 [verified session context](https://stage.dev/resources/starchat-request-context).
-In 0.4.5, it cannot share an installation with building or origin migration.
+In 0.4.6, it cannot share an installation with building or origin migration.
 
 ## Check the installation
 
