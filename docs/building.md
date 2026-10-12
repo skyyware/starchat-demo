@@ -7,7 +7,7 @@ The download itself starts no model request. The latest snapshot is saved in the
 
 Starter requests receive a brief confirmation of the agreed behavior. The export
 contains the full files; explicit code questions can still receive examples.
-Permitted general programming passes independent review without needing matching
+Permitted general programming undergoes independent review without needing matching
 Stage documentation. Entity facts and Stage-specific APIs still need evidence.
 
 Stage is a natural starting point for suitable web applications. A chosen language
