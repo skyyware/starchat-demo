@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4587d8882a54ea1a078ea5be21137bc7",
+    "content-hash": "c0a804e668b89cdbe9075a1fef39437e",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -666,16 +666,16 @@
         },
         {
             "name": "skyyware/starchat",
-            "version": "v0.4.3",
+            "version": "v0.4.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:skyyware/starchat.git",
-                "reference": "8a7bf490751184dd43d75022285faec5063ccda4"
+                "reference": "3c638b1f108d84a3f331ed96666465bc1edfa711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/starchat/zipball/8a7bf490751184dd43d75022285faec5063ccda4",
-                "reference": "8a7bf490751184dd43d75022285faec5063ccda4",
+                "url": "https://api.github.com/repos/skyyware/starchat/zipball/3c638b1f108d84a3f331ed96666465bc1edfa711",
+                "reference": "3c638b1f108d84a3f331ed96666465bc1edfa711",
                 "shasum": ""
             },
             "require": {
@@ -715,9 +715,10 @@
             "description": "Source-grounded chat for an organization, product or community, built on Stage.",
             "homepage": "https://chat.stage.dev",
             "support": {
-                "source": "https://github.com/skyyware/starchat"
+                "source": "https://github.com/skyyware/starchat",
+                "issues": "https://github.com/skyyware/starchat/issues"
             },
-            "time": "2026-10-12T10:22:31+00:00"
+            "time": "2026-10-12T10:54:39+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

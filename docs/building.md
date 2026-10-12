@@ -5,6 +5,11 @@ as a ZIP. After each completed answer, the current snapshot is prepared in the
 background. A download appears only when the complete, reviewed archive is ready.
 The download itself starts no model request. The latest snapshot is saved in the browser.
 
+Starter requests receive a brief confirmation of the agreed behavior. The export
+contains the full files; explicit code questions can still receive examples.
+Permitted general programming passes independent review without needing matching
+Stage documentation. Entity facts and Stage-specific APIs still need evidence.
+
 Stage is a natural starting point for suitable web applications. A chosen language
 or another platform is respected: a Python tool, Java application or PSP homebrew
 does not need an artificial PHP backend. The installation's `scope` and `building`
