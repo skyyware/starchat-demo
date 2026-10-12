@@ -30,12 +30,14 @@ and reviews custom files but does not execute them. Visitors
 run the documented checks in their own environment. Changes made outside this
 chat are not uploaded or synchronized back.
 
-A repeated download reuses the prepared snapshot. New decisions hide the old
-download while a replacement is prepared from the previous files and conversation.
-The replacement overwrites the older browser archive and releases its download
-URL. A custom project with missing essential decisions or an unrelated goal removes the saved archive;
-the conversation can clarify the goal before a download becomes available. New
-conversation also clears the project. Files already downloaded onto the visitor’s
+A repeated download reuses the prepared snapshot. New decisions, clarification,
+preparation and failures keep the last ready version downloadable. Its label
+states that later changes are not included yet. Only a completed replacement
+overwrites the older browser archive and releases its download URL. If an older
+client removed a previously offered starter, the conversation can restore that
+configured starter before preparing a revision. This does not recover lost custom
+files or replace a saved custom project. New conversation clears the project.
+Files already downloaded onto the visitor’s
 device remain theirs. A storage failure is shown while the current download stays
 available in memory. Preparation failures offer a manual retry.
 
