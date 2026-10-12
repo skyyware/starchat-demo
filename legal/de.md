@@ -51,16 +51,21 @@ personenbezogenen oder vertraulichen Informationen.
 
 ### Projekt-Downloads
 
-Nach jeder abgeschlossenen Antwort senden wir automatisch das aktuelle,
-begrenzte Gespräch und gegebenenfalls die zuvor erzeugten Projektdateien an
-denselben Anbieter, um einen neuen Stand zu erstellen und zu prüfen. Ein
-Download erscheint erst, wenn die ZIP-Datei fertig ist. Der Klick darauf löst
-keine weitere Modellanfrage aus. Der Dienst führt diesen Quellcode nicht aus.
-Ihr Browser speichert das letzte Projekt neben dem Gespräch. Ein neuer Stand
-ersetzt den älteren; **Neues Gespräch** löscht ihn. Bereits auf Ihr Gerät
-heruntergeladene Dateien bleiben dort. Der Server erstellt eine temporäre ZIP-Datei
-zur Auslieferung und entfernt sie nach der Anfrage. Er führt kein Projektarchiv.
-Änderungen nach dem Herunterladen werden nicht in den Chat zurückgeladen.
+Zum Einstieg kann der Chat eine vorbereitete Minimalanwendung anbieten.
+Dieser von uns bereitgestellte Starter enthält kein Gespräch und keine persönlichen
+Angaben. Der Server hält eine vorbereitete Kopie vor. Ihr Download braucht keine
+zusätzliche Modellanfrage.
+
+Für ein individuelles Projekt senden wir nach der Antwort automatisch das aktuelle,
+begrenzte Gespräch und gegebenenfalls die bisherigen Projektdateien an denselben
+Anbieter, um einen neuen Stand zu erstellen und zu prüfen. Ein Download erscheint
+erst, wenn die ZIP-Datei fertig ist. Der Klick darauf löst keine weitere
+Modellanfrage aus. Der Dienst führt Besucherprojekte nicht aus. Ihr Browser speichert
+das letzte Projekt neben dem Gespräch. Ein neuer Stand ersetzt den älteren;
+**Neues Gespräch** löscht ihn. Bereits auf Ihr Gerät heruntergeladene Dateien bleiben
+dort. Der Server entfernt temporäre individuelle ZIP-Dateien nach der Auslieferung
+und führt kein Archiv von Besucherprojekten. Änderungen nach dem Herunterladen
+werden nicht in den Chat zurückgeladen.
 
 ### Betrieb der Website
 

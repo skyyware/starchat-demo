@@ -47,16 +47,19 @@ infrastructure. Keep personal and confidential information out of these links.
 
 ### Project downloads
 
-After each completed answer, we automatically send the current bounded
-conversation and, if available, the previously generated project files to the
-same provider to prepare and review a new snapshot. A download appears only
-when the ZIP is ready. Clicking it starts no further model request. The service
-does not execute that source. Your browser stores the latest project alongside
-the conversation. A new snapshot replaces the older one; **New conversation**
-clears it. Files already downloaded onto your device remain there. The server
-creates a temporary ZIP for delivery and removes that temporary file after the
-request. It keeps no project archive. Changes made after downloading are not
-uploaded back to the chat.
+For an introductory request, the chat can offer a prepared minimal application.
+This installation-owned starter contains no conversation or personal information.
+The server keeps one prepared copy; downloading it needs no additional model request.
+
+For a custom project, after the answer we automatically send the current bounded
+conversation and, if available, the previous project files to the same provider
+to prepare and review a new snapshot. A download appears only when the ZIP is
+ready. Clicking it starts no further model request. The service does not execute
+visitor projects. Your browser stores the latest project alongside the conversation.
+A new snapshot replaces the older one; **New conversation** clears it. Files already
+downloaded onto your device remain there. The server removes temporary custom ZIP
+files after delivery and keeps no visitor project archive. Changes made after
+downloading are not uploaded back to the chat.
 
 ### Website operation
 

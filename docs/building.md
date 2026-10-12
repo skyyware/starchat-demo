@@ -1,8 +1,14 @@
 # Build and take your project with you
 
 The Stage chat helps visitors define a project and download a first implementation
-as a ZIP. After each completed answer, the current snapshot is prepared in the
-background. A download appears only when the complete, reviewed archive is ready.
+as a ZIP. The first introductory answer offers a prepared minimal Stage
+application, even before a visitor names a specific feature. It includes one JSON
+endpoint, local run instructions and checks. The reviewed source lives in
+`starters/minimal.json`, selected by `building.starter`.
+
+The installer packages the starter in advance. Its download needs no project
+generation. A concrete feature or another chosen technology starts a custom
+snapshot in the background after the answer. A download appears only when the complete, reviewed archive is ready.
 The download itself starts no model request. The latest snapshot is saved in the browser.
 
 Starter requests receive a brief confirmation of the agreed behavior. The export
@@ -19,14 +25,15 @@ core capability with their own constraints; it is disabled by default.
 Each ready ZIP contains source files, README setup/build/run instructions,
 PROJECT.md decisions and remaining work, ignore rules and a fresh Git repository
 on `main` with no commits or remote. Dependencies and SDKs are installed locally.
-The service generates and reviews the files but does not execute them. Visitors
+The maintainer checks the prepared starter before delivery. The service generates
+and reviews custom files but does not execute them. Visitors
 run the documented checks in their own environment. Changes made outside this
 chat are not uploaded or synchronized back.
 
 A repeated download reuses the prepared snapshot. New decisions hide the old
 download while a replacement is prepared from the previous files and conversation.
 The replacement overwrites the older browser archive and releases its download
-URL. Missing essential decisions or an unrelated goal remove the saved archive;
+URL. A custom project with missing essential decisions or an unrelated goal removes the saved archive;
 the conversation can clarify the goal before a download becomes available. New
 conversation also clears the project. Files already downloaded onto the visitor’s
 device remain theirs. A storage failure is shown while the current download stays

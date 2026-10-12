@@ -1,0 +1,38 @@
+{
+  "status": "ready",
+  "name": "stage-app",
+  "summary": "A minimal Stage web application with a JSON endpoint, local run instructions and application checks. Add your first feature from here.",
+  "open_questions": [
+    "What should the first useful feature do?"
+  ],
+  "files": [
+    {
+      "path": "composer.json",
+      "content": "{\n  \"type\": \"project\",\n  \"require\": {\n    \"php\": \"^8.4\",\n    \"skyyware/stage\": \"^0.1.5\"\n  },\n  \"config\": {\n    \"allow-plugins\": false,\n    \"sort-packages\": true\n  },\n  \"scripts\": {\n    \"start\": \"@php -S 127.0.0.1:8080 -t public public/index.php\",\n    \"check\": \"@php tests/check.php\"\n  }\n}\n"
+    },
+    {
+      "path": "app.php",
+      "content": "<?php\ndeclare(strict_types=1);\n\nuse Stage\\Http\\Application;\nuse Stage\\Http\\Response;\nuse Stage\\Http\\Route;\n\nreturn new Application(\n    Route::get('/', fn () => Response::json(['hello' => 'world'])),\n);\n"
+    },
+    {
+      "path": "public/index.php",
+      "content": "<?php\ndeclare(strict_types=1);\n\nrequire dirname(__DIR__) . '/vendor/autoload.php';\n\n(require dirname(__DIR__) . '/app.php')->run();\n"
+    },
+    {
+      "path": "tests/check.php",
+      "content": "<?php\ndeclare(strict_types=1);\n\nuse Stage\\Http\\Request;\n\nrequire dirname(__DIR__) . '/vendor/autoload.php';\n\n$app = require dirname(__DIR__) . '/app.php';\n$response = $app->handle(new Request('GET', '/'));\nif ($response->status !== 200 || json_decode($response->body, true, flags: JSON_THROW_ON_ERROR) !== ['hello' => 'world']) {\n    throw new RuntimeException('Unexpected greeting response');\n}\nif ($app->handle(new Request('GET', '/missing'))->status !== 404) {\n    throw new RuntimeException('Unknown paths must return 404');\n}\necho \"Greeting and missing-route checks passed\\n\";\n"
+    },
+    {
+      "path": ".gitignore",
+      "content": "/vendor/\n.env\n.env.*\n!.env.example\n"
+    },
+    {
+      "path": "README.md",
+      "content": "# Stage application\n\nA minimal PHP application with one JSON endpoint. Start here and add your first feature.\n\n## Requirements\n\nPHP 8.4 or a later PHP 8 release, Composer 2, and Git for version control.\n\n## Run locally\n\nIn the extracted stage-app directory:\n\n```sh\ncomposer install\ncomposer check\ncomposer start\n```\n\nOpen http://127.0.0.1:8080 or run `curl http://127.0.0.1:8080` in a second terminal.\nExpect `{\"hello\":\"world\"}`. Stop the server with Ctrl+C.\n\n`composer check` exercises the actual application: its greeting and a missing route.\nThis prepared starter was checked by the installation maintainer before release.\nThe chat does not execute visitor projects. Run these checks in your own environment,\nand again after changes. PHP's built-in server is for local development only.\n\n## Continue\n\nDefine routes in app.php. public/index.php is the web entry point. Only public/\nshould be exposed by a web server; vendor/, source, tests and project records stay\noutside it. Keep the composer.lock created by Composer when you commit your work.\n\nThe included Git repository is on main with no commits, identity or remote.\n`git status` shows your uncommitted files. Set your own identity and remote if needed.\nNo account, database, hosting, deployment or external integration is configured.\n\nStage documentation: https://stage.dev/resources/getting-started\n"
+    },
+    {
+      "path": "PROJECT.md",
+      "content": "# Current project\n\n## Starting point\n\nThe Stage chat offers this minimal application before visitor-specific requirements\nare known. PHP and Stage are the installation's default starting point, not a\nconfirmed requirement from the visitor. Another chosen language or platform replaces\nthis default.\n\n## Implemented\n\n- GET / returns the JSON object {\"hello\":\"world\"}\n- Unrecognized routes return 404\n- Local run and application checks are included\n\n## Open decisions\n\nWhat should the first useful feature do, and who will use it? No audience, data\nstorage, authentication, integrations or deployment choices have been assumed.\nContinue the conversation to develop the project, or edit these files locally.\nExternal edits are not synchronized back into the chat.\n"
+    }
+  ]
+}
