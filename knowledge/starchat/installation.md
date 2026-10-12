@@ -3,9 +3,9 @@ id: starchat-installation
 entity: stage
 title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
-retrieved_at: '2026-10-11'
+retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.3.1'
+source_version: 'skyyware/starchat v0.4.3'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -17,8 +17,8 @@ topic_terms:
   - 'number shortcuts'
   - 'suggested question'
   - 'suggested questions'
-  - 'tastenkürzel'
-  - 'fragevorschläge'
+  - tastenkürzel
+  - fragevorschläge
   - building
   - 'project zip'
   - 'project export'
@@ -38,8 +38,8 @@ keywords:
   - 'number shortcuts'
   - 'suggested question'
   - 'suggested questions'
-  - 'tastenkürzel'
-  - 'fragevorschläge'
+  - tastenkürzel
+  - fragevorschläge
   - building
   - 'project zip'
   - 'project export'
@@ -60,32 +60,39 @@ links:
   -
     label: 'Operate Starchat'
     url: 'https://stage.dev/resources/starchat-operations'
+  -
+    label: 'Use verified session context'
+    url: 'https://stage.dev/resources/starchat-request-context'
+  -
+    label: 'Build and download a project'
+    url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Install Starchat
 
-Starchat 0.3.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.4.3 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
 ## Create the project
 
-The core repository is private. The public
+The core is private. The public
 [example installation](https://github.com/skyyware/starchat-demo) requires
-existing authorized access to that Composer dependency. It does not grant access.
+authorized access to that dependency and grants none.
 
-With access to Starchat 0.3.0, copy `examples/installation` from that release
-into an empty project directory. Run:
+With authorized access, copy `examples/installation` from Starchat 0.4.3
+into an empty project. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.3.0 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.4.3 --no-plugins --no-scripts
 ```
 
-Keep Composer authentication outside Git and retain both Composer files.
-The starter calls `Starchat\App::run()` with the project root. Route requests
-that do not match public files to `public/index.php`.
+Keep Composer credentials outside Git and retain both Composer files. Route
+non-file requests to `public/index.php`, which calls `Starchat\App::run()`
+with the project root.
 
 ## Set the purpose and knowledge
 
@@ -96,9 +103,9 @@ The host and knowledge owner must agree. Visitors cannot select another installa
 Use broad starter questions without assuming a technical background or chosen
 project. Later suggestions follow the visitor's stated goal.
 
-Set `brand.home_url` to your HTTPS homepage. The logo or wordmark opens it in
-the same tab, or `/` when unset. There is no additional Home link. Supply your
-fonts, logo, favicon, and stylesheet through `brand`.
+Set `brand.home_url` to your HTTPS homepage. The logo or wordmark opens it in the same tab,
+or `/` when unset. There is no extra Home link. Set fonts, logo, favicon, and
+stylesheet through `brand`.
 
 For shared branding, set `brand.asset_origin` to a trusted HTTPS origin with
 paths under `/branding/`. Revalidate styles and allow cross-origin font reads.
@@ -106,10 +113,11 @@ Permission covers styles, fonts, and images, excluding scripts and APIs.
 Without this setting, assets stay local.
 
 Optional `header_link` adds a labelled HTTPS destination beside the language
-selector. Suggestions fit their text and wrap unless your stylesheet changes it.
+selector. Four suggestions use two columns. Other counts wrap to fit their text.
+Your stylesheet can change this layout.
 
-Suggestions have no custom keyboard shortcuts or numbered labels. Use Tab to
-focus, then Enter or Space to activate. Clicking and tapping work too.
+Suggestions have no custom keyboard shortcuts or numbered labels. Tab focuses.
+Enter or Space activates. Clicking and tapping work too.
 Number keys do not select suggestions. Remove `suggestion_shortcuts` when
 upgrading. It no longer enables shortcuts.
 
@@ -122,8 +130,8 @@ Build the index from the project directory:
 vendor/bin/starchat index
 ```
 
-Expect the installation ID and document count. Validation preserves the previous
-index on failure and does not fact-check articles.
+Expect the installation ID and document count. Failed validation preserves the
+index. Indexing does not fact-check articles.
 
 ## Connect the model
 
@@ -141,9 +149,9 @@ grant no access. A provider rejection does not trigger a tier fallback.
 
 ## Enable project ZIP downloads
 
-Building is optional and off by default. It can generate projects in any language
-allowed by your installation, including Python or Java. Stage and PHP are not
-required in the generated project. Install PHP's zip extension on the chat server.
+Building is off by default. Projects can use any language
+allowed by your installation, including Python or Java, without Stage or PHP.
+Install PHP's zip extension on the chat server.
 
 Adapt these fields in `installation.json` to the work you support:
 
@@ -162,31 +170,27 @@ visitor messages cannot replace them. Rebuild the index to validate the settings
 and zip extension. Set `building.enabled` to `false`, or remove `building`,
 to disable the control and project generation.
 
-After describing a goal, select **Project ZIP**. Missing essential decisions
-produce a question. A ready ZIP contains source files, a README with setup and
-checks, `PROJECT.md`, `.gitignore`, and a fresh Git repository on `main` with
-no commits or remote. Install dependencies locally. The service generates and
-reviews files but does not execute generated code or deploy it.
+After each completed answer, the browser automatically prepares a project for
+that conversation. **Download project ZIP** appears only when generation,
+independent review, and ZIP creation have finished. Clicking downloads the
+prepared archive without a model request.
 
-The browser saves the latest successful project. Downloading it again without
-conversation changes reuses that snapshot. After new decisions, **Update project
-ZIP** uses the previous files and conversation to create a replacement snapshot.
-External file edits cannot be uploaded or synchronized. **New conversation**
-clears the saved project. If browser storage fails, the current download remains
-available in memory.
+Read [Build and download a project](https://stage.dev/resources/starchat-building)
+for archive contents, revisions, limits, and manual recovery. Describe automatic
+preparation, model input, and browser storage in your notices before enabling it.
+The service does not execute generated code or deploy it.
 
-Exports allow 40 UTF-8 text files, 16 KiB per file, and 32 KiB per serialized
-project. Conversation input is limited to 80 messages and 24 KiB. Oversized input
-is rejected visibly. Generation and review share the installation's model profile
-and request capacity. Describe this processing and browser storage in your notices.
-Review the files and run their documented checks locally. Model review does not
-establish that the generated code works.
+## Connect a signed-in application
+
+For optional account facts, see
+[verified session context](https://stage.dev/resources/starchat-request-context).
+In 0.4.3, it cannot share an installation with building or origin migration.
 
 ## Check the installation
 
-Check the installation ID, document count, and `aggregate_rate_limit` at `/health`.
-Try a guide, synthetic and unrelated questions, and desktop and mobile layouts.
-Read the answers and sources.
+Check the ID, document count, and `aggregate_rate_limit` at `/health`. Try a guide,
+synthetic and unrelated questions, and desktop and mobile layouts. Read each
+answer and its sources.
 
 Keep previous code and index for rollback. Preserve production data and credentials.
 Installation grants no hosting, accounts, spending cap, or organizational policies.

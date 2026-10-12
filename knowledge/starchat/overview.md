@@ -3,15 +3,16 @@ id: starchat
 entity: stage
 title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
-retrieved_at: '2026-10-11'
+retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.3.1'
+source_version: 'skyyware/starchat v0.4.3'
 public_path: /resources/starchat
 topic_terms:
   - starchat
   - capabilities
   - purpose
   - 'project building'
+  - 'session context'
 phrase_terms:
   - 'what is starchat'
   - 'what can starchat do'
@@ -20,6 +21,7 @@ keywords:
   - capabilities
   - purpose
   - 'project building'
+  - 'session context'
 links:
   -
     label: 'What Starchat provides'
@@ -31,12 +33,19 @@ links:
     label: 'Maintain knowledge with an agent'
     url: 'https://stage.dev/resources/starchat-knowledge'
   -
+    label: 'Use verified session context'
+    url: 'https://stage.dev/resources/starchat-request-context'
+  -
     label: 'Public example installation'
     url: 'https://github.com/skyyware/starchat-demo'
   -
     label: 'Stage demo chat'
     url: 'https://chat.stage.dev'
+  -
+    label: 'Build and download a project'
+    url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # What Starchat provides
@@ -71,7 +80,7 @@ Starchat answers questions, explains procedures, cites supplied sources, and
 displays code as text. Links appear only when they help the answer; each
 destination appears once. A complete answer or focused question can have no
 links. Its factual claims still undergo review against the supplied evidence.
-It retains the visible conversation in the visitor's browser and sends bounded
+By default, it saves the visible conversation in the visitor's browser and sends bounded
 context to the configured model provider. Selected
 reviewed articles can also appear at `/resources/<slug>`.
 
@@ -80,13 +89,30 @@ assuming the visitor's role or technical knowledge. Once a conversation starts,
 suggestions should answer the open clarification or advance the stated goal.
 An unselected suggestion is never a confirmed fact about the visitor.
 
-An installation can enable optional project building. Visitors can download a
-project ZIP and revise it through the conversation. The operator's scope and
-building settings define the permitted work and technologies. Generated projects
-can use languages other than PHP. The service reviews the text files but does
-not execute them. Building is off by default. See
-[Install Starchat](https://stage.dev/resources/starchat-installation) for settings,
-archive contents, and limits.
+An installation can enable optional project building. After a completed answer,
+the browser prepares a project from the conversation. A download appears only
+when the ZIP is ready and independently reviewed. Clicking downloads that archive
+without a model request. New decisions hide the obsolete download and prepare a
+replacement. The latest successful archive replaces the older one in browser
+storage. Previously downloaded files remain on the visitor's device.
+
+The operator's scope and building settings define the permitted work and
+technologies. Projects can use languages other than PHP. Building is off by
+default. The service reviews files but does not execute them. See
+[Build and download a project](https://stage.dev/resources/starchat-building)
+for setup, missing-information cases, manual retry, and limits.
+
+## Facts from a signed-in application
+
+An installation can opt into verified session context. Its provider verifies
+signed session data and supplies bounded facts for one answer. Ordinary knowledge
+retrieval, scope, and answer review remain. These facts stay out of the public
+index. The browser keeps this conversation only in RAM. A session check clears
+it if the account, company, permissions, or verified session changed or context
+is unavailable.
+In 0.4.3, this mode cannot be combined with project building or origin migration.
+See [verified session context](https://stage.dev/resources/starchat-request-context)
+for the provider contract and privacy limits.
 
 Starchat cannot execute an example, submit a form, deploy an application,
 book an appointment, or grant access to another installation. Public answers

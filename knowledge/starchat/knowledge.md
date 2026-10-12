@@ -3,9 +3,9 @@ id: starchat-knowledge
 entity: stage
 title: 'Maintain Starchat knowledge with an agent'
 source: 'https://stage.dev/resources/starchat-knowledge'
-retrieved_at: '2026-10-09'
+retrieved_at: '2026-10-11'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.3.1'
+source_version: 'skyyware/starchat v0.4.3'
 public_path: /resources/starchat-knowledge
 topic_terms:
   - knowledge
@@ -29,7 +29,11 @@ links:
   -
     label: 'Maintain Starchat knowledge with an agent'
     url: 'https://stage.dev/resources/starchat-knowledge'
+  -
+    label: 'Use verified session context'
+    url: 'https://stage.dev/resources/starchat-request-context'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Maintain Starchat knowledge with an agent
@@ -42,6 +46,12 @@ the facts and procedures that the chat may use in answers.
 Maintain both when relevant behavior changes. Starchat does not connect to
 other Markdown folders, crawl sources, or let the answer model edit articles.
 An editor or agent reviews source material before updating the local database.
+
+Optional [session context](https://stage.dev/resources/starchat-request-context)
+adds verified facts for one answer. The installation's provider owns those facts;
+the agent must not copy them into Markdown or the search index. This feature
+does not restore external Markdown connectors. Keep public procedures in the
+owned articles and account-specific facts in the verified request.
 
 ## Prepare an article
 

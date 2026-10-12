@@ -3,9 +3,9 @@ id: starchat-operations
 entity: stage
 title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
-retrieved_at: '2026-10-11'
+retrieved_at: '2026-10-12'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.3.1'
+source_version: 'skyyware/starchat v0.4.3'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -14,6 +14,7 @@ topic_terms:
   - 'starchat limits'
   - 'project limits'
   - 'zip privacy'
+  - 'context privacy'
 phrase_terms:
   - 'starchat operations'
   - 'starchat deployment'
@@ -25,6 +26,7 @@ keywords:
   - 'starchat limits'
   - 'project limits'
   - 'zip privacy'
+  - 'context privacy'
 links:
   -
     label: 'Operate a Starchat installation'
@@ -32,7 +34,14 @@ links:
   -
     label: 'Maintain knowledge with an agent'
     url: 'https://stage.dev/resources/starchat-knowledge'
+  -
+    label: 'Use verified session context'
+    url: 'https://stage.dev/resources/starchat-request-context'
+  -
+    label: 'Build and download a project'
+    url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Operate a Starchat installation
@@ -49,12 +58,11 @@ twenty-requests-per-minute limit per installation and PHP pool. Verify
 `aggregate_rate_limit: true` in `/health` and configure an appropriate edge
 limit for a public deployment. Rate limits are not a spending cap.
 
-When enabled, project generation shares these limits and the same connector
-profile with chat. It accepts up to 80 messages and 24 KiB of serialized
-conversation, with a 192 KiB total request limit. Ordinary chat retains its
-64 KiB request limit. Output allows 40 UTF-8 files, 16 KiB each, and 32 KiB
-per serialized project. Oversized conversations are rejected, without silently
-dropping earlier requirements.
+Building shares chat's model profile and capacity. Its input allows 80 messages
+and 24 KiB of serialized conversation within a 192 KiB request. Ordinary chat
+allows 64 KiB. Oversized history is rejected without dropping requirements.
+See [project limits](https://stage.dev/resources/starchat-building) for file
+and archive bounds.
 
 Allow at least 55 seconds at the proxy and PHP worker. Selection, answering,
 and review calls have a 25-second limit. Project generation has a 35-second
@@ -63,21 +71,23 @@ so project review also stops when the remaining time runs out. The browser
 gives up at 50 seconds. A disconnected browser does not prove that provider
 work stops immediately.
 
-The browser keeps the visible conversation until it is reset or cleared.
+In ordinary chat, the browser keeps the conversation until it is reset or cleared.
 The model provider receives a bounded history and relevant knowledge. Verify
 the actual server, connector, and provider settings before making retention
 claims. Never put private records in public answering knowledge.
 
-Project generation also sends the previous generated files when revising a
-project. The browser stores the latest successful project until reset or cleared.
-The application deletes temporary ZIP files after each request and keeps no
-server-side project archive. These facts do not establish provider retention.
-Update the installation's notices before enabling building. Review generated
-files and run their checks locally; the service does not execute them.
+When building is enabled, completed answers trigger automatic project preparation.
+The model receives the conversation and previous generated files when available.
+Describe this processing and browser storage in the notices before enabling it.
+See [project downloads](https://stage.dev/resources/starchat-building) for archive
+replacement and manual retry. Temporary ZIPs are removed after each request.
+Starchat keeps no server-side project archive. These facts do not establish
+provider retention. The service does not run generated code. Review and test
+files locally.
 
 ## Recover an interrupted answer
 
-After a reload or connection loss, the browser can retry an interrupted question
+In ordinary chat, the browser can retry an interrupted question after reload or connection loss
 once after its sixty-second lease expires. Web Locks let one tab claim the retry.
 The question keeps its place; a late result from the earlier request cannot
 replace the recovered answer. Starting a new conversation cancels recovery.
@@ -89,6 +99,13 @@ This mechanism does not run requests in the background after the browser closes.
 
 Keep the generated version parameters on package JavaScript URLs. They prevent
 cached child modules from retaining old behavior after an update.
+
+Optional [session context](https://stage.dev/resources/starchat-request-context)
+uses RAM-only history. A scope change or failed session check clears it.
+It disables automatic recovery and cannot coexist with building or origin
+migration in 0.4.3. Its notices must identify the context provider, transmitted
+facts, and actual retention. Memory-only browser history makes no provider
+retention promise.
 
 ## Present legal information
 
