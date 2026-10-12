@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8116e99dc77d8b7fb77a9144d600721d",
+    "content-hash": "4587d8882a54ea1a078ea5be21137bc7",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -666,16 +666,16 @@
         },
         {
             "name": "skyyware/starchat",
-            "version": "v0.3.1",
+            "version": "v0.4.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:skyyware/starchat.git",
-                "reference": "d73a4511f649a89ee0eb115f8a63a7eff348bdf3"
+                "reference": "8a7bf490751184dd43d75022285faec5063ccda4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/starchat/zipball/d73a4511f649a89ee0eb115f8a63a7eff348bdf3",
-                "reference": "d73a4511f649a89ee0eb115f8a63a7eff348bdf3",
+                "url": "https://api.github.com/repos/skyyware/starchat/zipball/8a7bf490751184dd43d75022285faec5063ccda4",
+                "reference": "8a7bf490751184dd43d75022285faec5063ccda4",
                 "shasum": ""
             },
             "require": {
@@ -715,10 +715,9 @@
             "description": "Source-grounded chat for an organization, product or community, built on Stage.",
             "homepage": "https://chat.stage.dev",
             "support": {
-                "source": "https://github.com/skyyware/starchat",
-                "issues": "https://github.com/skyyware/starchat/issues"
+                "source": "https://github.com/skyyware/starchat"
             },
-            "time": "2026-10-11T09:10:11+00:00"
+            "time": "2026-10-12T10:22:31+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1042,8 +1041,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-zip": "*",
-        "php": "^8.4"
+        "php": "^8.4",
+        "ext-zip": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

@@ -4,9 +4,9 @@
   "type": "project",
   "license": "MIT",
   "require": {
-    "ext-zip": "*",
     "php": "^8.4",
-    "skyyware/starchat": "^0.3.1"
+    "ext-zip": "*",
+    "skyyware/starchat": "^0.4.3"
   },
   "repositories": [
     {

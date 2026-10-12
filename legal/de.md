@@ -51,13 +51,15 @@ personenbezogenen oder vertraulichen Informationen.
 
 ### Projekt-Downloads
 
-Wenn Sie **Projekt-ZIP** wählen, senden wir das aktuelle, begrenzte Gespräch und
-gegebenenfalls die zuvor erzeugten Projektdateien an denselben Anbieter, um
-einen neuen Stand zu erstellen und zu prüfen. Der Dienst führt diesen Quellcode
-nicht aus. Ihr Browser speichert das letzte Projekt neben dem Gespräch, damit
-Sie es erneut herunterladen oder weiterentwickeln können. **Neues Gespräch**
-löscht auch dieses Projekt. Der Server erstellt eine temporäre ZIP-Datei zur
-Auslieferung und entfernt sie nach der Anfrage. Er führt kein Projektarchiv.
+Nach jeder abgeschlossenen Antwort senden wir automatisch das aktuelle,
+begrenzte Gespräch und gegebenenfalls die zuvor erzeugten Projektdateien an
+denselben Anbieter, um einen neuen Stand zu erstellen und zu prüfen. Ein
+Download erscheint erst, wenn die ZIP-Datei fertig ist. Der Klick darauf löst
+keine weitere Modellanfrage aus. Der Dienst führt diesen Quellcode nicht aus.
+Ihr Browser speichert das letzte Projekt neben dem Gespräch. Ein neuer Stand
+ersetzt den älteren; **Neues Gespräch** löscht ihn. Bereits auf Ihr Gerät
+heruntergeladene Dateien bleiben dort. Der Server erstellt eine temporäre ZIP-Datei
+zur Auslieferung und entfernt sie nach der Anfrage. Er führt kein Projektarchiv.
 Änderungen nach dem Herunterladen werden nicht in den Chat zurückgeladen.
 
 ### Betrieb der Website
@@ -99,4 +101,4 @@ Baden-Württemberg.
 Der Chat trifft keine Entscheidungen mit rechtlicher oder vergleichbar
 erheblicher Wirkung über Sie.
 
-Zuletzt geprüft: 10. Oktober 2026.
+Verhalten der Projekt-Downloads aktualisiert: 12. Oktober 2026. Übrige Abschnitte zuletzt geprüft: 10. Oktober 2026.

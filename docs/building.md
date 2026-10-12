@@ -1,8 +1,9 @@
 # Build and take your project with you
 
 The Stage chat helps visitors define a project and download a first implementation
-as a ZIP. Visitors can export during the discussion and request a new snapshot
-after changing a requirement. The latest export is saved in their browser.
+as a ZIP. After each completed answer, the current snapshot is prepared in the
+background. A download appears only when the complete, reviewed archive is ready.
+The download itself starts no model request. The latest snapshot is saved in the browser.
 
 Stage is a natural starting point for suitable web applications. A chosen language
 or another platform is respected: a Python tool, Java application or PSP homebrew
@@ -17,12 +18,14 @@ The service generates and reviews the files but does not execute them. Visitors
 run the documented checks in their own environment. Changes made outside this
 chat are not uploaded or synchronized back.
 
-A repeated download without conversation changes reuses the saved snapshot.
-After new decisions, Update project ZIP builds on the previous files. New
-conversation clears that project from browser storage. A storage failure is
-shown, while the current download remains available in memory. The interface
-shows a focused question when an essential decision is missing and a retry when
-generation or review fails.
+A repeated download reuses the prepared snapshot. New decisions hide the old
+download while a replacement is prepared from the previous files and conversation.
+The replacement overwrites the older browser archive and releases its download
+URL. Missing essential decisions or an unrelated goal remove the saved archive;
+the conversation can clarify the goal before a download becomes available. New
+conversation also clears the project. Files already downloaded onto the visitor’s
+device remain theirs. A storage failure is shown while the current download stays
+available in memory. Preparation failures offer a manual retry.
 
 Exports are bounded to 40 text files and 32 KiB of serialized project, with
 24 KiB of conversation input. Oversized conversations are rejected visibly.

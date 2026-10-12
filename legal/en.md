@@ -47,14 +47,16 @@ infrastructure. Keep personal and confidential information out of these links.
 
 ### Project downloads
 
-When you choose **Project ZIP**, we send the current bounded conversation and,
-if available, the previously generated project files to the same provider to
-prepare and review a new snapshot. The service does not execute that source.
-Your browser stores the latest project alongside the conversation so you can
-download it again or refine it. **New conversation** also clears this project.
-The server creates a temporary ZIP for delivery and removes that temporary file
-after the request. It keeps no project archive. Changes made after downloading
-are not uploaded back to the chat.
+After each completed answer, we automatically send the current bounded
+conversation and, if available, the previously generated project files to the
+same provider to prepare and review a new snapshot. A download appears only
+when the ZIP is ready. Clicking it starts no further model request. The service
+does not execute that source. Your browser stores the latest project alongside
+the conversation. A new snapshot replaces the older one; **New conversation**
+clears it. Files already downloaded onto your device remain there. The server
+creates a temporary ZIP for delivery and removes that temporary file after the
+request. It keeps no project archive. Changes made after downloading are not
+uploaded back to the chat.
 
 ### Website operation
 
@@ -88,4 +90,4 @@ and Freedom of Information Baden-Württemberg.
 
 The chat makes no decisions with legal or similarly significant effects about you.
 
-Last reviewed: 10 October 2026.
+Project download behavior updated: 12 October 2026. Other sections last reviewed: 10 October 2026.
