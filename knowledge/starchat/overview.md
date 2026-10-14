@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.7'
+source_version: 'skyyware/starchat v0.4.8'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -130,7 +130,7 @@ retrieval, scope, and answer review remain. These facts stay out of the public
 index. The browser keeps this conversation only in RAM. A session check clears
 it if the account, company, permissions, or verified session changed or context
 is unavailable.
-In 0.4.7, this mode cannot be combined with project building or origin migration.
+In 0.4.8, this mode cannot be combined with project building or origin migration.
 See [verified session context](https://stage.dev/resources/starchat-request-context)
 for the provider contract and privacy limits.
 

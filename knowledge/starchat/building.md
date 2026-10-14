@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.7'
+source_version: 'skyyware/starchat v0.4.8'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -29,6 +29,9 @@ topic_terms:
   - 'projekt vorbereiten'
   - 'erneut vorbereiten'
 phrase_terms:
+  - 'project review'
+  - 'unavailable project review'
+  - 'project review retry'
   - 'last ready project'
   - 'starter download'
   - 'previous zip'
@@ -81,8 +84,8 @@ based_on: {  }
 
 # Build and download a project
 
-When an operator enables building, Starchat prepares source files and local
-instructions from the conversation. The ZIP is a project, not a chat transcript.
+When building is enabled, Starchat prepares project files and local instructions
+from the conversation.
 
 ## Define the first useful version
 
@@ -129,14 +132,18 @@ generated files. You can keep chatting. The project area stays hidden while
 an answer or its ZIP is being prepared.
 
 **Download project ZIP** appears after generation, review, and ZIP creation
-succeed for the current conversation. It downloads the prepared archive without
-a model request. Repeated downloads reuse that archive.
+succeed for the current conversation. It downloads the archive without a model
+request. Repeated downloads reuse that archive.
 
 A new question hides the previous download. Earlier files stay available
 internally for the next revision. There is no **Download last ready ZIP** action.
 Starchat applies changed files and explicit removals, then validates and reviews
 the complete project. Missing essential details, an out-of-scope result, or a
 preparation failure produces no current download.
+
+A temporarily unavailable review may run once more within the same 115-second
+deadline. Cancellation, timeouts, and rejected or malformed reviews do not trigger
+this retry. Generation is not repeated.
 
 A failed preparation offers **Prepare again**. It retries only when selected.
 Redraws do not repeat failed attempts. This guard lasts for the open page;
@@ -173,10 +180,9 @@ does not contain your local edits. Compare it in a separate directory before mer
 
 ## Account for processing and limits
 
-Custom preparation uses the installation's model account, profile, and request
-capacity in addition to the answer. The provider receives the conversation and
-previous generated files when available. Describe this processing and browser
-storage in the privacy notice before enabling building.
+Preparation uses the installation's model account and capacity. Its provider
+receives the conversation and previous files. Document this processing and
+browser storage before enabling building.
 
 Input allows 80 messages and 24 KiB of serialized conversation within a 192 KiB
 HTTP request. The complete project permits 40 UTF-8 text files, 16 KiB each, and

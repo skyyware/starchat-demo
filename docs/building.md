@@ -45,6 +45,11 @@ Files already downloaded onto the visitor’s
 device remain theirs. A storage failure is shown while the current download stays
 available in memory. Preparation failures offer a manual retry.
 
+Custom generation aims for a compact first slice with native controls and short
+project documents. A temporarily unavailable independent reviewer can retry once
+with the same candidate and remaining request deadline. Generation, timeouts,
+invalid responses and rejected projects are not automatically retried.
+
 At the start, four concrete app ideas are drawn from the installation's reviewed
 English/German pool. Both familiar and unexpected ideas appear; the long-run
 ratio is approximately 1 to the golden ratio. Choices stay stable across reloads

@@ -666,16 +666,16 @@
         },
         {
             "name": "skyyware/starchat",
-            "version": "v0.4.7",
+            "version": "v0.4.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:skyyware/starchat.git",
-                "reference": "66ab08db2be9d02b704131f7ae36b3482a1916ea"
+                "reference": "d2bd4647efb5bdcef166ef7b9d3f4bfae72bcca6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/starchat/zipball/66ab08db2be9d02b704131f7ae36b3482a1916ea",
-                "reference": "66ab08db2be9d02b704131f7ae36b3482a1916ea",
+                "url": "https://api.github.com/repos/skyyware/starchat/zipball/d2bd4647efb5bdcef166ef7b9d3f4bfae72bcca6",
+                "reference": "d2bd4647efb5bdcef166ef7b9d3f4bfae72bcca6",
                 "shasum": ""
             },
             "require": {
@@ -715,9 +715,10 @@
             "description": "Source-grounded chat for an organization, product or community, built on Stage.",
             "homepage": "https://chat.stage.dev",
             "support": {
-                "source": "https://github.com/skyyware/starchat"
+                "source": "https://github.com/skyyware/starchat",
+                "issues": "https://github.com/skyyware/starchat/issues"
             },
-            "time": "2026-10-14T10:10:20+00:00"
+            "time": "2026-10-14T10:35:49+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
