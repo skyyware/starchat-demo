@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.1'
+source_version: 'skyyware/starchat v0.6.7'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -75,7 +75,7 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.6.1 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.6.7 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -85,12 +85,12 @@ The core is private. The public
 [example installation](https://github.com/skyyware/starchat-demo) requires
 authorized access to that dependency and grants none.
 
-With authorized access, copy `examples/installation` from Starchat 0.6.1
+With authorized access, copy `examples/installation` from Starchat 0.6.7
 into an empty project. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.6.1 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.6.7 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route

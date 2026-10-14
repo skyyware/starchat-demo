@@ -5,7 +5,7 @@ title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.1'
+source_version: 'skyyware/starchat v0.6.7'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -16,10 +16,14 @@ topic_terms:
   - 'verified contacts'
   - kontaktaktionen
   - telefonnummer
+  - 'contact language'
+  - 'recipient language'
+  - 'primary email'
 phrase_terms:
   - 'email and phone'
   - 'contact verification'
   - 'E-Mail und Telefon'
+  - 'English summary German email'
 keywords:
   - 'contact actions'
   - 'contact metadata'
@@ -31,6 +35,11 @@ keywords:
   - telefonnummer
   - mailto
   - verified_at
+  - 'contact language'
+  - 'recipient language'
+  - 'primary email'
+  - contact_locale
+  - Empfängersprache
 links:
   -
     label: 'Offer verified email and phone contacts'
@@ -48,7 +57,7 @@ follow_ups: {  }
 # Offer verified email and phone contacts
 
 Starchat can suggest an editable email or preparation for a telephone call after
-a useful answer. The operator enables the channels and maintains their recipients
+an answer. The operator enables the channels and maintains their recipients
 in reviewed installation knowledge. Conversation text cannot introduce a recipient.
 Starchat sends no message, makes no call, and submits no application.
 
@@ -57,13 +66,26 @@ Starchat sends no message, makes no call, and submits no application.
 Add `actions` to the installation's existing `asset` configuration:
 
 ```json
-{"asset":{"type":"pdf","actions":["email","phone"]}}
+{"asset":{"type":"pdf","contact_locale":"de","actions":["email","phone"]}}
 ```
 
 Actions default to an empty list. They can accompany `none`, `pdf`, `email`, or
 `project`. A project installation keeps its ZIP panel and prepares contact actions
 separately. The PDF and Markdown exports contain the same reviewed actions.
+Cards follow the input and suggestions at the end of the conversation.
 See [conversation assets](https://stage.dev/resources/starchat-assets) for downloads.
+
+## Choose the recipient's language
+
+`asset.contact_locale` sets the organization's correspondence language and
+defaults to the installation's `locale`. A source contact's optional `locale`
+overrides that default for its recipient. Both settings use a supported language
+code. The visitor's language selection does not change them.
+
+The summary, action labels, and telephone checklists use the visitor's selected
+language. Each email subject and body use the recipient's language. An English
+summary can therefore include a German email. Generation and independent review
+check this separation.
 
 ## Record contacts in their source article
 
@@ -77,6 +99,7 @@ contacts:
     label: Service office
     purpose: General questions about the service
     verified_at: '2026-10-14'
+    locale: de
   - id: service-phone
     kind: phone
     address: '+497110000000'
@@ -89,7 +112,8 @@ These are fictional addresses. Replace them, their purpose, and their verificati
 date with checked source facts. Do not mark an inferred address as verified.
 Keep the verification evidence with the installation. Rebuild its knowledge index.
 
-Each entry has exactly `id`, `kind`, `address`, `label`, `purpose`, and `verified_at`.
+Each entry requires `id`, `kind`, `address`, `label`, `purpose`, and `verified_at`.
+Only `locale` is optional.
 IDs are unique within the article and use 2 to 60 lowercase letters, digits, or
 hyphens. Email addresses are single plain recipients, at most 160 characters.
 Phone numbers use E.164: a plus sign followed by 7 to 15 digits, without an initial
@@ -112,10 +136,12 @@ the model cannot supply a new destination. No matching contact means no action.
 Up to four actions can appear, each checked by the independent summary reviewer.
 An older topic must not supply an irrelevant contact for the current concern.
 
-Email actions contain a localized label, subject, and editable body. The subject
-allows 140 characters and the body 1,200. Their encoded mailto URI allows 8,000
-characters; mail applications may impose smaller limits. The fixed-recipient
-`asset.type: email` shortcut instead uses the shorter limit in the assets guide.
+Email actions contain a complete editable letter with a greeting, the stated
+situation, a request, and a closing. Blank lines separate paragraphs; the server
+normalizes them to blank CRLF lines. The subject allows 140 characters and the
+body 1,200. Their encoded mailto URI allows 8,000 characters; mail applications
+may impose smaller limits. These limits also apply to `asset.type: email`.
+The browser does not shorten the server-prepared draft.
 Telephone actions include preparation for the call, with at most six checklist
 items of 300 characters each. Expand the details to inspect the draft or checklist.
 
@@ -127,7 +153,11 @@ The interface and exported PDF or Markdown use the same validated content.
 
 A new question cancels earlier preparation and removes stale actions. PDF and
 action-only panels wait for useful content; a first clarification alone starts
-no summary. The fixed email shortcut remains available without a summary.
+no summary. A primary `asset.type: email` draft requires a completed exchange,
+including a clarification, and successful preparation and review. Empty history
+shows no contact card. The configured recipient enters the trusted catalogue as
+`primary`; generation must include its draft. No email button appears before that
+draft is ready.
 
 With verified session context, preparation and display require fresh checks.
 Changed or unavailable context, reset, or a hidden page clears actions and

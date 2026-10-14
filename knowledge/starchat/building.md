@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.1'
+source_version: 'skyyware/starchat v0.6.7'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -128,7 +128,7 @@ atomically. Keep source and cache outside `public/`.
 ## Download the current project
 
 The answer appears first. The browser then automatically prepares custom work
-in a compact panel above the input. The generator and independent reviewer use
+in a compact card after the input and suggestions. The generator and independent reviewer use
 the conversation and previous files. You can keep chatting. Progress has no
 percentage or promised completion time.
 

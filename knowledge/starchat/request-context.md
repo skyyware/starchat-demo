@@ -5,7 +5,7 @@ title: 'Use verified session context'
 source: 'https://stage.dev/resources/starchat-request-context'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.1'
+source_version: 'skyyware/starchat v0.6.7'
 public_path: /resources/starchat-request-context
 topic_terms:
   - 'request context'
@@ -56,7 +56,7 @@ follow_ups: {  }
 
 # Use verified session context
 
-Starchat 0.6.1 can use verified account or cart facts from a signed-in application.
+Starchat 0.6.7 can use verified account or cart facts from a signed-in application.
 This optional mode requires an installation-owned context provider. Ordinary chat
 remains the default. It does not connect external Markdown folders.
 
@@ -138,11 +138,12 @@ This conversation stays in the current tab's RAM, without localStorage or
 sessionStorage. Reloading starts empty. Earlier public-chat history remains
 untouched and is never imported into context mode.
 
-Starchat checks context on load, focus, return to a visible page, and reconnection.
-It hides the conversation during a check. A changed scope or unavailable context
-clears visible and pending history and aborts the active answer. A change while
-preparing a question also discards that question. Input stays disabled while
-context is unavailable; the link to the application's website remains available.
+Starchat checks context on load, focus, return to a visible page, and reconnection,
+hiding history during checks. Changed or unavailable context clears visible and
+pending history, cancels the answer, and discards any question being prepared.
+The public input stays editable and opening suggestions visible; the website
+link remains available. Submission requires a fresh successful check for the
+exact question.
 
 Before showing an answer, the browser checks its `request_scope` and probes the
 session again. A changed scope, failed probe, reset, or newer request prevents

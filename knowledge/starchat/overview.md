@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.1'
+source_version: 'skyyware/starchat v0.6.7'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -102,8 +102,8 @@ A reviewed starter can appear with the first compatible answer. Other technologi
 and custom features use generation and independent review. A custom project
 cannot be reset to the starter.
 
-The browser shows the answer before preparing a project for the current
-conversation. A compact panel above the input shows progress; you can keep chatting.
+The answer appears before project preparation. A compact card after the input
+and suggestions shows progress while you keep chatting.
 A concrete goal can produce a first useful version while reversible
 choices remain provisional. Those choices and open questions belong in
 `PROJECT.md`. A new question hides the old download and cancels preparation.

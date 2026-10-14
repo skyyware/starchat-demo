@@ -5,7 +5,7 @@ title: 'Configure opening app ideas'
 source: 'https://stage.dev/resources/starchat-app-ideas'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.1'
+source_version: 'skyyware/starchat v0.6.7'
 public_path: /resources/starchat-app-ideas
 topic_terms:
   - 'app ideas'
@@ -68,7 +68,7 @@ Each app idea has three fields:
 Supply at least two familiar and three less obvious ideas, with no more than
 40 entries. Labels and requests must be distinct, nonempty, and use single spaces without
 leading or trailing whitespace. Translate each locale's
-entries in the same order so a language change retains the selected positions.
+entries in the same order so the selector can reuse positions across languages.
 Do not add a period to a short label.
 
 Name an outcome people can recognize. A familiar label might be “Build a task
@@ -82,13 +82,15 @@ Keep each proposal within the installation's purpose.
 
 ## Understand the selection
 
-Starchat selects four distinct ideas from the reviewed pool. In 53% of
-conversations it selects two familiar and two less obvious ideas. Otherwise,
+The initial page keeps its server-rendered set of two familiar and two less
+obvious ideas. After a reset or language change, the selector chooses four distinct
+ideas from the reviewed pool. In 53% of selections it chooses two familiar and
+two less obvious ideas. Otherwise,
 it selects one familiar and three less obvious ideas. This approximates a
-familiar-to-unexpected ratio of 1 : phi across conversations; a single set of
+familiar-to-unexpected ratio of 1 : phi across selections; a single set of
 four cannot represent that ratio exactly.
 
-Selection is random between conversations and stable within one conversation.
+The selector varies with each new conversation's ID and stays stable within one conversation.
 A new conversation can include an idea seen before. The selector makes no model
 call and uses no visitor profile. During a conversation, suggestions come from
 the answer and address the visitor's current goal or open question.
