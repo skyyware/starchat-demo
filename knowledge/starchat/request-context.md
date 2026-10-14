@@ -3,15 +3,15 @@ id: starchat-request-context
 entity: stage
 title: 'Use verified session context'
 source: 'https://stage.dev/resources/starchat-request-context'
-retrieved_at: '2026-10-11'
+retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-request-context
 topic_terms:
   - 'request context'
   - 'session context'
   - 'signed session'
-  - 'signed-in'
+  - signed-in
   - 'account facts'
   - 'context privacy'
   - 'account switch'
@@ -29,7 +29,7 @@ keywords:
   - 'request context'
   - 'session context'
   - 'signed session'
-  - 'signed-in'
+  - signed-in
   - 'account facts'
   - 'context privacy'
   - 'account switch'
@@ -51,26 +51,24 @@ links:
     label: 'Operate Starchat'
     url: 'https://stage.dev/resources/starchat-operations'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Use verified session context
 
-Starchat 0.5.0 can use verified facts from a signed-in application for one answer.
-For example, an operator could provide the current account's permitted features
-or cart total. This optional mode requires an installation-owned context provider.
-Ordinary chat remains the default. It does not connect external Markdown folders.
+Starchat 0.6.1 can use verified account or cart facts from a signed-in application.
+This optional mode requires an installation-owned context provider. Ordinary chat
+remains the default. It does not connect external Markdown folders.
 
 ## Verify the session before using its facts
 
-The application owns authentication and permissions. Its HTTPS endpoint checks
-the native session and returns a signed token with a scope digest. The browser
-passes that result to Starchat with the question. A PHP provider verifies it
-before any model call and returns the permitted facts as documents.
+The application authenticates the session and returns a signed token and scope
+digest. The browser supplies them with the question. A PHP provider verifies
+them before any model call and returns the permitted facts as documents.
 
-The verifier checks the signature, allowed algorithm, issuer, audience, expiry,
-schema, exact question, and authorized scope. Decoding a token is insufficient.
-Browser claims and conversation history cannot establish identity or access.
-Keep signing credentials in private runtime and read them inside the provider.
+Verify the signature, algorithm, issuer, audience, expiry, schema, exact question,
+and scope. Decoding alone is insufficient. Browser claims and history cannot
+establish access. Read credentials inside the provider from private runtime.
 
 The scope is a digest of 64 lowercase hexadecimal characters without readable
 identity. It must change when the account, company, session, or relevant
@@ -81,29 +79,40 @@ before model work. The request does not fall back to ordinary chat.
 ## Provide the endpoint and verifier together
 
 Set `request_context.endpoint` in `installation.json` and supply
-`config/request-context.php`. Configuration without a provider is rejected.
-The file returns a closure accepting `array $envelope`,
-`Starchat\Conversation $conversation`, and `Starchat\Installation $installation`,
-in that order. It returns `Starchat\RequestContext` with the verified scope and
-documents. The installation owns the signing protocol and document conversion.
+`config/request-context.php`; a missing provider is rejected. It returns a closure
+accepting `array $envelope`, `Starchat\Conversation $conversation`, and
+`Starchat\Installation $installation`, in that order. Return
+`Starchat\RequestContext` with verified scope and documents. The installation
+owns signing and document conversion.
 
-The endpoint must use HTTPS with a lowercase hostname. Credentials, explicit
-ports, query parameters, and fragments are rejected. Before each question,
-the browser sends a form-encoded POST containing `question`, includes session
-credentials, disables caching, and rejects redirects. An empty question probes
-the current session without starting a conversation. Each fetch allows eight
-seconds. Return only `token` and `scope` in JSON with `Cache-Control: no-store`.
-For another origin, allow the exact chat origin and credentialed requests.
-Test this with the application's actual browser session.
+The endpoint uses HTTPS and a lowercase hostname, without credentials, ports,
+query parameters, or fragments. The browser POSTs a form-encoded `question` with
+session credentials, no caching or redirects, and an eight-second timeout.
+An empty question probes the session. Return only `token` and `scope` in JSON
+with `Cache-Control: no-store`. For another origin, allow that exact chat origin
+and credentialed requests. Test the application's actual browser session.
 
-Since 0.4.1, `/chat`, `/project`, and `/language` preserve gateway
-cookies with `credentials: 'same-origin'`. Keep those cookies HttpOnly.
-They do not supply verified application facts. The separate context endpoint
-continues to use `credentials: 'include'` for its application's session.
+`/chat`, `/asset`, `/project`, and `/language` retain gateway cookies through
+`credentials: 'same-origin'`; keep them HttpOnly. Those cookies are not verified
+application facts. The context endpoint uses `credentials: 'include'`.
 
-In 0.5.0, request context cannot be combined with enabled project building,
-conversation assets, or `migration_origin`. Enabling context is a separate
-integration decision.
+Request context cannot be combined with enabled project building or
+`migration_origin`. Summaries and contact actions can use fresh verified
+context. Enabling context is a separate integration decision.
+
+## Prepare summaries in the same verified scope
+
+After displaying the answer, summary preparation signs the exact last user
+question. `/asset` verifies that envelope before any summary model call and
+returns `request_scope`. Fresh request documents reach generation and independent
+review in full, ahead of public documents with the same ID for contact selection.
+Tokens and scope digests stay out of model input.
+
+Before showing a download or contact draft, the browser probes again. A scope
+change, failed check, reset, or hidden page cancels preparation, clears contacts,
+and revokes download URLs. Late responses cannot restore them. Input stays
+usable during these background checks. Explicitly saved downloads remain on the
+visitor's device. See [conversation assets](https://stage.dev/resources/starchat-assets).
 
 ## Limit facts to one request
 
@@ -119,18 +128,15 @@ evidence budget cannot fit them. It neither adds them to the knowledge index
 nor publishes them as resource pages. Public retrieval, installation scope,
 and independent answer review still apply.
 
-The model receives these documents as `request_local` evidence. Its instructions
-give current verified facts precedence over conflicting account or price claims
-in old history.
-The facts remain data, not instructions or permission to act. Starchat cannot
-change the account, place an order, or guarantee that a price stays unchanged.
+The model receives `request_local` evidence and instructions to prefer current
+verified facts over conflicting history. Facts grant no authority to change an
+account or place an order. Prices can change after the snapshot.
 
 ## Keep context conversations in memory
 
-The browser keeps this conversation only in the current tab's RAM. It does not
-read or write its history through localStorage or sessionStorage. Reloading
-starts an empty conversation. Earlier public-chat history remains untouched
-and is never imported into context mode.
+This conversation stays in the current tab's RAM, without localStorage or
+sessionStorage. Reloading starts empty. Earlier public-chat history remains
+untouched and is never imported into context mode.
 
 Starchat checks context on load, focus, return to a visible page, and reconnection.
 It hides the conversation during a check. A changed scope or unavailable context
@@ -145,15 +151,13 @@ An explicit retry obtains fresh context.
 
 ## Check privacy and failure cases before adoption
 
-Send only the facts needed for the answer. The model provider receives those
-facts, the question, and bounded conversation history. Tokens and scope digests
-do not enter model input. Keep tokens, request bodies, and model input out of
-logs. RAM-only browser history does not establish provider retention or erase
-already transmitted data. Describe the context provider, transmitted facts,
-and actual retention policy in the installation's notices.
+Send only needed facts, the question, and bounded history. Keep tokens, request
+bodies, and model input out of logs. RAM-only history cannot erase transmitted
+data or establish provider retention. Describe the provider, transmitted facts,
+and actual retention in the installation's notices.
 
-Test the real verifier with expired tokens, the wrong question or audience,
-scope mismatches, and unavailable context. Check logout, account and company
-changes during an answer, reload, and recovery after a failed probe in a browser.
-Use synthetic facts to check grounding and instructions embedded in data.
-Package tests do not establish the correctness of an installation's adapter.
+Test expired tokens, wrong questions and audiences, scope mismatches, and
+unavailable context. Check logout, account and company changes during answers
+and summary preparation, reload, and recovery after failed probes. Use synthetic
+facts to test grounding and instructions embedded in data. Package tests do not
+prove an installation adapter correct.

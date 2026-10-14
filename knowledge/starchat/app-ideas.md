@@ -5,7 +5,7 @@ title: 'Configure opening app ideas'
 source: 'https://stage.dev/resources/starchat-app-ideas'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-app-ideas
 topic_terms:
   - 'app ideas'
@@ -35,13 +35,17 @@ keywords:
   - unexpected
   - phi
 links:
-  - label: 'Configure opening app ideas'
+  -
+    label: 'Configure opening app ideas'
     url: 'https://stage.dev/resources/starchat-app-ideas'
-  - label: 'Install Starchat'
+  -
+    label: 'Install Starchat'
     url: 'https://stage.dev/resources/starchat-installation'
-  - label: 'Build and download a project'
+  -
+    label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
-based_on: { }
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Configure opening app ideas

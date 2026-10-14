@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -17,8 +17,8 @@ topic_terms:
   - 'number shortcuts'
   - 'suggested question'
   - 'suggested questions'
-  - 'tastenkürzel'
-  - 'fragevorschläge'
+  - tastenkürzel
+  - fragevorschläge
   - building
   - 'project zip'
   - 'project export'
@@ -38,8 +38,8 @@ keywords:
   - 'number shortcuts'
   - 'suggested question'
   - 'suggested questions'
-  - 'tastenkürzel'
-  - 'fragevorschläge'
+  - tastenkürzel
+  - fragevorschläge
   - building
   - 'project zip'
   - 'project export'
@@ -70,11 +70,12 @@ links:
     label: 'Configure opening app ideas'
     url: 'https://stage.dev/resources/starchat-app-ideas'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Install Starchat
 
-Starchat 0.5.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.6.1 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -84,12 +85,12 @@ The core is private. The public
 [example installation](https://github.com/skyyware/starchat-demo) requires
 authorized access to that dependency and grants none.
 
-With authorized access, copy `examples/installation` from Starchat 0.5.0
+With authorized access, copy `examples/installation` from Starchat 0.6.1
 into an empty project. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.5.0 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.6.1 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -178,27 +179,28 @@ and zip extension. Assets are off by default, including after an upgrade: set
 `asset.type` to `project` for the download. To disable downloads and generation,
 remove both `asset` and `building`.
 
-After a completed answer, the browser automatically prepares the project.
+The answer appears before project preparation starts. You can keep chatting.
 An optional `building.starter` supplies a reviewed ready application. Custom
 work still passes generation, independent review, and ZIP creation.
 **Download ZIP** downloads the prepared archive without a model request.
 
-Read [Build and download a project](https://stage.dev/resources/starchat-building)
-for archive contents, revisions, limits, and manual recovery. Describe automatic
+See [project downloads](https://stage.dev/resources/starchat-building)
+for contents, revisions, limits, and recovery. Describe automatic
 preparation, model input, and browser storage in your notices before enabling it.
 The service does not execute generated code or deploy it.
 
 ## Offer other conversation assets
 
-PDF summaries and email drafts need no project building. Choose one asset type;
-see [conversation assets](https://stage.dev/resources/starchat-assets) for
-configuration, branding, language limits, privacy, and topic links.
+PDF summaries and email drafts need no project building. Contact actions and
+Markdown downloads can accompany the selected type. See
+[conversation assets](https://stage.dev/resources/starchat-assets) for configuration and limits.
 
 ## Connect a signed-in application
 
 For optional account facts, see
 [verified session context](https://stage.dev/resources/starchat-request-context).
-In 0.5.0, it cannot share an installation with building, assets, or origin migration.
+It cannot share an installation with building or origin migration. Summaries
+and contacts require fresh context checks before preparation and display.
 
 ## Check the installation
 
@@ -206,7 +208,7 @@ Check the ID, document count, and `aggregate_rate_limit` at `/health`. Try a gui
 synthetic and unrelated questions, and desktop and mobile layouts. Read each
 answer and its sources.
 
-Keep previous code and index for rollback. Preserve production data and credentials.
+Keep previous code and index for rollback. Preserve data and credentials.
 Installation grants no hosting, accounts, spending cap, or organizational policies.
 See [operations](https://stage.dev/resources/starchat-operations) for deployment
 checks, deadlines, and rate limits.

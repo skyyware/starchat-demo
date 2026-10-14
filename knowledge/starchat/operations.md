@@ -5,7 +5,7 @@ title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -16,6 +16,9 @@ topic_terms:
   - 'zip privacy'
   - 'starter cache'
   - 'context privacy'
+  - STARCHAT_ASSET_RUNTIME
+  - 'read-only runtime'
+  - 'PDF temporary directory'
 phrase_terms:
   - 'starchat operations'
   - 'starchat deployment'
@@ -29,6 +32,9 @@ keywords:
   - 'zip privacy'
   - 'starter cache'
   - 'context privacy'
+  - STARCHAT_ASSET_RUNTIME
+  - 'read-only runtime'
+  - 'PDF temporary directory'
 links:
   -
     label: 'Operate a Starchat installation'
@@ -43,12 +49,18 @@ links:
     label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Operate a Starchat installation
 
-Deploy locked code with its reviewed knowledge index. Keep private runtime
-separate. The operator owns hosting, model access, notices, and recovery.
+Deploy locked code with its reviewed index and separate private runtime.
+The operator owns hosting, model access, notices, and recovery.
+
+`STARCHAT_ASSET_RUNTIME` selects a pre-created writable directory for temporary
+PDF and bundle work. It defaults to the application runtime. Keep it private,
+outside `public/`, and permit worker writes. The index, capacity, sources, account,
+and project archive paths remain unchanged, so the index can stay read-only.
 
 ## Check limits and privacy
 
@@ -78,44 +90,41 @@ The model provider receives a bounded history and relevant knowledge. Verify
 the actual server, connector, and provider settings before making retention
 claims. Never put private records in public answering knowledge.
 
-Custom project preparation sends the conversation and previous files to the model.
-Describe this processing and browser storage in the notices before enabling it.
-Temporary ZIPs are removed after each request. Visitor-generated archives are
-not kept on the server. A configured public starter has one runtime cache,
-replaced atomically when its source changes. Fetching it needs no generation
-model call. The service does not run generated code. Review and test files locally.
+Project generation sends the conversation and previous files to the model.
+Describe this and browser storage in your notices. Temporary ZIPs are removed.
+One cache retains the configured public starter, replaced atomically when changed.
+The service never executes generated code. Test it locally.
 
 ## Recover an interrupted answer
 
 In ordinary chat, the browser can retry an interrupted question after reload or connection loss
 once after its sixty-second lease expires. Web Locks let one tab claim the retry.
-The question keeps its place; a late result from the earlier request cannot
-replace the recovered answer. Starting a new conversation cancels recovery.
+The question keeps its place; late results cannot replace the recovered answer.
+A new conversation cancels recovery.
 
 Completed answers and terminal HTTP or validation errors are not resubmitted
 automatically. If the recovery also fails, manual retry remains available.
 Without browser storage or Web Locks, temporary tab-only mode still applies.
-This mechanism does not run requests in the background after the browser closes.
+Closing the browser stops recovery.
 
-Keep the generated version parameters on package JavaScript URLs. They prevent
+Keep version parameters on package JavaScript URLs. They prevent
 cached child modules from retaining old behavior after an update.
 
 Optional [session context](https://stage.dev/resources/starchat-request-context)
 uses RAM-only history. A scope change or failed session check clears it.
-It disables automatic recovery and cannot coexist with building, assets, or
-origin migration in 0.5.0. Its notices must identify the context provider, transmitted
-facts, and actual retention. Memory-only browser history makes no provider
-retention promise.
+It disables automatic recovery and cannot coexist with building or origin
+migration. Summaries and contacts require fresh scope checks; scope changes
+revoke their download URLs and clear contact actions. Notices must identify
+the provider, transmitted facts, and retention. RAM-only history makes no
+provider retention promise.
 
 ## Present legal information
 
-Write the installation's notices in `legal/en.md` and `legal/de.md`. Use the
-level-two headings `Legal notice` and `Privacy`, or `Impressum` and `Datenschutz`,
-with shorter level-three sections underneath. Starchat keeps stable section
-anchors and a combined title for assistive technology. The visible page starts
-with the individual section headings, without a duplicate contents list.
-The `/impressum`, `/privacy`, and `/datenschutz` aliases preserve the selected
-language and open the matching section.
+Write notices in `legal/en.md` and `legal/de.md`. Use level-two `Legal notice`
+and `Privacy`, or `Impressum` and `Datenschutz`, with level-three subsections.
+Starchat keeps stable anchors and a combined accessible title, without a duplicate
+contents list. `/impressum`, `/privacy`, and `/datenschutz` preserve the language
+and open the matching section.
 
 Verify the operator, actual processing, and provider terms for the installation.
 The renderer cannot establish legal grounds or a provider agreement.

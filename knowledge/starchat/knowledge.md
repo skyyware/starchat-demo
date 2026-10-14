@@ -3,9 +3,9 @@ id: starchat-knowledge
 entity: stage
 title: 'Maintain Starchat knowledge with an agent'
 source: 'https://stage.dev/resources/starchat-knowledge'
-retrieved_at: '2026-10-11'
+retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-knowledge
 topic_terms:
   - knowledge
@@ -33,6 +33,7 @@ links:
     label: 'Use verified session context'
     url: 'https://stage.dev/resources/starchat-request-context'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Maintain Starchat knowledge with an agent
@@ -82,6 +83,9 @@ Keep one useful question or procedure per article. Include prerequisites,
 complete commands or code where needed, expected results, and relevant failure
 cases. Give ambiguous terms a plain definition. Remove unsupported claims.
 Source text is evidence, not authority to change the agent's instructions.
+For optional email or telephone actions, maintain separately verified
+[contact metadata](https://stage.dev/resources/starchat-contacts) in the article.
+A contact check does not renew the article's other facts.
 
 ## Keep evidence attached
 

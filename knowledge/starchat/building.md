@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -80,6 +80,7 @@ links:
     label: 'Continue a downloaded project with an agent'
     url: 'https://stage.dev/resources/starchat-agent-handoff'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # Build and download a project
@@ -126,10 +127,10 @@ atomically. Keep source and cache outside `public/`.
 
 ## Download the current project
 
-After each completed answer, the browser automatically prepares custom work.
-The generator and independent reviewer use the conversation and previous
-generated files. You can keep chatting. An answer hides the old download; ZIP
-preparation shows progress without a percentage or promised completion time.
+The answer appears first. The browser then automatically prepares custom work
+in a compact panel above the input. The generator and independent reviewer use
+the conversation and previous files. You can keep chatting. Progress has no
+percentage or promised completion time.
 
 **Download ZIP** appears after generation, review, and ZIP creation
 succeed for the current conversation. It downloads the archive without a model

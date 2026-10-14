@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -19,6 +19,10 @@ topic_terms:
   - 'E-Mail Entwurf'
   - 'no download'
   - 'topic links'
+  - 'summary downloads'
+  - 'download filenames'
+  - 'answer first'
+  - 'PDF clarification'
 phrase_terms:
   - 'disable assets'
   - 'PDF from conversation'
@@ -27,7 +31,7 @@ phrase_terms:
 keywords:
   - 'conversation assets'
   - 'optional assets'
-  - 'asset.type'
+  - asset.type
   - 'PDF summary'
   - 'conversation summary'
   - 'email draft'
@@ -38,14 +42,25 @@ keywords:
   - progress
   - branding
   - languages
+  - 'summary downloads'
+  - 'download filenames'
+  - 'answer first'
+  - 'PDF clarification'
 links:
-  - label: 'Offer a project, PDF summary, or email draft'
+  -
+    label: 'Offer a project, PDF summary, or email draft'
     url: 'https://stage.dev/resources/starchat-assets'
-  - label: 'Install Starchat'
+  -
+    label: 'Install Starchat'
     url: 'https://stage.dev/resources/starchat-installation'
-  - label: 'Build and download a project'
+  -
+    label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
-based_on: { }
+  -
+    label: 'Offer verified email and phone contacts'
+    url: 'https://stage.dev/resources/starchat-contacts'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Offer something to take away
@@ -55,14 +70,15 @@ Assets are off by default. Set one `asset.type` in `installation.json`:
 
 | Setting | Result |
 | --- | --- |
-| No `asset`, or `{"type":"none"}` | No asset control or summary preparation |
+| No `asset`, or `{"type":"none"}` | No primary asset |
 | `{"type":"project"}` | Current project ZIP; also requires `building.enabled` |
 | `{"type":"pdf"}` | Reviewed conversation summary as a PDF |
 | `{"type":"email","recipient":"hello@example.org"}` | Editable draft in the visitor's mail app |
 
-PDF and email do not require project building. These settings belong to the
-operator; visitor messages cannot change the type or recipient. Installations
-using verified session context cannot enable assets.
+PDF and email need no project building. Optional `actions` and `downloads` can
+accompany any type, including `none`; both default to empty lists. With neither,
+`none` prepares nothing. Visitor messages cannot change these operator settings.
+Verified session context permits summaries under its fresh scope checks.
 
 When upgrading a building installation from 0.4.x, explicitly set
 `asset.type: project` to retain its visible ZIP download. Setting assets to
@@ -71,40 +87,58 @@ disable both, remove `asset` and `building`.
 
 ## Keep the result current
 
-After a completed answer, the browser prepares the selected asset automatically.
-A new question hides the previous ZIP or PDF. Preparation shows a progress
-indicator without an invented percentage or completion time. The download
-appears only when the current result is ready. Clicking it starts no model call.
-An unavailable result offers a manual retry.
+The answer appears before asset preparation starts. A compact panel above the
+input shows progress; you can keep chatting. A new question hides the previous
+ZIP or PDF and cancels preparation. Progress has no percentage or completion time.
+Only the current result gets a download. Clicking it starts no model call.
+A failed preparation offers a manual retry.
 
-A reset, language change, or newer conversation state prevents an older result
-from replacing the current one. PDF and email summaries remain in browser memory.
-Reloading can prepare them again. Project ZIPs use their separate browser-storage
-entry and retain earlier files as revision input; see
+PDF preparation skips a first clarification with no useful content. Earlier useful
+content can still be summarized after a later question. The browser accepts
+nonempty steps or a standalone answer without a follow-up. Facts followed by a
+question, without steps, wait for more content. Orientation, missing evidence,
+and unavailable answers do not start a PDF. The fixed email contact stays available.
+
+A reset or language change discards older results. Summaries stay in browser
+memory. Ordinary chat can prepare them again after reload; context chat starts
+empty. Project ZIPs keep separate browser storage and previous revision input; see
 [project downloads](https://stage.dev/resources/starchat-building).
 
 ## Prepare a faithful summary
 
-The summary generator receives the bounded conversation and trusted installation
-scope. A separate reviewer checks the result before it is released. Both preserve
-speaker attribution, later corrections, uncertainty, and unresolved decisions.
+The generator receives the bounded conversation and installation scope. A separate
+reviewer checks the summary. Both preserve speaker attribution, later corrections,
+uncertainty, and unresolved decisions.
 A proposal is not an agreement; an appointment request is not a confirmation.
 Review checks faithfulness to the conversation, not the truth of every claim.
 
-Only useful exact links already in the conversation and accepted by the
-installation's link policy can appear. Links are optional. Summary generation
-does not retrieve private documents or add new knowledge.
+Links are optional and must match approved conversation links or fresh verified
+context. Enabled contact actions use reviewed source metadata. Summaries do not
+fetch arbitrary private documents. See
+[verified session context](https://stage.dev/resources/starchat-request-context).
 
 Input permits 80 messages and 24 KiB of serialized conversation. Generation and
 review share a 45-second deadline, with no automatic model retry. The browser
 allows 60 seconds for preparation. Capacity is shared with chat and building.
 These are limits, not a delivery promise.
 
+## Add document downloads and contacts
+
+```json
+{"asset":{"type":"pdf","actions":["email","phone"],"downloads":["markdown","bundle"]}}
+```
+
+`markdown` exports the reviewed summary as text. `bundle` requires `type: pdf`
+and PHP's zip extension; it packs that same PDF and Markdown into a ZIP.
+It generates no software. Files use the summary title in its selected language
+and an ISO date in the installation timezone, with unsafe characters removed.
+Contact actions require [verified contact metadata](https://stage.dev/resources/starchat-contacts).
+No matching contact means no contact action.
+
 ## Use installation branding in PDFs
 
-PDFs use local logos, brand colors, and supported local fonts. They contain the
-summary, key points, next steps, optional links, date, and page numbers. A short
-note identifies the content as conversation guidance, not official confirmation.
+PDFs use local branding and supported fonts. They contain the reviewed summary,
+next steps, contacts, links, date, page numbers, and a note that this is guidance.
 
 Latin, Greek, and Cyrillic text are supported when their glyphs are available.
 Arabic, other complex scripts, and missing glyphs fail explicitly. The visitor
@@ -124,9 +158,9 @@ The contact action remains available while its summary is being prepared.
 It opens a `mailto:` draft for the configured recipient. The visitor can review,
 edit, and send it in their own mail application. Starchat sends no email.
 
-The encoded mailto link is limited to 1,900 characters for compatibility, so the
-draft may be shortened. Check the contents in the mail application before sending.
-No account connection or permission to contact someone is created by this feature.
+This fixed-recipient mailto link allows 1,900 characters, so the draft may be
+shortened. Check it in the mail app. It creates no account connection or permission
+to contact someone. Contextual email actions have their own documented limits.
 
 ## Start a conversation from a topic
 
@@ -142,6 +176,5 @@ topics do nothing; a topic selected during a pending answer stays as a draft.
 Only use public topic names. This differs from `?q=`, which fills an editable
 question without submitting it.
 
-Update the installation's notices for automatic summary preparation, model
-input, browser storage, and downloads. Temporary local files do not establish
-the model provider's retention policy.
+Describe automatic preparation, model input, storage, and downloads in your
+notices. Local file deletion makes no promise about provider retention.

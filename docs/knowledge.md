@@ -18,3 +18,9 @@ The chat never reads the website's private CMS. Do not copy drafts, revision
 history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
+
+The 14 October 2026 snapshot covers Starchat 0.6.1, including independent asset
+preparation after the answer, meaningful PDF eligibility, localized filenames,
+reviewed email and telephone contacts, and summaries under verified session
+context. The public contacts guide explains how other installations can enable
+these actions. This demo keeps its project ZIP configuration.

@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.5.0'
+source_version: 'skyyware/starchat v0.6.1'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -51,6 +51,7 @@ links:
     label: 'Continue a downloaded project with an agent'
     url: 'https://stage.dev/resources/starchat-agent-handoff'
 based_on: {  }
+follow_ups: {  }
 ---
 
 # What Starchat provides
@@ -101,14 +102,14 @@ A reviewed starter can appear with the first compatible answer. Other technologi
 and custom features use generation and independent review. A custom project
 cannot be reset to the starter.
 
-After a completed answer, the browser prepares a project for the current
-conversation. A concrete goal can produce a first useful version while reversible
+The browser shows the answer before preparing a project for the current
+conversation. A compact panel above the input shows progress; you can keep chatting.
+A concrete goal can produce a first useful version while reversible
 choices remain provisional. Those choices and open questions belong in
-`PROJECT.md`. An answer hides the old download; preparing the next ZIP shows
-progress. A download appears only when the current ZIP is ready; clicking it
-makes no model request. Previous files stay available internally for revisions,
-but the interface does not offer an older ZIP as the current project.
-Previously downloaded files remain on the visitor's device.
+`PROJECT.md`. A new question hides the old download and cancels preparation.
+Only the current ZIP is downloadable, without a model request. Previous files
+stay available internally for revisions.
+Saved files remain on the visitor's device.
 
 Each archive includes a documented entry point for people and coding agents.
 The README explains setup and checks. AGENTS.md, a CLAUDE.md import, and optional
@@ -122,7 +123,8 @@ default. The service reviews files but does not execute them. See
 for setup, missing-information cases, manual retry, and limits.
 
 Assets are off by default. An installation can instead offer a reviewed PDF
-summary or an editable email draft. Starchat sends no email. See
+summary or an editable email draft. Reviewed email and telephone contacts, or
+Markdown downloads, can accompany the selected type. Starchat sends no email. See
 [conversation assets](https://stage.dev/resources/starchat-assets) for setup and limits.
 
 ## Facts from a signed-in application
@@ -133,7 +135,8 @@ retrieval, scope, and answer review remain. These facts stay out of the public
 index. The browser keeps this conversation only in RAM. A session check clears
 it if the account, company, permissions, or verified session changed or context
 is unavailable.
-In 0.5.0, this mode cannot be combined with building, assets, or origin migration.
+This mode cannot be combined with building or origin migration. Summaries and
+contacts require fresh context checks before preparation and display.
 See [verified session context](https://stage.dev/resources/starchat-request-context)
 for the provider contract and privacy limits.
 
