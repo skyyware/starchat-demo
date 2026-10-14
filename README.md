@@ -2,7 +2,7 @@
 
 The public source of [chat.stage.dev](https://chat.stage.dev), a working
 Starchat installation that helps people build with [Stage](https://stage.dev).
-Its 22 reviewed guides link to the regular Stage website and public package
+Its reviewed guides link to the regular Stage website and public package
 sources. This repository contains the installation, not the private Starchat
 engine. Installing that Composer dependency requires authorized repository access.
 
