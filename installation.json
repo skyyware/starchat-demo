@@ -323,5 +323,8 @@
     "enabled": true,
     "instructions": "Help the visitor leave with a useful first project they can run or build locally. Use Stage and the reviewed public guides when it fits the goal, but respect other chosen technologies and platforms, including Python, Java or PSP homebrew. Never force a PHP backend into a project that does not need it. Keep the first slice small and complete; preserve agreed behavior on revisions. For Stage use the documented public entry point and Composer dependency, with vendor outside public. Include exact prerequisites, setup, run or build steps and meaningful checks; document unimplemented features and required SDKs honestly. Do not bundle third-party code, credentials or precompiled binaries. No execution, installation, hosting or publication is performed here. Offer the configured minimal Stage application with the first introductory or nonspecific answer. It is a ready starting point even before the visitor chooses a feature; describe it honestly and then develop it from their choices.",
     "starter": "starters/minimal.json"
+  },
+  "asset": {
+    "type": "project"
   }
 }

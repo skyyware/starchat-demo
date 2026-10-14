@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.8'
+source_version: 'skyyware/starchat v0.5.0'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -96,17 +96,16 @@ choices that mix familiar applications with less obvious useful ones. Once a
 conversation starts, suggestions answer the open clarification or advance the
 stated goal. An unselected suggestion is never a confirmed fact about the visitor.
 
-An installation can enable optional project building. A reviewed, configured
-starter can appear with the first compatible introductory answer, without asking
-for a project name or first feature. Explicit other technologies and custom
-features use normal generation and independent review. A custom project cannot
-be reset to the starter.
+An installation can enable project building and select `asset.type: project`.
+A reviewed starter can appear with the first compatible answer. Other technologies
+and custom features use generation and independent review. A custom project
+cannot be reset to the starter.
 
 After a completed answer, the browser prepares a project for the current
 conversation. A concrete goal can produce a first useful version while reversible
 choices remain provisional. Those choices and open questions belong in
-`PROJECT.md`. The project area stays hidden while an answer or ZIP is being
-prepared. A download appears only when the current ZIP is ready; clicking it
+`PROJECT.md`. An answer hides the old download; preparing the next ZIP shows
+progress. A download appears only when the current ZIP is ready; clicking it
 makes no model request. Previous files stay available internally for revisions,
 but the interface does not offer an older ZIP as the current project.
 Previously downloaded files remain on the visitor's device.
@@ -122,6 +121,10 @@ default. The service reviews files but does not execute them. See
 [Build and download a project](https://stage.dev/resources/starchat-building)
 for setup, missing-information cases, manual retry, and limits.
 
+Assets are off by default. An installation can instead offer a reviewed PDF
+summary or an editable email draft. Starchat sends no email. See
+[conversation assets](https://stage.dev/resources/starchat-assets) for setup and limits.
+
 ## Facts from a signed-in application
 
 An installation can opt into verified session context. Its provider verifies
@@ -130,7 +133,7 @@ retrieval, scope, and answer review remain. These facts stay out of the public
 index. The browser keeps this conversation only in RAM. A session check clears
 it if the account, company, permissions, or verified session changed or context
 is unavailable.
-In 0.4.8, this mode cannot be combined with project building or origin migration.
+In 0.5.0, this mode cannot be combined with building, assets, or origin migration.
 See [verified session context](https://stage.dev/resources/starchat-request-context)
 for the provider contract and privacy limits.
 
@@ -151,7 +154,5 @@ shown. The model and reviewer can still share mistakes. No candidate is released
 when review fails. The application also enforces host and knowledge-owner
 matching, input bounds, and allowed links in code.
 
-Use the installation and knowledge guides to build your own application.
-The technical demo at [chat.stage.dev](https://chat.stage.dev) answers questions
-about stage and its packages. The regular website at stage.dev provides the
-public documentation used to prepare the demo's own Markdown knowledge.
+[chat.stage.dev](https://chat.stage.dev) demonstrates stage and its packages
+using its own reviewed snapshot of the public guides on stage.dev.

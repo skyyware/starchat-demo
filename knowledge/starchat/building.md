@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.8'
+source_version: 'skyyware/starchat v0.5.0'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -84,20 +84,21 @@ based_on: {  }
 
 # Build and download a project
 
-When building is enabled, Starchat prepares project files and local instructions
-from the conversation.
+With building enabled and `asset.type: project`, Starchat prepares project
+files and local instructions from the conversation.
 
 ## Define the first useful version
 
 Building is off by default. The operator sets `building.enabled` and
-`building.instructions` in `installation.json`. These cannot widen `scope`;
+`building.instructions`, plus `asset.type: project`, in `installation.json`.
+These cannot widen `scope`;
 visitor messages cannot replace them. Install PHP's zip extension on the server
 and rebuild the index. See [Install Starchat](https://stage.dev/resources/starchat-installation)
 for setup.
 
 Projects can use any language allowed by your installation, including
-Python or Java. The project does not need Stage or PHP. Describe its users,
-first useful behavior, and constraints. Suggestions remain proposals until chosen.
+Python or Java, without Stage or PHP. Describe the first useful behavior and
+constraints. Suggestions remain proposals until chosen.
 
 A concrete goal can produce a first version with open choices. A task list can
 add, edit, complete, and delete tasks while storage remains provisional.
@@ -113,8 +114,7 @@ must match its behavior. Starchat supplies no built-in Stage app. Disabled
 building cannot declare a starter.
 
 The answer and its independent reviewer can select the starter for a compatible
-introductory request. It can appear with the first answer, without a project name
-or first feature. An explicit different technology or custom feature uses normal
+introductory request. It can appear with the first answer, without a project name or first feature. An explicit different technology or custom feature uses normal
 preparation. Later answers cannot reset a custom project to the starter.
 Revising a starter passes its files into custom work.
 
@@ -128,10 +128,10 @@ atomically. Keep source and cache outside `public/`.
 
 After each completed answer, the browser automatically prepares custom work.
 The generator and independent reviewer use the conversation and previous
-generated files. You can keep chatting. The project area stays hidden while
-an answer or its ZIP is being prepared.
+generated files. You can keep chatting. An answer hides the old download; ZIP
+preparation shows progress without a percentage or promised completion time.
 
-**Download project ZIP** appears after generation, review, and ZIP creation
+**Download ZIP** appears after generation, review, and ZIP creation
 succeed for the current conversation. It downloads the archive without a model
 request. Repeated downloads reuse that archive.
 
@@ -190,6 +190,6 @@ HTTP request. The complete project permits 40 UTF-8 text files, 16 KiB each, and
 without dropping earlier requirements. See [operations](https://stage.dev/resources/starchat-operations)
 for deadlines and capacity. Rate limits are not a spending cap.
 
-Temporary ZIP files are removed after each request. Visitor archives are not
-retained on the server; the public starter cache is separate. This does not
-establish provider retention. Verify the actual settings and terms.
+Temporary ZIPs are removed after each request. Visitor archives are not retained
+on the server; the public starter cache is separate. Verify provider retention
+from its actual settings and terms.

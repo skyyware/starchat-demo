@@ -14,13 +14,15 @@ mobile. Do not add a duplicate theme here, a copy job or an automatic pipeline.
 The website's Start building action opens the chat in the same tab.
 
 This installation explicitly enables Starchat's optional project-building feature.
-Keep its implementation in the private engine, not in a demo-only wrapper.
+It explicitly selects asset.type=project for the current ZIP and preparation
+progress. Keep implementation in the private engine, not in a demo-only wrapper.
 Respect the visitor's chosen technology and installation constraints; do not
 force Stage into unrelated platforms. See docs/building.md for the ZIP contract.
 
-The active installations are Esslingen, Stage chat and Sonnenzeit. Sonnenzeit
+The active installations are Esslingen, Stage chat, Sonnenzeit and the fresh
+SKYYWARE adviser authorized on 14 October 2026. Sonnenzeit
 remains actively developed by its owner with a separate Stage preview. Do not revive
-the retired Starchat self-demo or SKYYWARE chat. No worker, task or scheduler may
+the retired Starchat self-demo or the archived old SKYYWARE repository/data. No worker, task or scheduler may
 be created as part of ordinary maintenance. GitHub Actions stays disabled.
 
 The knowledge snapshot owns only reviewed, public material. Use docs/knowledge.md

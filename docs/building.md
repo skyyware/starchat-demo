@@ -10,7 +10,8 @@ The installer packages the starter in advance. Its download needs no project
 generation. A concrete feature or another chosen technology starts a custom
 snapshot in the background after the answer. A download appears only when the complete, reviewed archive is ready.
 The download itself starts no model request. The latest snapshot is saved in the browser.
-The project section stays hidden while either an answer or a project is in progress.
+The project section stays hidden while an answer is in progress. Preparing the
+latest project shows a compact progress indicator; its ZIP appears only when ready.
 
 Starter requests receive a brief confirmation of the agreed behavior. The export
 contains the full files; explicit code questions can still receive examples.

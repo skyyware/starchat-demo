@@ -5,7 +5,7 @@ title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.8'
+source_version: 'skyyware/starchat v0.5.0'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -47,13 +47,12 @@ based_on: {  }
 
 # Operate a Starchat installation
 
-Keep code and reviewed Markdown separate from private runtime. Deploy the
-Composer lockfile with its matching index. The operator owns hosting, provider
-access, notices, and recovery.
+Deploy locked code with its reviewed knowledge index. Keep private runtime
+separate. The operator owns hosting, model access, notices, and recovery.
 
 ## Check limits and privacy
 
-Chat and custom projects share three concurrent requests per runtime. APCu enables an aggregate
+Chat, custom projects, and summaries share three concurrent requests per runtime. APCu enables an aggregate
 twenty-requests-per-minute limit per installation and PHP pool. Verify
 `aggregate_rate_limit: true` in `/health` and configure an appropriate edge
 limit for a public deployment. Rate limits are not a spending cap.
@@ -103,8 +102,8 @@ cached child modules from retaining old behavior after an update.
 
 Optional [session context](https://stage.dev/resources/starchat-request-context)
 uses RAM-only history. A scope change or failed session check clears it.
-It disables automatic recovery and cannot coexist with building or origin
-migration in 0.4.8. Its notices must identify the context provider, transmitted
+It disables automatic recovery and cannot coexist with building, assets, or
+origin migration in 0.5.0. Its notices must identify the context provider, transmitted
 facts, and actual retention. Memory-only browser history makes no provider
 retention promise.
 

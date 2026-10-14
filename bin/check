@@ -17,6 +17,7 @@ $fail = static function (bool $condition, string $message): void {
 };
 $installation = Installation::fromFile($root . '/installation.json');
 $fail($installation->id() === 'stage', 'Stage identity changed');
+$fail($installation->assetType() === 'project', 'Project asset must be explicitly selected');
 $fail($installation->building(), 'Project building must be enabled for this installation');
 $fail($installation->starter?->data['name'] === 'stage-app', 'The prepared minimal application is missing');
 $fail(class_exists(ZipArchive::class), 'Project downloads require the zip extension');
@@ -54,7 +55,7 @@ try {
     $knowledge = new Knowledge($installation, $runtime . '/knowledge.sqlite');
     $fail($knowledge->rebuild() === count($files), 'Index count mismatch');
     $fail(count($knowledge->catalogue(true)) === count($files), 'Ineligible reviewed snapshot');
-    foreach (['Starchat installation' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7? Are there number shortcuts?' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7?' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication', 'Four random app ideas' => 'starchat-app-ideas', 'Continue a downloaded project with Claude Code' => 'starchat-agent-handoff', 'Download the current project ZIP' => 'starchat-building'] as $query => $expected) {
+    foreach (['Starchat installation' => 'starchat-installation', 'PDF summary email conversation asset' => 'starchat-assets', 'How do I select a suggested question in Starchat 0.2.7? Are there number shortcuts?' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7?' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication', 'Four random app ideas' => 'starchat-app-ideas', 'Continue a downloaded project with Claude Code' => 'starchat-agent-handoff', 'Download the current project ZIP' => 'starchat-building'] as $query => $expected) {
         $ids = array_map(static fn (Document $document): string => $document->meta['id'], $knowledge->search($query));
         $fail(in_array($expected, $ids, true), 'Retrieval regression: ' . $query);
     }

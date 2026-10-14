@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.8'
+source_version: 'skyyware/starchat v0.5.0'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -74,7 +74,7 @@ based_on: {  }
 
 # Install Starchat
 
-Starchat 0.4.8 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.5.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -84,12 +84,12 @@ The core is private. The public
 [example installation](https://github.com/skyyware/starchat-demo) requires
 authorized access to that dependency and grants none.
 
-With authorized access, copy `examples/installation` from Starchat 0.4.8
+With authorized access, copy `examples/installation` from Starchat 0.5.0
 into an empty project. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.4.8 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.5.0 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -105,10 +105,9 @@ The host and knowledge owner must agree. Visitors cannot select another installa
 Use broad starter questions without assuming a technical background or chosen
 project. Later suggestions follow the visitor's stated goal.
 
-A building installation can instead provide a reviewed pool of app ideas.
-Starchat selects four per conversation, mixing familiar and less obvious uses.
-See [Configure opening app ideas](https://stage.dev/resources/starchat-app-ideas)
-for the fields, limits, and selection behavior.
+Building installations can offer four app ideas per conversation, mixing
+familiar and less obvious uses. See [opening app ideas](https://stage.dev/resources/starchat-app-ideas)
+for configuration and limits.
 
 Set `brand.home_url` to your HTTPS homepage. The logo or wordmark opens it in the same tab,
 or `/` when unset. There is no extra Home link. Set fonts, logo, favicon, and
@@ -165,6 +164,7 @@ Adapt these fields in `installation.json` to the work you support:
 ```json
 {
 	"scope": "Help visitors build small Python command-line tools.",
+	"asset": {"type": "project"},
 	"building": {
 		"enabled": true,
 		"instructions": "Use Python's standard library. Document setup and checks."
@@ -174,26 +174,31 @@ Adapt these fields in `installation.json` to the work you support:
 
 `building.instructions` cannot widen `scope`. These are operator settings;
 visitor messages cannot replace them. Rebuild the index to validate the settings
-and zip extension. Remove `building`, or remove its starter and set
-`building.enabled` to `false`, to disable the control and project generation.
+and zip extension. Assets are off by default, including after an upgrade: set
+`asset.type` to `project` for the download. To disable downloads and generation,
+remove both `asset` and `building`.
 
 After a completed answer, the browser automatically prepares the project.
-An operator can also set `building.starter` to a reviewed application in
-`starters/minimal.json` and rebuild the index. This ready starter can appear
-with the first compatible introductory answer. Custom work still passes
-through generation, independent review, and ZIP creation.
-**Download project ZIP** downloads the prepared archive without a model request.
+An optional `building.starter` supplies a reviewed ready application. Custom
+work still passes generation, independent review, and ZIP creation.
+**Download ZIP** downloads the prepared archive without a model request.
 
 Read [Build and download a project](https://stage.dev/resources/starchat-building)
 for archive contents, revisions, limits, and manual recovery. Describe automatic
 preparation, model input, and browser storage in your notices before enabling it.
 The service does not execute generated code or deploy it.
 
+## Offer other conversation assets
+
+PDF summaries and email drafts need no project building. Choose one asset type;
+see [conversation assets](https://stage.dev/resources/starchat-assets) for
+configuration, branding, language limits, privacy, and topic links.
+
 ## Connect a signed-in application
 
 For optional account facts, see
 [verified session context](https://stage.dev/resources/starchat-request-context).
-In 0.4.8, it cannot share an installation with building or origin migration.
+In 0.5.0, it cannot share an installation with building, assets, or origin migration.
 
 ## Check the installation
 
