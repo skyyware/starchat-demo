@@ -54,7 +54,7 @@ try {
     $knowledge = new Knowledge($installation, $runtime . '/knowledge.sqlite');
     $fail($knowledge->rebuild() === count($files), 'Index count mismatch');
     $fail(count($knowledge->catalogue(true)) === count($files), 'Ineligible reviewed snapshot');
-    foreach (['Starchat installation' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7? Are there number shortcuts?' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7?' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication'] as $query => $expected) {
+    foreach (['Starchat installation' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7? Are there number shortcuts?' => 'starchat-installation', 'How do I select a suggested question in Starchat 0.2.7?' => 'starchat-installation', 'Stage HTTP request' => 'stage-http', 'CMS published draft' => 'stage-cms-publication', 'Four random app ideas' => 'starchat-app-ideas', 'Continue a downloaded project with Claude Code' => 'starchat-agent-handoff', 'Download the current project ZIP' => 'starchat-building'] as $query => $expected) {
         $ids = array_map(static fn (Document $document): string => $document->meta['id'], $knowledge->search($query));
         $fail(in_array($expected, $ids, true), 'Retrieval regression: ' . $query);
     }
@@ -68,7 +68,7 @@ try {
     $fail($app->handle(new Request('GET', '/starchat/project.js'))->status === 200, 'Project browser module absent');
     $starter = $app->handle(new Request('GET', '/project/starter'));
     $prepared = json_decode($starter->body, true, flags: JSON_THROW_ON_ERROR);
-    $fail($starter->status === 200 && $prepared['project'] === $installation->starter->data && str_starts_with($prepared['archive'], 'UEsDB'), 'Prepared starter download unavailable');
+    $fail($starter->status === 200 && $prepared['project'] === Starchat\ProjectHandoff::prepare($installation->starter)->data && str_starts_with($prepared['archive'], 'UEsDB'), 'Prepared starter download unavailable');
     foreach (['/', '/legal', '/sources', ...$paths] as $path) {
         $fail($app->handle(new Request('GET', $path))->status === 200, 'Public route failed: ' . $path);
     }

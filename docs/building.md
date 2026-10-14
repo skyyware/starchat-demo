@@ -10,6 +10,7 @@ The installer packages the starter in advance. Its download needs no project
 generation. A concrete feature or another chosen technology starts a custom
 snapshot in the background after the answer. A download appears only when the complete, reviewed archive is ready.
 The download itself starts no model request. The latest snapshot is saved in the browser.
+The project section stays hidden while either an answer or a project is in progress.
 
 Starter requests receive a brief confirmation of the agreed behavior. The export
 contains the full files; explicit code questions can still receive examples.
@@ -30,16 +31,30 @@ and reviews custom files but does not execute them. Visitors
 run the documented checks in their own environment. Changes made outside this
 chat are not uploaded or synchronized back.
 
-A repeated download reuses the prepared snapshot. New decisions, clarification,
-preparation and failures keep the last ready version downloadable. Its label
-states that later changes are not included yet. Only a completed replacement
-overwrites the older browser archive and releases its download URL. If an older
+A repeated download reuses the prepared current snapshot. Each completed answer
+prepares the newest useful first slice, including concrete features discussed
+while optional choices remain open. Provisional choices are documented.
+Only a ready archive matching the latest conversation is offered. The previous
+project remains internal revision input until a completed replacement succeeds.
+Unchanged files are preserved; the assembled project receives independent review.
+If an older
 client removed a previously offered starter, the conversation can restore that
 configured starter before preparing a revision. This does not recover lost custom
 files or replace a saved custom project. New conversation clears the project.
 Files already downloaded onto the visitor’s
 device remain theirs. A storage failure is shown while the current download stays
 available in memory. Preparation failures offer a manual retry.
+
+At the start, four concrete app ideas are drawn from the installation's reviewed
+English/German pool. Both familiar and unexpected ideas appear; the long-run
+ratio is approximately 1 to the golden ratio. Choices stay stable across reloads
+and language changes until a new conversation starts. Contextual follow-ups
+replace them after an answer. Short labels submit the complete app request.
+
+Ready ZIPs include AGENTS.md, CLAUDE.md, and docs/agent-tools.md when absent.
+Existing project instructions survive revisions. README explains how to continue
+with a coding agent. Optional tools are suggestions for the visitor's own agent;
+the service installs no plugins, hooks, accounts or additional workers.
 
 Exports are bounded to 40 text files and 32 KiB of serialized project, with
 24 KiB of conversation input. Oversized conversations are rejected visibly.

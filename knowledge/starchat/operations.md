@@ -3,9 +3,9 @@ id: starchat-operations
 entity: stage
 title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
-retrieved_at: '2026-10-12'
+retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.4.6'
+source_version: 'skyyware/starchat v0.4.7'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -47,8 +47,7 @@ based_on: {  }
 
 # Operate a Starchat installation
 
-Keep the installation's immutable code and reviewed Markdown separate from its
-private writable runtime. Deploy the Composer lockfile and a matching knowledge
+Keep immutable code and reviewed Markdown separate from private writable runtime. Deploy the Composer lockfile and a matching knowledge
 index together. The installation owns its host, provider account, privacy notice,
 and recovery procedure.
 
@@ -65,12 +64,14 @@ allows 64 KiB. Oversized history is rejected without dropping requirements.
 See [project limits](https://stage.dev/resources/starchat-building) for file
 and archive bounds.
 
-Allow at least 55 seconds at the proxy and PHP worker. Selection, answering,
-and review calls have a 25-second limit. Project generation has a 35-second
-limit. Each answer or project shares a 45-second deadline across its phases,
-so project review also stops when the remaining time runs out. The browser
-gives up at 50 seconds. A disconnected browser does not prove that provider
-work stops immediately.
+Ordinary chat needs at least 55 seconds at the proxy and PHP worker.
+Selection, answering, and review have a 25-second limit within a shared
+45-second deadline. The browser allows 50 seconds.
+
+Building needs at least 130 seconds at the proxy and worker. Generation has
+a 90-second limit; independent review has a 25-second limit and must fit the
+remaining time in the shared 115-second deadline. The browser allows 120 seconds.
+These limits promise no delivery time. Disconnecting may leave provider work running.
 
 In ordinary chat, the browser keeps the conversation until it is reset or cleared.
 The model provider receives a bounded history and relevant knowledge. Verify
@@ -102,7 +103,7 @@ cached child modules from retaining old behavior after an update.
 Optional [session context](https://stage.dev/resources/starchat-request-context)
 uses RAM-only history. A scope change or failed session check clears it.
 It disables automatic recovery and cannot coexist with building or origin
-migration in 0.4.6. Its notices must identify the context provider, transmitted
+migration in 0.4.7. Its notices must identify the context provider, transmitted
 facts, and actual retention. Memory-only browser history makes no provider
 retention promise.
 

@@ -85,10 +85,117 @@
       "orientation": "Ich helfe dir, ein Softwareprojekt zu planen und zu bauen, einen passenden Einstieg zu wählen und Stage kennenzulernen.",
       "followup": "Was möchtest du bauen?",
       "suggestions": [
-        "Hilf mir, aus meiner Idee ein Projekt zu machen",
-        "Was kann ich mit stage bauen?",
-        "Passt stage zu meiner Idee?",
-        "Wie fange ich an?"
+        "Eine Aufgabenliste bauen",
+        "Meine Arbeit im Portfolio zeigen",
+        "Reparaturen meiner Geräte festhalten",
+        "Lebensmittel rechtzeitig aufbrauchen"
+      ],
+      "app_ideas": [
+        {
+          "kind": "familiar",
+          "label": "Eine Aufgabenliste bauen",
+          "question": "Ich möchte eine Aufgabenliste bauen, in der ich Aufgaben hinzufügen, bearbeiten, abschließen und löschen kann"
+        },
+        {
+          "kind": "familiar",
+          "label": "Meine Arbeit im Portfolio zeigen",
+          "question": "Ich möchte ein Portfolio mit Projekten, Bildern und einem Kontaktbereich bauen"
+        },
+        {
+          "kind": "familiar",
+          "label": "Terminanfragen organisieren",
+          "question": "Ich möchte eine App bauen, die Terminanfragen sammelt und als bestätigt oder abgelehnt markiert"
+        },
+        {
+          "kind": "familiar",
+          "label": "Mahlzeiten aus meinen Rezepten planen",
+          "question": "Ich möchte eine Rezeptsammlung mit Wochenplan und Einkaufsliste bauen"
+        },
+        {
+          "kind": "familiar",
+          "label": "Ein Quiz für Freunde bauen",
+          "question": "Ich möchte ein Quiz bauen, in dem ich Fragen erstelle, eine Runde spiele und das Ergebnis sehe"
+        },
+        {
+          "kind": "familiar",
+          "label": "Meine Sachen im Blick behalten",
+          "question": "Ich möchte ein persönliches Inventar mit Namen, Aufbewahrungsorten und Notizen bauen"
+        },
+        {
+          "kind": "familiar",
+          "label": "Eine Leseliste organisieren",
+          "question": "Ich möchte eine Leseliste bauen, in der ich Bücher und Artikel speichere, meinen Fortschritt festhalte und Notizen ergänze"
+        },
+        {
+          "kind": "familiar",
+          "label": "Ein kleines Gemeinschaftsevent planen",
+          "question": "Ich möchte einen Planer für kleine Veranstaltungen mit Ablauf, Aufgaben und einer Mitbringliste bauen"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Reparaturen meiner Geräte festhalten",
+          "question": "Ich möchte einen Reparaturpass für Haushaltsgeräte mit Kaufdaten, Reparaturverlauf und nächstem Wartungstermin bauen"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Lebensmittel rechtzeitig aufbrauchen",
+          "question": "Ich möchte eine Vorratsliste bauen, die Lebensmittel nach meinen eingetragenen Daten sortiert, damit ich weiß, was zuerst weg muss"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Festhalten, warum wir etwas entschieden haben",
+          "question": "Ich möchte ein Entscheidungsbuch bauen, das Entscheidungen, Gründe, Annahmen und einen Termin zur Überprüfung festhält"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Wissen, wer was ausgeliehen hat",
+          "question": "Ich möchte ein Leihbuch für Werkzeuge und Bücher mit Spitznamen, vereinbarten Rückgabeterminen und Rückgabestatus bauen"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Eine hilfreiche Übergabe vorbereiten",
+          "question": "Ich möchte ein Übergabebuch mit aktuellen Aufgaben, bekannten Problemen und dem nächsten Schritt für die übernehmende Person bauen"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Quellen neben KI-Aussagen festhalten",
+          "question": "Ich möchte ein Notizbuch bauen, in dem ich KI-Antworten einfüge, Quellenlinks ergänze und Aussagen als geprüft, unsicher oder falsch markiere"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Offene Rückmeldungen im Blick behalten",
+          "question": "Ich möchte eine Warteliste für erwartete Antworten oder Lieferungen mit letzter Nachfrage und nächstem Prüftermin bauen"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Vor dem Kauf nach Leihmöglichkeiten schauen",
+          "question": "Ich möchte eine persönliche Liste bauen, in der ich vor einem Kauf nachsehen kann, was ich wo ausleihen kann"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Zugänglichkeit von Orten notieren",
+          "question": "Ich möchte ein Ortsnotizbuch für eigene Beobachtungen zur Zugänglichkeit bauen, etwa Stufen, Sitzplätze, Eingänge und Prüfdatum"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Mir selbst den Wiedereinstieg erleichtern",
+          "question": "Ich möchte ein Wiedereinstiegsbuch für Projekte bauen, das den letzten Stand, den nächsten kleinen Schritt und nötige Dateien oder Links festhält"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Wissen, ob meine Backups funktionieren",
+          "question": "Ich möchte ein Backup-Prüfbuch bauen, in dem ich manuelle Wiederherstellungstests, ihr Ergebnis und den nächsten Prüftermin festhalte"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Gespeicherte Ersatzteilinfos wiederfinden",
+          "question": "Ich möchte ein Ersatzteilnotizbuch mit Gerätemodell, Teilenummern, Maßen und von mir geprüften Links bauen"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Ruhige Zeiten für gemeinsame Aufgaben finden",
+          "question": "Ich möchte einen Haushaltsplaner mit Ruhezeiten und lauten Aufgaben bauen, damit wir passende Zeiten für alle finden"
+        }
       ]
     },
     "en": {
@@ -97,10 +204,117 @@
       "orientation": "I can help you define and build a software project, choose a suitable starting point, and get to know Stage.",
       "followup": "What would you like to build?",
       "suggestions": [
-        "Help me turn my idea into a project",
-        "What can I build with stage?",
-        "Is stage right for my idea?",
-        "How do I get started?"
+        "Build a task list",
+        "Show my work in a portfolio",
+        "Keep a repair passport for my things",
+        "Use food before it goes to waste"
+      ],
+      "app_ideas": [
+        {
+          "kind": "familiar",
+          "label": "Build a task list",
+          "question": "I want to build a task list where I can add, edit, complete, and delete tasks"
+        },
+        {
+          "kind": "familiar",
+          "label": "Show my work in a portfolio",
+          "question": "I want to build a portfolio with projects, images, and a contact section"
+        },
+        {
+          "kind": "familiar",
+          "label": "Organize appointment requests",
+          "question": "I want to build an app to collect appointment requests and mark them confirmed or declined"
+        },
+        {
+          "kind": "familiar",
+          "label": "Plan meals from my recipes",
+          "question": "I want to build a recipe collection with a weekly meal plan and a shopping list"
+        },
+        {
+          "kind": "familiar",
+          "label": "Make a quiz for friends",
+          "question": "I want to build a quiz where I can write questions, play a round, and see the score"
+        },
+        {
+          "kind": "familiar",
+          "label": "Keep track of my belongings",
+          "question": "I want to build a personal inventory with item names, locations, and notes"
+        },
+        {
+          "kind": "familiar",
+          "label": "Organize a reading list",
+          "question": "I want to build a reading list where I can save books and articles, track progress, and add notes"
+        },
+        {
+          "kind": "familiar",
+          "label": "Plan a small community event",
+          "question": "I want to build an event planner with a schedule, tasks, and a list of things to bring"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Keep a repair passport for my things",
+          "question": "I want to build a repair passport for household items with purchase details, repair history, and the next maintenance date"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Use food before it goes to waste",
+          "question": "I want to build a pantry list that sorts food by the dates I enter so I know what to use first"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Remember why we made a decision",
+          "question": "I want to build a decision log that records the choice, reasons, assumptions, and a date to review the outcome"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Remember who borrowed what",
+          "question": "I want to build a lending notebook for tools and books with borrower nicknames, agreed return dates, and returned status"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Make a useful handover in minutes",
+          "question": "I want to build a handover notebook with current tasks, known problems, and the next action for whoever takes over"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Keep sources beside AI claims",
+          "question": "I want to build a claim notebook where I can paste an AI answer, attach source links, and mark claims as checked, uncertain, or incorrect"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Track things I am waiting for",
+          "question": "I want to build a waiting-for list with the expected reply or delivery, the last follow-up, and the next date to check"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Check what I can borrow before buying",
+          "question": "I want to build a personal list of things I can borrow and where, so I can check it before adding an item to my shopping list"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Save accessibility notes for places",
+          "question": "I want to build a place notebook for my own accessibility observations, such as steps, seating, entrances, and when I last checked them"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Leave my future self a restart note",
+          "question": "I want to build a project restart notebook with what I last did, the next small action, and the files or links I need"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Track restore tests for my backups",
+          "question": "I want to build a backup practice log where I record a manual restore test, its outcome, and the next date to try again"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Find the spare-part details I saved",
+          "question": "I want to build a spare-parts notebook with the appliance model, part numbers, measurements, and links I have checked"
+        },
+        {
+          "kind": "unexpected",
+          "label": "Find a quiet time for shared tasks",
+          "question": "I want to build a household planner with quiet hours and noisy tasks so we can choose times that suit everyone"
+        }
       ]
     }
   },
