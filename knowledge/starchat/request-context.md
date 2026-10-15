@@ -5,7 +5,7 @@ title: 'Use verified session context'
 source: 'https://stage.dev/resources/starchat-request-context'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.7'
+source_version: 'skyyware/starchat v0.7.2'
 public_path: /resources/starchat-request-context
 topic_terms:
   - 'request context'

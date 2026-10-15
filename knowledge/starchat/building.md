@@ -3,9 +3,9 @@ id: starchat-building
 entity: stage
 title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.7'
+source_version: 'skyyware/starchat v0.7.2'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -29,6 +29,8 @@ topic_terms:
   - 'projekt vorbereiten'
   - 'erneut vorbereiten'
 phrase_terms:
+  - 'project description'
+  - 'four words'
   - 'project review'
   - 'unavailable project review'
   - 'project review retry'
@@ -47,6 +49,8 @@ keywords:
   - 'project download'
   - 'project export'
   - 'project preparation'
+  - 'project description'
+  - 'four words'
   - 'prepare again'
   - 'automatic preparation'
   - 'ready starter'
@@ -111,7 +115,7 @@ that blocks useful work still needs an answer.
 An operator can set `building.starter` to `starters/minimal.json`. The JSON file
 contains `status: "ready"`, `name`, `summary`, `open_questions`, and `files` with
 `path` and `content`. Review and run this application before release. Its summary
-must match its behavior. Starchat supplies no built-in Stage app. Disabled
+uses at most four words matching its behavior. Starchat supplies no built-in Stage app. Disabled
 building cannot declare a starter.
 
 The answer and its independent reviewer can select the starter for a compatible
@@ -127,14 +131,15 @@ atomically. Keep source and cache outside `public/`.
 
 ## Download the current project
 
-The answer appears first. The browser then automatically prepares custom work
-in a compact card after the input and suggestions. The generator and independent reviewer use
-the conversation and previous files. You can keep chatting. Progress has no
-percentage or promised completion time.
+The answer appears first. Preparation then runs after the input and suggestions
+while you keep chatting. Progress has no percentage or completion promise.
+Generation and independent review use the conversation and previous files.
+Only a reviewed, assembled ZIP becomes downloadable.
 
-**Download ZIP** appears after generation, review, and ZIP creation
-succeed for the current conversation. It downloads the archive without a model
-request. Repeated downloads reuse that archive.
+The ready card shows a code-folder icon, at most four words describing the
+implemented function, and **Download ZIP** for the current conversation. Details stay in the ZIP's README.md
+and PROJECT.md; there is no contents disclosure. Clicking starts no model call.
+Older saved ZIPs with long summaries use up to four words from their project name.
 
 A new question hides the previous download. Earlier files stay available
 internally for the next revision. There is no **Download last ready ZIP** action.
@@ -146,14 +151,12 @@ A temporarily unavailable review may run once more within the same 115-second
 deadline. Cancellation, timeouts, and rejected or malformed reviews do not trigger
 this retry. Generation is not repeated.
 
-A failed preparation offers **Prepare again**. It retries only when selected.
-Redraws do not repeat failed attempts. This guard lasts for the open page;
-reloading or opening another tab can prepare again without a matching ZIP.
+A failure offers **Prepare again**, which retries only when selected. Redraws
+never retry it. Reloading or another tab can prepare again without a matching ZIP.
 
-A successful replacement overwrites the installation's separate `:project`
-browser-storage entry. Obsolete Blob URLs, the browser's temporary download
-addresses, are released. A saved starter selection can restore the configured
-starter when its archive is missing. This cannot restore lost custom files.
+A successful replacement overwrites the separate `:project` browser-storage
+entry and releases obsolete download URLs. A saved starter selection can restore
+its configured archive, but cannot recover lost custom files.
 
 **New conversation** clears the saved project. Files downloaded onto your device
 remain there. A new question, language change, or reset cancels preparation.
@@ -171,8 +174,8 @@ A fresh Git repository on `main` has no commits, index, identity, hooks, or
 remote. Files are untracked and ready for your first commit. Install dependencies
 and SDKs locally; the archive bundles no third-party binaries or dependency trees.
 
-The service does not execute generated code or deploy it. Independent review
-cannot prove that the application works. Inspect the files and run their checks.
+The service neither executes nor deploys generated code. Review cannot prove it
+works; inspect the files and run their checks.
 See [Continue a downloaded project with an agent](https://stage.dev/resources/starchat-agent-handoff)
 for Codex, Claude Code, Grok Build, and optional plugins.
 

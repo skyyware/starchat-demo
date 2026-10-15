@@ -12,6 +12,10 @@ snapshot in the background after the answer. A download appears only when the co
 The download itself starts no model request. The latest snapshot is saved in the browser.
 The project section stays hidden while an answer is in progress. Preparing the
 latest project shows a compact progress indicator; its ZIP appears only when ready.
+The ready card uses a code-folder icon and a description of the current function
+in at most four words. Project details stay in README.md and PROJECT.md inside
+the ZIP; there is no contents disclosure on the card. Older saved archives remain
+usable, with a short project-name caption until their next revision.
 
 Starter requests receive a brief confirmation of the agreed behavior. The export
 contains the full files; explicit code questions can still receive examples.

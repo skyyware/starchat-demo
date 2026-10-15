@@ -3,9 +3,9 @@ id: starchat-installation
 entity: stage
 title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.7'
+source_version: 'skyyware/starchat v0.7.2'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -90,7 +90,7 @@ into an empty project. Run:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.6.7 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.7.2 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route

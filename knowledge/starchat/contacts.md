@@ -3,9 +3,9 @@ id: starchat-contacts
 entity: stage
 title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.7'
+source_version: 'skyyware/starchat v0.7.2'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -84,8 +84,9 @@ code. The visitor's language selection does not change them.
 
 The summary, action labels, and telephone checklists use the visitor's selected
 language. Each email subject and body use the recipient's language. An English
-summary can therefore include a German email. Generation and independent review
-check this separation.
+summary can therefore include a German email. Letters written directly in chat
+follow the same rule; surrounding explanations retain the conversation language.
+Generation and independent review check this separation.
 
 ## Record contacts in their source article
 
@@ -135,6 +136,11 @@ The model chooses a catalogue ID. The server resolves the exact address and URI;
 the model cannot supply a new destination. No matching contact means no action.
 Up to four actions can appear, each checked by the independent summary reviewer.
 An older topic must not supply an irrelevant contact for the current concern.
+
+A current email draft with a matching verified recipient must offer that email
+action. It preserves the latest corrections and placeholders. A writing-only
+revision keeps the last substantive contact query; a new topic replaces it.
+Superseded drafts and unrelated or unverified addresses create no action.
 
 Email actions contain a complete editable letter with a greeting, the stated
 situation, a request, and a closing. Blank lines separate paragraphs; the server

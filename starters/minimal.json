@@ -1,7 +1,7 @@
 {
   "status": "ready",
   "name": "stage-app",
-  "summary": "A minimal Stage web application with a JSON endpoint, local run instructions and application checks. Add your first feature from here.",
+  "summary": "Return a JSON greeting",
   "open_questions": [
     "What should the first useful feature do?"
   ],

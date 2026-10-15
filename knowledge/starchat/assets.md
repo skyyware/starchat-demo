@@ -3,9 +3,9 @@ id: starchat-assets
 entity: stage
 title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.6.7'
+source_version: 'skyyware/starchat v0.7.2'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -89,12 +89,12 @@ both, remove `asset` and `building`.
 
 ## Keep the result current
 
-The answer appears before asset preparation starts. Compact cards follow the
-input and suggested questions, at the end of the conversation. They show progress
-while you keep chatting. A new question hides the previous ZIP or PDF and cancels
-preparation. Progress has no percentage or completion time. Only the current
-result gets a download; clicking it starts no model call. A failure offers a
-manual retry. PDFs have no inline preview; their button opens the prepared file.
+The answer appears before preparation. Assets follow the input and suggestions.
+PDF, email and contact cards appear only when ready, with motion disabled when
+requested. Progress and retry controls remain separate while you keep chatting.
+A new question hides old downloads and cancels preparation. Progress has no
+percentage or time promise. Downloads start no model call. PDFs have no inline
+preview; their button opens the prepared file.
 
 PDF preparation skips a first clarification with no useful content. Earlier useful
 content can still be summarized after a later question. The browser accepts
@@ -141,7 +141,8 @@ No matching contact means no contact action.
 ## Use installation branding in PDFs
 
 PDFs use local branding and supported fonts. They contain the reviewed summary,
-next steps, contacts, links, date, and page numbers, without a generic disclaimer footer.
+next steps, contacts, date and page numbers. Web links print their full addresses,
+wrap within the page and remain clickable. There is no generic disclaimer footer.
 
 Latin, Greek, and Cyrillic require available glyphs. Complex scripts, including
 Arabic, and missing glyphs fail explicitly. Visitors can choose a German PDF;

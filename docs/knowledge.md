@@ -19,10 +19,10 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 14 October 2026 snapshot covers Starchat 0.6.7. It describes compact asset
-cards after the input and suggestions, organization-language email drafts with
-complete paragraphs, and direct summaries without an inline PDF preview.
-The fixed email contact requires a completed exchange and a prepared draft.
-Opening ideas and verified-context input behavior match the current engine.
-The public contacts guide explains the configuration and verified metadata.
-This demo keeps its project ZIP configuration.
+The 15 October 2026 snapshot covers Starchat 0.7.2. Ready project cards show a
+code-folder icon and at most four words describing the implemented function.
+Project details remain in the downloaded README and PROJECT documents.
+The assets and contacts guides also explain recipient-language drafts, retention
+of current email corrections, printed PDF destinations, and separate progress
+before PDF, email or contact cards appear. This demo keeps its project ZIP
+configuration; other asset types remain disabled.
