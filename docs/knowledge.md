@@ -19,7 +19,7 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 15 October 2026 snapshot covers Starchat 0.7.4. Ready project cards show a
+The 15 October 2026 snapshot covers Starchat 0.7.5. Ready project cards show a
 code-folder icon and at most four words describing the implemented function.
 Project details remain in the downloaded README and PROJECT documents.
 The assets and contacts guides also explain recipient-language drafts, retention
