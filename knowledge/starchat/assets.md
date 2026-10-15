@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.2'
+source_version: 'skyyware/starchat v0.7.4'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -90,11 +90,12 @@ both, remove `asset` and `building`.
 ## Keep the result current
 
 The answer appears before preparation. Assets follow the input and suggestions.
-PDF, email and contact cards appear only when ready, with motion disabled when
-requested. Progress and retry controls remain separate while you keep chatting.
-A new question hides old downloads and cancels preparation. Progress has no
-percentage or time promise. Downloads start no model call. PDFs have no inline
-preview; their button opens the prepared file.
+PDF, email and contact cards appear only when ready. They prepare silently;
+failures offer manual retry. Project ZIPs keep progress. Ready cards
+slide and fade unless reduced motion is requested. Bundles use a document archive
+icon. A new question cancels preparation and hides
+old downloads; you can keep chatting. Downloads start no model call.
+PDFs have no inline preview; their button opens the prepared file.
 
 PDF preparation skips a first clarification with no useful content. Earlier useful
 content can still be summarized after a later question. The browser accepts
@@ -110,10 +111,10 @@ Project ZIP storage and revision input follow
 
 ## Prepare a faithful summary
 
-The generator receives the bounded conversation and installation scope. A separate
-reviewer checks the summary. Both state established facts and supported next steps
-directly, preserving corrections, actual uncertainty, and open decisions. Unverified
-claims keep their attribution. Summaries omit transcript narration and blanket disclaimers.
+Generation and independent review use the bounded conversation and installation
+scope. Summaries state established facts and supported steps, keeping corrections,
+uncertainty and open decisions. Unverified claims keep attribution. Summaries
+omit transcript narration and blanket disclaimers.
 A proposal is not an agreement; an appointment request is not a confirmation.
 Review checks faithfulness to the conversation, not the truth of every claim.
 

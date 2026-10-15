@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.2'
+source_version: 'skyyware/starchat v0.7.4'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -75,22 +75,19 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.6.7 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.7.4 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
 ## Create the project
 
-The core is private. The public
-[example installation](https://github.com/skyyware/starchat-demo) requires
-authorized access to that dependency and grants none.
-
-With authorized access, copy `examples/installation` from Starchat 0.6.7
-into an empty project. Run:
+The core is private; the [public example](https://github.com/skyyware/starchat-demo)
+grants no access. With authorized access, copy `examples/installation` from
+Starchat 0.7.4 into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.7.2 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.7.4 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -103,12 +100,15 @@ Edit `installation.json`. Set a unique `id`, allowed HTTPS `hosts`, `website`,
 `scope`, interface `copy`, and `brand`. Define what the chat helps with.
 The host and knowledge owner must agree. Visitors cannot select another installation.
 
-Use broad starter questions without assuming a technical background or chosen
-project. Later suggestions follow the visitor's stated goal.
+Optional `copy.<locale>.missing` sets the no-information answer. Use 1 to 500
+plain-text characters, not whitespace alone. Locale fallback applies.
+Omit it for defaults; service-unavailable messages stay unchanged.
 
-Building installations can offer four app ideas per conversation, mixing
-familiar and less obvious uses. See [opening app ideas](https://stage.dev/resources/starchat-app-ideas)
-for configuration and limits.
+Start with general questions without assuming technical knowledge or a project.
+Later suggestions follow the visitor's goal.
+
+Building installations can mix four familiar and less obvious
+[opening app ideas](https://stage.dev/resources/starchat-app-ideas) per conversation.
 
 Set `brand.home_url` to your HTTPS homepage. The logo or wordmark opens it in the same tab,
 or `/` when unset. There is no extra Home link. Set fonts, logo, favicon, and
@@ -137,8 +137,8 @@ Build the index from the project directory:
 vendor/bin/starchat index
 ```
 
-Expect the installation ID and document count. Failed validation preserves the
-index. Indexing does not fact-check articles.
+Expect the installation ID and article count. Failed validation preserves the
+index; indexing does not check facts.
 
 ## Connect the model
 
@@ -156,9 +156,8 @@ grant no access. A provider rejection does not trigger a tier fallback.
 
 ## Enable project ZIP downloads
 
-Building is off by default. Projects can use any language
-allowed by your installation, including Python or Java, without Stage or PHP.
-Install PHP's zip extension on the chat server.
+Building is off by default. It supports permitted languages, including Python or
+Java without Stage or PHP. The chat server needs PHP's zip extension.
 
 Adapt these fields in `installation.json` to the work you support:
 
@@ -173,11 +172,10 @@ Adapt these fields in `installation.json` to the work you support:
 }
 ```
 
-`building.instructions` cannot widen `scope`. These are operator settings;
-visitor messages cannot replace them. Rebuild the index to validate the settings
-and zip extension. Assets are off by default, including after an upgrade: set
-`asset.type` to `project` for the download. To disable downloads and generation,
-remove both `asset` and `building`.
+`building.instructions` cannot widen `scope`; visitors cannot replace either.
+Rebuild the index to validate settings and the zip extension. Assets stay off
+after upgrades; set `asset.type` to `project` for downloads. Remove both `asset`
+and `building` to disable downloads and generation.
 
 The answer appears before project preparation starts. You can keep chatting.
 An optional `building.starter` supplies a reviewed ready application. Custom

@@ -5,7 +5,7 @@ title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
 retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.2'
+source_version: 'skyyware/starchat v0.7.4'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -132,10 +132,11 @@ search for contact sources, and source links in the latest answer. At most twelv
 contacts reach the model. Fresh verified request documents take precedence over
 public documents with the same ID. Stale contacts and disabled channels are excluded.
 
-The model chooses a catalogue ID. The server resolves the exact address and URI;
-the model cannot supply a new destination. No matching contact means no action.
-Up to four actions can appear, each checked by the independent summary reviewer.
-An older topic must not supply an irrelevant contact for the current concern.
+The model chooses a catalogue ID and cannot supply a new destination.
+No matching contact means no action. Independent review checks up to four actions using their contact key, label,
+subject, exact body and checklist. Recipient, language and purpose come from
+the trusted catalogue. The server adds resolved destinations after review.
+Unapproved links are rejected; old topics must not supply irrelevant contacts.
 
 A current email draft with a matching verified recipient must offer that email
 action. It preserves the latest corrections and placeholders. A writing-only

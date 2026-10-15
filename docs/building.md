@@ -13,7 +13,8 @@ The download itself starts no model request. The latest snapshot is saved in the
 The project section stays hidden while an answer is in progress. Preparing the
 latest project shows a compact progress indicator; its ZIP appears only when ready.
 The ready card uses a code-folder icon and a description of the current function
-in at most four words. Project details stay in README.md and PROJECT.md inside
+in at most four words. It enters with a short slide and fade, disabled by
+reduced-motion preferences. Project details stay in README.md and PROJECT.md inside
 the ZIP; there is no contents disclosure on the card. Older saved archives remain
 usable, with a short project-name caption until their next revision.
 

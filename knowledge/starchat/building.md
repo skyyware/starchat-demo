@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-15'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.2'
+source_version: 'skyyware/starchat v0.7.4'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -137,8 +137,10 @@ Generation and independent review use the conversation and previous files.
 Only a reviewed, assembled ZIP becomes downloadable.
 
 The ready card shows a code-folder icon, at most four words describing the
-implemented function, and **Download ZIP** for the current conversation. Details stay in the ZIP's README.md
-and PROJECT.md; there is no contents disclosure. Clicking starts no model call.
+implemented function, and **Download ZIP** for the current conversation.
+It slides and fades in unless reduced motion is on. Details stay
+in the ZIP's README.md and PROJECT.md; there is no contents disclosure.
+Clicking starts no model call.
 Older saved ZIPs with long summaries use up to four words from their project name.
 
 A new question hides the previous download. Earlier files stay available
