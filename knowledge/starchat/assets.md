@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.8.0'
+source_version: 'skyyware/starchat v0.8.1'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -87,9 +87,10 @@ independently enabled project-building API; remove `asset` and `building` to dis
 
 ## Keep the result current
 
-The answer appears before preparation. Creation actions sit beside the suggestions.
-Only a click starts preparation. The request appears in the conversation, visible
-progress replaces the composer, and reviewed cards appear only when ready.
+The answer appears before preparation. Creation actions sit beside the suggestions
+and share their text layout, arrow and styling. Only a click starts preparation.
+The request appears in the conversation, visible progress replaces the composer,
+and reviewed cards appear only when ready.
 Failures offer manual retry. Loading, restored history and completed answers
 never prepare assets. Repeating an action reveals its result for that answer.
 Cards slide and fade unless reduced motion is on. Bundles use a document archive

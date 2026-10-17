@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.8.0'
+source_version: 'skyyware/starchat v0.8.1'
 public_path: /resources/starchat-building
 topic_terms:
   - building
