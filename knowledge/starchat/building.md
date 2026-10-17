@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.8.1'
+source_version: 'skyyware/starchat v0.9.0'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -29,6 +29,8 @@ topic_terms:
   - 'projekt vorbereiten'
   - 'erneut vorbereiten'
 phrase_terms:
+  - 'progress bar'
+  - ladebalken
   - 'project description'
   - 'four words'
   - 'project review'
@@ -49,6 +51,8 @@ keywords:
   - 'project download'
   - 'project export'
   - 'project preparation'
+  - 'progress bar'
+  - ladebalken
   - 'project description'
   - 'four words'
   - 'prepare again'
@@ -128,8 +132,9 @@ Missing or changed data is rebuilt from validated source and replaced atomically
 
 The answer appears first. Click **Create project ZIP** beside the suggestions
 to begin. Loading, restored history and completed answers never start a build.
-The click appears in the conversation. The normal progress line replaces the
-composer until preparation finishes, without a percentage or completion promise.
+The click appears in the conversation. Answers and preparation use the same
+centered progress bar without visible text. Completed steps advance it.
+Elapsed time does not.
 Generation and independent review use the conversation and previous files.
 Only a reviewed, assembled ZIP becomes downloadable.
 

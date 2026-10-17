@@ -7,6 +7,16 @@ The chat retains the engine's layout and behavior. The shared stylesheet wins
 over installation fallback tokens, so changing a color or font there changes
 both surfaces on their next load.
 
+Chat navigation, suggestions and download actions share one font size and the
+bright text color. Controls and cards have no borders or outlines. Keyboard
+focus changes the fill or underlines the text. Download actions sit vertically
+centered beside the project description. Answers and requested assets use one
+thin, centered progress bar with no visible status text.
+At most four choices appear, including asset actions; four use two rows where space allows.
+Each keeps its own text width. Additional actions stay under **More options**.
+Initial, reset and topic-entry focus waits for a ready composer and respects
+typing or a visitor-selected focus.
+
 `installation.json` uses `brand.asset_origin=https://stage.dev`,
 `brand.stylesheet=/branding/stage.css` and
 `brand.favicon=/branding/stage-star.svg`. The shared star is black in light mode

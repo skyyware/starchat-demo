@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.8.1'
+source_version: 'skyyware/starchat v0.9.0'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -75,7 +75,7 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.8.1 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.9.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -83,11 +83,11 @@ outside Git and the public directory.
 
 The core is private; the [public example](https://github.com/skyyware/starchat-demo)
 grants no access. With authorized access, copy `examples/installation` from
-Starchat 0.8.1 into an empty project:
+Starchat 0.9.0 into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.8.1 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.9.0 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -119,9 +119,9 @@ paths under `/branding/`. Revalidate styles and allow cross-origin font reads.
 Permission covers styles, fonts, and images, excluding scripts and APIs.
 Without this setting, assets stay local.
 
-Optional `header_link` adds a labelled HTTPS destination beside the language
-selector. Four suggestions use two columns. Other counts wrap to fit their text.
-Your stylesheet can change this layout.
+Optional `header_link` adds an HTTPS link beside the language selector.
+Show at most four choices, including asset actions. Four use two columns when space allows.
+Extra actions appear under **More options**; labels keep their own width.
 
 Suggestions have no custom keyboard shortcuts or numbered labels. Tab focuses.
 Enter or Space activates. Clicking and tapping work too.
@@ -177,8 +177,8 @@ Rebuild the index to validate settings and the zip extension. Assets stay off
 after upgrades; set `asset.type` to `project` for downloads. Remove both `asset`
 and `building` to disable downloads and generation.
 
-Click **Create project ZIP** beside the suggestions after an answer. Visible
-progress precedes the result in the conversation; answers alone never build it.
+Click **Create project ZIP** after an answer. A centered progress bar with no
+visible text precedes the result; answers alone never build it.
 An optional `building.starter` supplies a reviewed app. Custom work passes
 generation and independent review. **Download ZIP** starts no further model request.
 

@@ -8,8 +8,10 @@ endpoint, local run instructions and checks. The reviewed source lives in
 
 The installer packages the starter in advance. After an answer, the visitor
 clicks **Create project ZIP** beside the suggestions. The click appears as a
-request in the conversation, followed by visible progress and a reviewed package
-response. Loading, restored history and answers alone never start a build.
+request in the conversation, followed by the same thin, centered progress bar
+used for answers. It has no visible text and advances after completed processing
+steps, without estimating remaining time. A reviewed package follows when ready.
+Loading, restored history and answers alone never start a build.
 A starter needs no project generation; custom behavior uses the current
 conversation and previous files. The final download starts no further model
 request. The composer returns when preparation finishes.
