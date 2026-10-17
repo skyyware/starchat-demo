@@ -81,7 +81,7 @@
   "copy": {
     "de": {
       "headline": "Was möchtest du bauen?",
-      "description": "Kläre, was du bauen möchtest. Nimm eine erste Umsetzung als Projekt-ZIP mit.",
+      "description": "Starte hier, lade den Entwurf herunter und arbeite mit deinem Agenten weiter.",
       "orientation": "Ich helfe dir, ein Softwareprojekt zu planen und zu bauen, einen passenden Einstieg zu wählen und Stage kennenzulernen.",
       "followup": "Was möchtest du bauen?",
       "suggestions": [
@@ -200,7 +200,7 @@
     },
     "en": {
       "headline": "What do you want to build?",
-      "description": "Define what you want to build. Take a working starter with you as a project ZIP.",
+      "description": "Start here, download the outline, continue with your agent.",
       "orientation": "I can help you define and build a software project, choose a suitable starting point, and get to know Stage.",
       "followup": "What would you like to build?",
       "suggestions": [
