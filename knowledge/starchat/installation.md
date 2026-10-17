@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.9.1'
+source_version: 'skyyware/starchat v0.10.0'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -27,6 +27,8 @@ topic_terms:
   - 'projekt zip'
   - 'projekt export'
 phrase_terms:
+  - 'suggested questions and actions'
+  - 'separate actions'
   - 'install starchat'
   - 'set up starchat'
 keywords:
@@ -75,7 +77,7 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.9.1 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.10.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -83,11 +85,11 @@ outside Git and the public directory.
 
 The core is private; the [public example](https://github.com/skyyware/starchat-demo)
 grants no access. With authorized access, copy `examples/installation` from
-Starchat 0.9.1 into an empty project:
+Starchat 0.10.0 into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.9.1 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.10.0 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -120,13 +122,13 @@ Permission covers styles, fonts, and images, excluding scripts and APIs.
 Without this setting, assets stay local.
 
 Optional `header_link` adds an HTTPS link beside the language selector.
-Show at most four choices, including asset actions. Four use two columns when space allows.
-Extra actions appear under **More options**; labels keep their own width.
+Questions and **Actions** have separate limits of four controls. Actions sit below
+questions; neither fills or displaces the other. Extra formats use **More actions**,
+three per page. Four questions use two columns when space allows.
 
-Suggestions have no custom keyboard shortcuts or numbered labels. Tab focuses.
-Enter or Space activates. Clicking and tapping work too.
-Number keys do not select suggestions. Remove `suggestion_shortcuts` when
-upgrading. It no longer enables shortcuts.
+Suggestions have no custom keyboard shortcuts or numbers. Tab focuses; Enter or Space
+activates. Clicking and tapping work. Number keys do not select suggestions.
+Remove `suggestion_shortcuts` when upgrading.
 
 Replace the starter article with reviewed Markdown under `knowledge/<category>/`.
 Set each document's `entity` to your installation ID. Supply your legal notices.

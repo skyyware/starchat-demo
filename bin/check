@@ -67,7 +67,8 @@ try {
     $fail(str_contains($page->body, 'data-history-key="starchat:stage:conversation"') && str_contains($page->body, 'data-migration-origin="https://stage.dev"'), 'Stage history migration changed');
     $fail(str_contains($page->headers['content-security-policy'], "script-src 'self';") && str_contains($page->headers['content-security-policy'], "connect-src 'self';"), 'Shared theme expanded executable access');
     $fail(!str_contains($page->body, 'id="project"'), 'Empty automatic project panel returned');
-    $fail(str_contains($page->body, 'data-assets="[&quot;project&quot;]"'), 'Explicit project creation action absent');
+    $fail(preg_match('~<section id="actions"[^>]*aria-labelledby="actions-title"[^>]*data-assets="\[&quot;project&quot;\]"~', $page->body) === 1, 'Project action must have its own labelled area');
+    $fail(preg_match('~<div id="suggestions"[^>]*data-assets=~', $page->body) === 0, 'Questions still own asset actions');
     $icons = $app->handle(new Request('GET', '/starchat/asset-icons.svg'));
     $sprite = '/starchat/asset-icons.svg?v=' . substr(hash('sha256', $icons->body), 0, 12);
     $fail($icons->status === 200 && str_contains($icons->body, 'id="project"'), 'Project code-folder icon absent');

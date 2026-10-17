@@ -11,10 +11,14 @@ Chat navigation, suggestions and download actions share one font size and the
 bright text color. Controls and cards have no borders or outlines. Keyboard
 focus changes the fill or underlines the text. Download actions sit vertically
 centered beside the project description. Answers and requested assets use one
-loader with three animated dots and a short status line, restored from Starchat
-0.8.1. It aligns with the chat's left edge and uses the Stage muted text color.
-At most four choices appear, including asset actions; four use two rows where space allows.
-Each keeps its own text width. Additional actions stay under **More options**.
+loader with three animated dots and a short localized status line, such as
+**Creating project**. It aligns with the chat's left edge and uses the Stage muted
+text color. Questions and **Actions** have separate limits of four controls.
+Actions appear below the questions; neither area fills or displaces the other.
+Four questions use two rows where space allows. Labels keep their own width.
+Extra formats use action-only pages with three formats and **More actions**.
+Requests and results remain in the same conversation. The shared `.suggestions`
+styles also apply to `#action-choices`; no second theme is needed.
 Initial, reset and topic-entry focus waits for a ready composer and respects
 typing or a visitor-selected focus.
 

@@ -5,7 +5,7 @@ title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.9.1'
+source_version: 'skyyware/starchat v0.10.0'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -70,7 +70,7 @@ Add `actions` to the installation's existing `asset` configuration:
 ```
 
 Actions default to an empty list. They can accompany `none`, `pdf`, `email`, or
-`project`. A project installation offers its ZIP and contact actions beside the
+`project`. Project ZIPs and contact actions appear under **Actions**, below the
 suggestions. Each prepares separately after a click. The PDF and Markdown exports
 contain the same reviewed actions. Result cards appear in the conversation.
 See [conversation assets](https://stage.dev/resources/starchat-assets) for downloads.
@@ -149,9 +149,9 @@ normalizes them to blank CRLF lines. The subject allows 140 characters and the
 body 1,200. Their encoded mailto URI allows 8,000 characters; mail applications
 may impose smaller limits. These limits also apply to `asset.type: email`.
 The browser does not shorten the server-prepared draft.
-Telephone actions include preparation for the call, with at most six checklist
-items of 300 characters each. Expand the details to inspect the checklist.
-Email opens the full draft in the mail app, without a preview.
+Telephone checklists have up to six items of 300 characters each in expandable
+details. Email opens the full draft in the mail app, without
+a preview. Contact cards show an icon, title and button, with no description.
 
 An inquiry is not a booking or formal application. Drafts must preserve unknown
 facts, avoid invented commitments or documents, and leave sending to the visitor.

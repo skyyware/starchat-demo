@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.9.1'
+source_version: 'skyyware/starchat v0.10.0'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -89,16 +89,17 @@ independently enabled project-building API; remove `asset` and `building` to dis
 
 ## Keep the result current
 
-The answer appears before preparation. Creation actions sit beside the suggestions
-with the same link styling. Only a click starts preparation.
+The answer appears before preparation. Creation actions sit in **Actions** below
+the suggestions. Each area has its own limit of four controls.
+Only a click starts preparation.
 Answers and preparation use three animated dots and a status line in the
 conversation; reviewed cards appear only when ready.
 Loading, restored history and completed answers never prepare assets. Failures
 offer manual retry. Ready cards hide actions they cover for this
 answer; a PDF with an email card also hides email creation. Other formats and
 later answers remain eligible.
-Cards slide and fade unless reduced motion is on. Downloads start no model
-call. Bundles use an archive icon. PDFs have no inline preview; their button opens the prepared file.
+Cards slide and fade unless motion is reduced. Downloads start no model call.
+PDFs have no inline preview; their button opens the prepared file.
 
 PDF actions skip a first clarification without useful content. Nonempty steps
 or an answer without a follow-up qualify; facts followed by a question, without

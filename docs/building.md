@@ -7,9 +7,10 @@ endpoint, local run instructions and checks. The reviewed source lives in
 `starters/minimal.json`, selected by `building.starter`.
 
 The installer packages the starter in advance. After an answer, the visitor
-clicks **Create project ZIP** beside the suggestions. The click appears as a
+clicks **Create project ZIP** under **Actions**. The click appears as a
 request in the conversation, followed by the same three animated dots and short
-status line used for answers. A reviewed package follows when ready.
+status line used for answers. Preparation says **Creating project**.
+A reviewed package follows when ready.
 Loading, restored history and answers alone never start a build.
 A starter needs no project generation; custom behavior uses the current
 conversation and previous files. The final download starts no further model
