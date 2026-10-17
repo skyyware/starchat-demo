@@ -19,12 +19,16 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 17 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.9.0.
+The 17 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.9.1.
 It explains constructor-owned request headers and both supported CMS framework
 series. Asset creation links share the suggestions' text layout, arrow and
 styling. Only a click starts creation. Answers and preparation use the same
-centered progress bar without visible text. It advances after completed steps,
-then the result appears in the conversation. Ready projects keep their code-folder
+three animated dots and short status line, then the result appears in the
+conversation. Ready projects keep their code-folder
 icon, four-word function description and reduced-motion-aware entrance.
 Full project details remain in README and PROJECT inside the ZIP. This demo
 enables project ZIPs only; other asset types remain disabled.
+Ready cards hide creation actions they already cover for the current answer.
+A PDF with an email card also covers email creation. Other formats and later
+answers remain eligible. Email cards have no preview disclosure; telephone
+checklists remain expandable. Reloading creates nothing automatically.

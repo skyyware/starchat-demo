@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.9.0'
+source_version: 'skyyware/starchat v0.9.1'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -26,6 +26,8 @@ topic_terms:
   - 'PDF preview'
   - 'contact language'
 phrase_terms:
+  - 'email creation action'
+  - 'duplicate creation action'
   - 'disable assets'
   - 'PDF from conversation'
   - 'prepare email'
@@ -89,13 +91,14 @@ independently enabled project-building API; remove `asset` and `building` to dis
 
 The answer appears before preparation. Creation actions sit beside the suggestions
 with the same link styling. Only a click starts preparation.
-The request appears in the conversation. Answers and preparation share a centered
-bar without visible text. Completed steps advance it, and reviewed cards appear only when ready.
-Failures offer manual retry. Loading, restored history and completed answers never prepare
-assets. Repeating an action reveals its existing result.
-Cards slide and fade unless reduced motion is on. Bundles use a document archive
-icon. Final downloads start no further model call.
-PDFs have no inline preview; their button opens the prepared file.
+Answers and preparation use three animated dots and a status line in the
+conversation; reviewed cards appear only when ready.
+Loading, restored history and completed answers never prepare assets. Failures
+offer manual retry. Ready cards hide actions they cover for this
+answer; a PDF with an email card also hides email creation. Other formats and
+later answers remain eligible.
+Cards slide and fade unless reduced motion is on. Downloads start no model
+call. Bundles use an archive icon. PDFs have no inline preview; their button opens the prepared file.
 
 PDF actions skip a first clarification without useful content. Nonempty steps
 or an answer without a follow-up qualify; facts followed by a question, without
@@ -103,11 +106,10 @@ steps, wait. Earlier useful answers still qualify. Orientation, missing evidence
 and unavailable answers do not. Primary email drafts can follow a completed
 clarification; empty history prepares none.
 
-The page keeps up to twelve package responses beside their original answers.
-A later click uses the current conversation. Reset, language change or context
-loss clears results and download URLs. Changed conversations cancel preparation
-and fence late responses. PDF and contact results stay in memory; reloads require
-a new creation click. Context chat starts empty.
+The page keeps up to twelve packages by their answers. A later click uses the
+current conversation. Reset, language change or context loss clears results and
+URLs. Changed conversations cancel preparation and fence late responses. PDF and
+contacts stay in memory; reloads require a new click. Context chat starts empty.
 Project ZIP storage and revision input follow
 [project downloads](https://stage.dev/resources/starchat-building).
 
@@ -160,7 +162,8 @@ and 2 MiB. Temporary files are removed; no server-side PDF archive is kept.
 ## Let the visitor send the email
 
 The primary email action follows a completed exchange. Clicking prepares and
-reviews a draft for `primary`. Buttons, previews and exports use the complete draft.
+reviews a draft for `primary`. Mail buttons and exports use the complete draft.
+Email has no preview.
 Limits are 140 characters for the subject, 1,200 for the body, and 8,000 for the
 encoded mailto URI. Mail apps may impose smaller limits.
 

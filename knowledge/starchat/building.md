@@ -5,7 +5,7 @@ title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.9.0'
+source_version: 'skyyware/starchat v0.9.1'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -29,7 +29,7 @@ topic_terms:
   - 'projekt vorbereiten'
   - 'erneut vorbereiten'
 phrase_terms:
-  - 'progress bar'
+  - 'loading indicator'
   - ladebalken
   - 'project description'
   - 'four words'
@@ -51,7 +51,7 @@ keywords:
   - 'project download'
   - 'project export'
   - 'project preparation'
-  - 'progress bar'
+  - 'loading indicator'
   - ladebalken
   - 'project description'
   - 'four words'
@@ -133,16 +133,15 @@ Missing or changed data is rebuilt from validated source and replaced atomically
 The answer appears first. Click **Create project ZIP** beside the suggestions
 to begin. Loading, restored history and completed answers never start a build.
 The click appears in the conversation. Answers and preparation use the same
-centered progress bar without visible text. Completed steps advance it.
-Elapsed time does not.
+three animated dots and a short status line.
 Generation and independent review use the conversation and previous files.
 Only a reviewed, assembled ZIP becomes downloadable.
 
 The ready response shows a code-folder icon, at most four words describing the
 implemented function, and **Download ZIP**. It slides and fades in unless reduced
 motion is on. Details stay in README.md and PROJECT.md; there is no contents disclosure.
-The final download starts no model call. Repeating the creation click for the
-same answer reveals its existing result.
+The final download starts no model call. A ready card hides the creation action
+for that answer. A later answer can offer a new project.
 Older saved ZIPs with long summaries use up to four words from their project name.
 
 Completed packages stay beside their original answer. A later click uses the

@@ -5,7 +5,7 @@ title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
 retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.9.0'
+source_version: 'skyyware/starchat v0.9.1'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -150,7 +150,8 @@ body 1,200. Their encoded mailto URI allows 8,000 characters; mail applications
 may impose smaller limits. These limits also apply to `asset.type: email`.
 The browser does not shorten the server-prepared draft.
 Telephone actions include preparation for the call, with at most six checklist
-items of 300 characters each. Expand the details to inspect the draft or checklist.
+items of 300 characters each. Expand the details to inspect the checklist.
+Email opens the full draft in the mail app, without a preview.
 
 An inquiry is not a booking or formal application. Drafts must preserve unknown
 facts, avoid invented commitments or documents, and leave sending to the visitor.

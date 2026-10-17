@@ -8,9 +8,8 @@ endpoint, local run instructions and checks. The reviewed source lives in
 
 The installer packages the starter in advance. After an answer, the visitor
 clicks **Create project ZIP** beside the suggestions. The click appears as a
-request in the conversation, followed by the same thin, centered progress bar
-used for answers. It has no visible text and advances after completed processing
-steps, without estimating remaining time. A reviewed package follows when ready.
+request in the conversation, followed by the same three animated dots and short
+status line used for answers. A reviewed package follows when ready.
 Loading, restored history and answers alone never start a build.
 A starter needs no project generation; custom behavior uses the current
 conversation and previous files. The final download starts no further model
@@ -40,7 +39,7 @@ and reviews custom files but does not execute them. Visitors
 run the documented checks in their own environment. Changes made outside this
 chat are not uploaded or synchronized back.
 
-A repeated creation click for the same answer reveals its existing result.
+A ready card hides its creation action for the current answer.
 Completed packages remain beside the answers they describe. A later creation
 click uses the latest conversation, including concrete features discussed while
 optional choices remain open. Provisional choices are documented. The previous
