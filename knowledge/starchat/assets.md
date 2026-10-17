@@ -3,9 +3,9 @@ id: starchat-assets
 entity: stage
 title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
-retrieved_at: '2026-10-15'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.5'
+source_version: 'skyyware/starchat v0.8.0'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -69,7 +69,7 @@ follow_ups: {  }
 
 # Offer something to take away
 
-Assets are off by default. Set `asset.type` in `installation.json`:
+Assets are off by default; set `asset.type` in `installation.json`:
 
 | Setting | Result |
 | --- | --- |
@@ -78,48 +78,47 @@ Assets are off by default. Set `asset.type` in `installation.json`:
 | `{"type":"pdf"}` | Reviewed conversation summary as a PDF |
 | `{"type":"email","recipient":"hello@example.org"}` | Editable draft in the visitor's mail app |
 
-PDF and email need no project building. Optional `actions` and `downloads`
-accompany any type and default to empty lists. With neither, `none` prepares
-nothing. Visitor messages cannot change these settings. Session context requires
-fresh scope checks.
+PDF and email need no building. Optional `actions` and `downloads` accompany any
+type and default to empty lists. With neither, `none` prepares nothing. Visitors
+cannot change these settings. Session context requires fresh scope checks.
 
-When upgrading from 0.4.x, set `asset.type: project` to retain the ZIP download.
-`none` does not disable an independently enabled project-building API. To disable
-both, remove `asset` and `building`.
+Upgrades from 0.4.x need `asset.type: project` for ZIPs. `none` does not disable an
+independently enabled project-building API; remove `asset` and `building` to disable both.
 
 ## Keep the result current
 
-The answer appears before preparation. Assets follow the input and suggestions.
-PDF, email and contact cards appear only when ready. They prepare silently;
-failures offer manual retry. Project ZIPs keep progress. Ready cards
-slide and fade unless reduced motion is requested. Bundles use a document archive
-icon. A new question cancels preparation and hides
-old downloads; you can keep chatting. Downloads start no model call.
+The answer appears before preparation. Creation actions sit beside the suggestions.
+Only a click starts preparation. The request appears in the conversation, visible
+progress replaces the composer, and reviewed cards appear only when ready.
+Failures offer manual retry. Loading, restored history and completed answers
+never prepare assets. Repeating an action reveals its result for that answer.
+Cards slide and fade unless reduced motion is on. Bundles use a document archive
+icon. Final downloads start no further model call.
 PDFs have no inline preview; their button opens the prepared file.
 
-PDF preparation skips a first clarification with no useful content. Earlier useful
-content can still be summarized after a later question. The browser accepts
-nonempty steps or a standalone answer without a follow-up. Facts followed by a
-question, without steps, wait for more content. Orientation, missing evidence,
-and unavailable answers do not start a PDF. A primary email draft can follow a
-completed exchange that only asks for clarification; empty history prepares none.
+PDF actions skip a first clarification without useful content. Nonempty steps
+or an answer without a follow-up qualify; facts followed by a question, without
+steps, wait. Earlier useful answers still qualify. Orientation, missing evidence
+and unavailable answers do not. Primary email drafts can follow a completed
+clarification; empty history prepares none.
 
-A reset or language change discards results. Summaries stay in browser memory.
-Ordinary chat can prepare them after reload; context chat starts empty.
+The page keeps up to twelve package responses beside their original answers.
+A later click uses the current conversation. Reset, language change or context
+loss clears results and download URLs. Changed conversations cancel preparation
+and fence late responses. PDF and contact results stay in memory; reloads require
+a new creation click. Context chat starts empty.
 Project ZIP storage and revision input follow
 [project downloads](https://stage.dev/resources/starchat-building).
 
 ## Prepare a faithful summary
 
 Generation and independent review use the bounded conversation and installation
-scope. Summaries state established facts and supported steps, keeping corrections,
-uncertainty and open decisions. Unverified claims keep attribution. Summaries
-omit transcript narration and blanket disclaimers.
-A proposal is not an agreement; an appointment request is not a confirmation.
-Review checks faithfulness to the conversation, not the truth of every claim.
+scope. Summaries preserve facts, corrections, uncertainty, open decisions and
+attribution. A proposal is not an agreement; a request is not a confirmed appointment.
+Review checks faithfulness, not the truth of every claim.
 
-Links must match approved conversation links or fresh verified context.
-Contacts use reviewed metadata. Summaries do not fetch arbitrary documents. See
+Links need approved conversation links or verified context; contacts need reviewed
+metadata. See
 [verified session context](https://stage.dev/resources/starchat-request-context).
 
 Input allows 80 messages and 24 KiB. Generation and review share a 45-second
@@ -132,41 +131,42 @@ Capacity is shared with chat and building.
 {"asset":{"type":"pdf","actions":["email","phone"],"downloads":["markdown","bundle"]}}
 ```
 
-`markdown` exports the reviewed summary as text. `bundle` requires `type: pdf`
-and PHP's zip extension; it packs that same PDF and Markdown into a ZIP.
-It generates no software. Files use the summary title in its selected language
-and an ISO date in the installation timezone, with unsafe characters removed.
+`markdown` exports text. `bundle` requires `type: pdf` and PHP's zip extension;
+it packs the same PDF and Markdown into a ZIP, not software. Names use the summary
+title in its selected language and an ISO date in the installation timezone,
+with unsafe characters removed.
 Contact actions require [verified contact metadata](https://stage.dev/resources/starchat-contacts).
 No matching contact means no contact action.
 
+Actions request only their selected type: email and phone do not render a PDF;
+PDF does not create unrequested Markdown or ZIP files. Unknown or disabled types
+fail before model use. Older clients without a selection retain combined responses.
+
 ## Use installation branding in PDFs
 
-PDFs use local branding and supported fonts. They contain the reviewed summary,
-next steps, contacts, date and page numbers. Web links print their full addresses,
-wrap within the page and remain clickable. There is no generic disclaimer footer.
+PDFs use local branding and contain the summary, next steps, contacts, date and
+page numbers. Full link addresses wrap and remain clickable. There is no disclaimer footer.
 
 Latin, Greek, and Cyrillic require available glyphs. Complex scripts, including
 Arabic, and missing glyphs fail explicitly. Visitors can choose a German PDF;
 the service does not silently translate. Source Sans and Roboto Slab have PDF
 fonts; D-DIN and system fonts use DejaVu. Output is not tagged for PDF/UA.
 
-The renderer uses trusted local branding, no remote images or scripts.
-A missing logo uses the installation name. PNG and WebP require PHP GD.
-Output is limited to eight A4 pages and 2 MiB. Temporary files are removed
-after the request; no server-side PDF archive is kept.
+The renderer permits no remote images or scripts. Missing logos use the
+installation name. PNG and WebP require PHP GD. Output is limited to eight A4 pages
+and 2 MiB. Temporary files are removed; no server-side PDF archive is kept.
 
 ## Let the visitor send the email
 
-The primary email button appears after a completed exchange and successful
-preparation and review. The server resolves the configured recipient as `primary`.
-Button, preview, and exports use the complete draft without browser truncation.
+The primary email action follows a completed exchange. Clicking prepares and
+reviews a draft for `primary`. Buttons, previews and exports use the complete draft.
 Limits are 140 characters for the subject, 1,200 for the body, and 8,000 for the
 encoded mailto URI. Mail apps may impose smaller limits.
 
 `asset.contact_locale` sets the recipient's language, defaulting to the
-installation's `locale`. Summary text and labels use the visitor's language;
-the email subject and body use the recipient's language, with blank lines between
-paragraphs. See [contact language](https://stage.dev/resources/starchat-contacts).
+installation's `locale`. The email uses that language and blank lines between
+paragraphs; summaries and labels use the visitor's language.
+See [contact language](https://stage.dev/resources/starchat-contacts).
 Visitors review, edit, and send the draft in their mail app. Starchat sends no email.
 
 ## Start a conversation from a topic
@@ -178,9 +178,9 @@ Configure questions under `topics`:
 ```
 
 `/?topic=integration&lang=de` submits the question and continues an existing conversation.
-The browser removes `topic` first. Unknown topics do nothing; during a pending
-answer the question stays a draft. Use public topic names. This differs from `?q=`,
+The browser removes `topic` first. Unknown topics do nothing; pending answers
+keep the question as a draft. Use public topic names. This differs from `?q=`,
 which fills an editable question without submitting it.
 
-Describe automatic preparation, model input, storage, and downloads in your
-notices. Local file deletion makes no promise about provider retention.
+Notices must describe requested preparation, model input, storage and downloads.
+Local deletion does not establish provider retention.

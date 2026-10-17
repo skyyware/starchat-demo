@@ -2,10 +2,10 @@
 id: stage-cms-operations
 entity: stage
 title: 'Stage CMS storage, recovery, and limits'
-source: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/operations.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/operations.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage-cms v0.5.3"
+source_version: 'skyyware/stage-cms v0.5.4'
 public_path: /resources/cms-operations
 topic_terms:
   - backup
@@ -15,7 +15,7 @@ topic_terms:
   - storage
   - 'image limits'
   - deployment
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - backup
   - restore
@@ -26,23 +26,24 @@ keywords:
   - deployment
 links:
   -
-    label: 'Stage CMS storage, recovery, and limits — Stage guide'
-    url: 'https://stage.dev/resources/cms-operations'
-  -
     label: 'Storage, deployment, and recovery'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/operations.md'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/operations.md'
   -
     label: 'Supported features and size limits'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/README.md'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/README.md'
   -
     label: 'Environment configuration'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/src/Infrastructure/Config.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/src/Infrastructure/Config.php'
+  -
+    label: 'Stage CMS storage, recovery, and limits — Stage guide'
+    url: 'https://stage.dev/resources/cms-operations'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Stage CMS storage, recovery, and limits
 
-Applies to Stage CMS 0.5.3. Sources checked on 9 October 2026.
+Applies to Stage CMS 0.5.4. Sources checked on 17 October 2026.
 
 `CMS_DATA_DIR` is an absolute private directory outside the public web root.
 `CMS_URL` is the public HTTP or HTTPS origin without a path. An HTTPS origin
@@ -85,7 +86,7 @@ for a tested backup.
 
 ## Check compatibility before an upgrade
 
-Version 0.5.3 uses database schema 3 and export format `stage-cms/3`.
+Version 0.5.4 uses database schema 3 and export format `stage-cms/3`.
 Version 0.5 migrates older schemas on startup. Back up before the first request
 after an upgrade. Version 0.4 cannot open schema 3. A downgrade requires stopped
 writers, old code, and the corresponding old data, with any later edits reconciled.
@@ -97,6 +98,6 @@ security audit.
 
 ## Sources
 
-- [Storage, deployment, and recovery](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/operations.md)
-- [Supported features and size limits](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/README.md)
-- [Environment configuration](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/src/Infrastructure/Config.php)
+- [Storage, deployment, and recovery](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/operations.md)
+- [Supported features and size limits](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/README.md)
+- [Environment configuration](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/src/Infrastructure/Config.php)

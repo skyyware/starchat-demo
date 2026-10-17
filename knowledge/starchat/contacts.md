@@ -3,9 +3,9 @@ id: starchat-contacts
 entity: stage
 title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
-retrieved_at: '2026-10-15'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.5'
+source_version: 'skyyware/starchat v0.8.0'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -70,9 +70,9 @@ Add `actions` to the installation's existing `asset` configuration:
 ```
 
 Actions default to an empty list. They can accompany `none`, `pdf`, `email`, or
-`project`. A project installation keeps its ZIP panel and prepares contact actions
-separately. The PDF and Markdown exports contain the same reviewed actions.
-Cards follow the input and suggestions at the end of the conversation.
+`project`. A project installation offers its ZIP and contact actions beside the
+suggestions. Each prepares separately after a click. The PDF and Markdown exports
+contain the same reviewed actions. Result cards appear in the conversation.
 See [conversation assets](https://stage.dev/resources/starchat-assets) for downloads.
 
 ## Choose the recipient's language
@@ -158,13 +158,12 @@ The interface and exported PDF or Markdown use the same validated content.
 
 ## Keep scope and privacy intact
 
-A new question cancels earlier preparation and removes stale actions. PDF and
-action-only panels wait for useful content; a first clarification alone starts
-no summary. A primary `asset.type: email` draft requires a completed exchange,
-including a clarification, and successful preparation and review. Empty history
-shows no contact card. The configured recipient enters the trusted catalogue as
-`primary`; generation must include its draft. No email button appears before that
-draft is ready.
+Only a creation click prepares contacts. Completed results stay by their original
+answer; a later click uses the current conversation. A first clarification alone
+offers no summary action. A primary `asset.type: email` draft can follow that
+completed exchange, after successful preparation and review. Empty history shows
+no contact card. Its configured recipient enters the trusted catalogue as `primary`;
+generation must include its draft before an email button appears.
 
 With verified session context, preparation and display require fresh checks.
 Changed or unavailable context, reset, or a hidden page clears actions and

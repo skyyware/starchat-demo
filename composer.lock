@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d567df08a0c1fb0f6f6a02ed80f2a740",
+    "content-hash": "6e54539dcff13cdbaf7c47de8733d15b",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -780,16 +780,16 @@
         },
         {
             "name": "skyyware/stage",
-            "version": "v0.1.5",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skyyware/stage.git",
-                "reference": "52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b"
+                "reference": "0a11702bfc66e088f9717b32b87e2e1bcf48ae03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/stage/zipball/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b",
-                "reference": "52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b",
+                "url": "https://api.github.com/repos/skyyware/stage/zipball/0a11702bfc66e088f9717b32b87e2e1bcf48ae03",
+                "reference": "0a11702bfc66e088f9717b32b87e2e1bcf48ae03",
                 "shasum": ""
             },
             "require": {
@@ -824,7 +824,7 @@
                 "issues": "https://github.com/skyyware/stage/issues",
                 "source": "https://github.com/skyyware/stage"
             },
-            "time": "2026-10-07T18:12:17+00:00"
+            "time": "2026-10-17T11:13:49+00:00"
         },
         {
             "name": "skyyware/stage-chat",
@@ -912,16 +912,16 @@
         },
         {
             "name": "skyyware/stage-cms",
-            "version": "v0.5.3",
+            "version": "v0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skyyware/stage-cms.git",
-                "reference": "7b7d9845e33059bbb490ca3b54c230a008062b6d"
+                "reference": "2e6b5ae174b8bf62f97fde3385ee407c4b652b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/stage-cms/zipball/7b7d9845e33059bbb490ca3b54c230a008062b6d",
-                "reference": "7b7d9845e33059bbb490ca3b54c230a008062b6d",
+                "url": "https://api.github.com/repos/skyyware/stage-cms/zipball/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e",
+                "reference": "2e6b5ae174b8bf62f97fde3385ee407c4b652b4e",
                 "shasum": ""
             },
             "require": {
@@ -933,7 +933,7 @@
                 "ext-zip": "*",
                 "league/commonmark": "^2.7",
                 "php": "^8.4",
-                "skyyware/stage": "^0.1.1"
+                "skyyware/stage": "^0.1.1 || ^0.2"
             },
             "require-dev": {
                 "phpstan/phpstan": "^2.1",
@@ -962,20 +962,20 @@
                 "issues": "https://github.com/skyyware/stage-cms/issues",
                 "source": "https://github.com/skyyware/stage-cms"
             },
-            "time": "2026-10-07T18:39:40+00:00"
+            "time": "2026-10-17T11:17:51+00:00"
         },
         {
             "name": "skyyware/starchat",
-            "version": "v0.7.5",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:skyyware/starchat.git",
-                "reference": "157782b4981a3396fb939a2b87e6fcb4b54b83b6"
+                "reference": "d17a5c2bff06ab191c3fd876fb39259f313ca1b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/starchat/zipball/157782b4981a3396fb939a2b87e6fcb4b54b83b6",
-                "reference": "157782b4981a3396fb939a2b87e6fcb4b54b83b6",
+                "url": "https://api.github.com/repos/skyyware/starchat/zipball/d17a5c2bff06ab191c3fd876fb39259f313ca1b8",
+                "reference": "d17a5c2bff06ab191c3fd876fb39259f313ca1b8",
                 "shasum": ""
             },
             "require": {
@@ -984,7 +984,7 @@
                 "ext-pdo": "*",
                 "ext-pdo_sqlite": "*",
                 "php": "^8.4",
-                "skyyware/stage": "^0.1.5",
+                "skyyware/stage": "^0.1.5 || ^0.2",
                 "skyyware/stage-chat": "^0.1.1",
                 "skyyware/stage-chat-codex": "0.2.3",
                 "skyyware/stage-cms": "^0.5.3",
@@ -1018,7 +1018,7 @@
             "support": {
                 "source": "https://github.com/skyyware/starchat"
             },
-            "time": "2026-10-15T15:09:46+00:00"
+            "time": "2026-10-17T11:30:32+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

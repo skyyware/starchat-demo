@@ -2,11 +2,11 @@
 id: stage-game-backend
 entity: stage
 title: 'Build a game with a Stage HTTP backend'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md'
 source_title: 'Stage routes and JSON input'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/game-backend
 topic_terms:
   - game
@@ -28,19 +28,23 @@ keywords:
   - move
   - server
 links:
-  - label: 'Game backend example'
+  -
+    label: 'Game backend example'
     url: 'https://stage.dev/resources/game-backend'
-  - label: 'Stage routes and JSON validation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md'
-  - label: 'Stage application boundaries'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
-based_on: []
+  -
+    label: 'Stage routes and JSON validation'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md'
+  -
+    label: 'Stage application boundaries'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Build a game with a Stage HTTP backend
 
 Stage can provide the PHP backend for a game. The browser or a separate game
-engine handles rendering, input, and the playable loop. Stage 0.1.5 provides
+engine handles rendering, input, and the playable loop. Stage 0.2.0 provides
 HTTP routing and JSON messages. It does not provide graphics, physics, a game
 loop, or WebSocket multiplayer.
 
@@ -60,7 +64,7 @@ Install Stage with PHP 8.4 or a later PHP 8 release and Composer:
 ```sh
 mkdir quiz
 cd quiz
-composer require skyyware/stage:^0.1.5
+composer require skyyware/stage:^0.2
 mkdir public
 ```
 
@@ -133,5 +137,5 @@ No production capacity or latency is established by this quiz example.
 
 ## Sources
 
-- [Stage routes and JSON validation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md)
-- [Stage application boundaries](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md)
+- [Stage routes and JSON validation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md)
+- [Stage application boundaries](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md)

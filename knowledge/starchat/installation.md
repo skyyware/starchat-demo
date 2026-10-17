@@ -3,9 +3,9 @@ id: starchat-installation
 entity: stage
 title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
-retrieved_at: '2026-10-15'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.5'
+source_version: 'skyyware/starchat v0.8.0'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -75,7 +75,7 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.7.5 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.8.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -83,11 +83,11 @@ outside Git and the public directory.
 
 The core is private; the [public example](https://github.com/skyyware/starchat-demo)
 grants no access. With authorized access, copy `examples/installation` from
-Starchat 0.7.5 into an empty project:
+Starchat 0.8.0 into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.7.5 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.8.0 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -177,15 +177,14 @@ Rebuild the index to validate settings and the zip extension. Assets stay off
 after upgrades; set `asset.type` to `project` for downloads. Remove both `asset`
 and `building` to disable downloads and generation.
 
-The answer appears before project preparation starts. You can keep chatting.
-An optional `building.starter` supplies a reviewed ready application. Custom
-work still passes generation, independent review, and ZIP creation.
-**Download ZIP** downloads the prepared archive without a model request.
+Click **Create project ZIP** beside the suggestions after an answer. Visible
+progress precedes the result in the conversation; answers alone never build it.
+An optional `building.starter` supplies a reviewed app. Custom work passes
+generation and independent review. **Download ZIP** starts no further model request.
 
 See [project downloads](https://stage.dev/resources/starchat-building)
-for contents, revisions, limits, and recovery. Describe automatic
-preparation, model input, and browser storage in your notices before enabling it.
-The service does not execute generated code or deploy it.
+for contents, revisions and limits. Notices must describe requested preparation,
+model input and browser storage. The service does not execute or deploy generated code.
 
 ## Offer other conversation assets
 

@@ -66,13 +66,15 @@ try {
     $fail(str_contains($page->body, 'class="brand" href="https://stage.dev"'), 'Website return link absent');
     $fail(str_contains($page->body, 'data-history-key="starchat:stage:conversation"') && str_contains($page->body, 'data-migration-origin="https://stage.dev"'), 'Stage history migration changed');
     $fail(str_contains($page->headers['content-security-policy'], "script-src 'self';") && str_contains($page->headers['content-security-policy'], "connect-src 'self';"), 'Shared theme expanded executable access');
-    $fail(str_contains($page->body, 'id="project"'), 'Project download control absent');
+    $fail(!str_contains($page->body, 'id="project"'), 'Empty automatic project panel returned');
+    $fail(str_contains($page->body, 'data-assets="[&quot;project&quot;]"'), 'Explicit project creation action absent');
     $icons = $app->handle(new Request('GET', '/starchat/asset-icons.svg'));
     $sprite = '/starchat/asset-icons.svg?v=' . substr(hash('sha256', $icons->body), 0, 12);
-    $fail($icons->status === 200 && str_contains($page->body, 'href="' . $sprite . '#project"'), 'Versioned project code-folder icon absent');
+    $fail($icons->status === 200 && str_contains($icons->body, 'id="project"'), 'Project code-folder icon absent');
     $fail(str_contains($page->body, 'data-asset-icons="' . $sprite . '"'), 'Dynamic card sprite version differs');
     $fail(!str_contains($page->body, 'class="asset-details"'), 'Project contents disclosure returned');
     $fail($app->handle(new Request('GET', '/starchat/project.js'))->status === 200, 'Project browser module absent');
+    $fail($app->handle(new Request('GET', '/starchat/asset-flow.js'))->status === 200, 'Explicit asset creation module absent');
     $starter = $app->handle(new Request('GET', '/project/starter'));
     $prepared = json_decode($starter->body, true, flags: JSON_THROW_ON_ERROR);
     $fail($starter->status === 200 && $prepared['project'] === Starchat\ProjectHandoff::prepare($installation->starter)->data && str_starts_with($prepared['archive'], 'UEsDB'), 'Prepared starter download unavailable');

@@ -1,27 +1,37 @@
 ---
-id: "stage-cms-publication"
-entity: "stage"
-title: "CMS publication and revisions"
-source: "https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/publication.md"
-retrieved_at: "2026-10-09"
+id: stage-cms-publication
+entity: stage
+title: 'CMS publication and revisions'
+source: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/publication.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage-cms v0.5.3"
-public_path: "/resources/cms-publication"
-topic_terms: ["publish", "draft", "revision", "preview"]
-keywords: ["publish", "draft", "revision", "preview"]
+source_version: 'skyyware/stage-cms v0.5.4'
+public_path: /resources/cms-publication
+topic_terms:
+  - publish
+  - draft
+  - revision
+  - preview
+keywords:
+  - publish
+  - draft
+  - revision
+  - preview
 links:
+  -
+    label: 'CMS publication and revisions source'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/publication.md'
   -
     label: 'CMS publication and revisions — Stage guide'
     url: 'https://stage.dev/resources/cms-publication'
-  -
-    label: 'CMS publication and revisions source'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/publication.md'
-based_on: []
+based_on: {  }
+phrase_terms: {  }
+follow_ups: {  }
 ---
 
 # CMS publication and revisions
 
-Stage CMS 0.5.3 stores edits as private drafts until an authorized publication.
+Stage CMS 0.5.4 stores edits as private drafts until an authorized publication.
 Publishing checks required fields and the application's `PublicationRule`
 before changing the public revision.
 

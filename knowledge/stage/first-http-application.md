@@ -1,27 +1,39 @@
 ---
-id: "stage-tutorial"
-entity: "stage"
-title: "Build your first HTTP application"
-source: "https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md"
-retrieved_at: "2026-10-09"
+id: stage-tutorial
+entity: stage
+title: 'Build your first HTTP application'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
-public_path: "/resources/first-http-application"
-topic_terms: ["first application", "tutorial", "getting started", "json", "routing"]
-keywords: ["first application", "tutorial", "getting started", "json", "routing"]
+source_version: 'skyyware/stage v0.2.0'
+public_path: /resources/first-http-application
+topic_terms:
+  - 'first application'
+  - tutorial
+  - 'getting started'
+  - json
+  - routing
+keywords:
+  - 'first application'
+  - tutorial
+  - 'getting started'
+  - json
+  - routing
 links:
+  -
+    label: 'Build your first HTTP application source'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md'
   -
     label: 'Build your first HTTP application — Stage guide'
     url: 'https://stage.dev/resources/first-http-application'
-  -
-    label: 'Build your first HTTP application source'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md'
-based_on: []
+based_on: {  }
+phrase_terms: {  }
+follow_ups: {  }
 ---
 
 # Build your first HTTP application
 
-Build a named greeting route and a JSON endpoint with Stage 0.1.5.
+Build a named greeting route and a JSON endpoint with Stage 0.2.0.
 Start with the Composer project in [Create a Stage application](https://stage.dev/resources/getting-started).
 
 ## Add the routes

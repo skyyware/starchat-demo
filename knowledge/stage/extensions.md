@@ -2,10 +2,10 @@
 id: stage-extensions
 entity: stage
 title: 'Extend Stage with an idea'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/ideas.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/ideas.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/extensions
 topic_terms:
   - extend
@@ -15,7 +15,7 @@ topic_terms:
   - reuse
   - erweitern
   - 'composer package'
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - extend
   - extension
@@ -26,18 +26,19 @@ keywords:
   - 'composer package'
 links:
   -
-    label: 'Extend Stage with an idea — Stage guide'
-    url: 'https://stage.dev/resources/extensions'
-  -
     label: 'Share an idea'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/ideas.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/ideas.md'
   -
     label: 'Idea interface'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Idea.php'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Idea.php'
   -
     label: 'Application route composition'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Application.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Application.php'
+  -
+    label: 'Extend Stage with an idea — Stage guide'
+    url: 'https://stage.dev/resources/extensions'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Extend Stage with an idea
@@ -46,8 +47,8 @@ An idea is reusable PHP code with a defined interface. For HTTP routes,
 implement `Stage\Http\Idea` and pass the object to `Application`.
 The interface is available from Stage 0.1.4.
 
-This example builds a greeting route with Stage 0.1.5.
-Sources checked on 9 October 2026.
+This example builds a greeting route with Stage 0.2.0.
+Sources checked on 17 October 2026.
 
 ## Write the idea
 
@@ -116,6 +117,6 @@ Review those packages as executable PHP. An idea does not run in a sandbox.
 
 ## Sources
 
-- [Share an idea](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/ideas.md)
-- [Idea interface](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Idea.php)
-- [Application route composition](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Application.php)
+- [Share an idea](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/ideas.md)
+- [Idea interface](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Idea.php)
+- [Application route composition](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Application.php)

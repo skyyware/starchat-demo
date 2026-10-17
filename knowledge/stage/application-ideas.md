@@ -2,11 +2,11 @@
 id: stage-application-ideas
 entity: stage
 title: 'Turn an application idea into a first feature'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md'
 source_title: 'Stage application boundaries'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/application-ideas
 topic_terms:
   - application
@@ -28,23 +28,24 @@ keywords:
   - storage
 links:
   -
-    label: 'Turn an application idea into a first feature — Stage guide'
-    url: 'https://stage.dev/resources/application-ideas'
-  -
     label: 'Stage application boundaries'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md'
   -
     label: 'Compose application features'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/features.md'
   -
     label: 'First HTTP application'
     url: 'https://stage.dev/resources/first-http-application'
-based_on: []
+  -
+    label: 'Turn an application idea into a first feature — Stage guide'
+    url: 'https://stage.dev/resources/application-ideas'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Turn an application idea into a first feature
 
-Stage 0.1.5 supplies PHP HTTP routes, requests, responses, and caller permission
+Stage 0.2.0 supplies PHP HTTP routes, requests, responses, and caller permission
 values. An application adds its own rules, storage, identity, and user interface.
 The examples below are design starting points, not packaged Stage features.
 
@@ -106,5 +107,5 @@ cases in the environment where the application will run.
 
 ## Sources
 
-- [Stage application boundaries](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md)
-- [Compose application features](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md)
+- [Stage application boundaries](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md)
+- [Compose application features](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/features.md)

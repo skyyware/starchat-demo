@@ -19,11 +19,10 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 15 October 2026 snapshot covers Starchat 0.7.5. Ready project cards show a
-code-folder icon and at most four words describing the implemented function.
-Project details remain in the downloaded README and PROJECT documents.
-The assets and contacts guides also explain recipient-language drafts, retention
-of current email corrections, printed PDF destinations, and silent preparation
-before PDF, email or contact cards appear. Ready cards enter with a short slide
-and fade unless reduced motion is requested. This demo keeps its project ZIP
-configuration and separate progress; other asset types remain disabled.
+The 17 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.8.0.
+It explains constructor-owned request headers and both supported CMS framework
+series. Assets now require a creation click beside the suggestions, use visible
+progress and appear in the conversation. Ready projects keep their code-folder
+icon, four-word function description and reduced-motion-aware entrance.
+Full project details remain in README and PROJECT inside the ZIP. This demo
+enables project ZIPs only; other asset types remain disabled.

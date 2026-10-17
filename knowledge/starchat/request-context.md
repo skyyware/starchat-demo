@@ -5,7 +5,7 @@ title: 'Use verified session context'
 source: 'https://stage.dev/resources/starchat-request-context'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.5'
+source_version: 'skyyware/starchat v0.8.0'
 public_path: /resources/starchat-request-context
 topic_terms:
   - 'request context'
@@ -102,7 +102,7 @@ context. Enabling context is a separate integration decision.
 
 ## Prepare summaries in the same verified scope
 
-After displaying the answer, summary preparation signs the exact last user
+After the visitor clicks a creation action, summary preparation signs the exact last user
 question. `/asset` verifies that envelope before any summary model call and
 returns `request_scope`. Fresh request documents reach generation and independent
 review in full, ahead of public documents with the same ID for contact selection.
@@ -110,8 +110,8 @@ Tokens and scope digests stay out of model input.
 
 Before showing a download or contact draft, the browser probes again. A scope
 change, failed check, reset, or hidden page cancels preparation, clears contacts,
-and revokes download URLs. Late responses cannot restore them. Input stays
-usable during these background checks. Explicitly saved downloads remain on the
+and revokes download URLs. Late responses cannot restore them. The normal progress
+line replaces the composer while the package is prepared. Explicitly saved downloads remain on the
 visitor's device. See [conversation assets](https://stage.dev/resources/starchat-assets).
 
 ## Limit facts to one request

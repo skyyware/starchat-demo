@@ -2,10 +2,10 @@
 id: stage-files
 entity: stage
 title: 'File uploads and downloads'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/files.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/files.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/files
 topic_terms:
   - upload
@@ -15,7 +15,7 @@ topic_terms:
   - range
   - media
   - streaming
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - upload
   - download
@@ -26,24 +26,25 @@ keywords:
   - streaming
 links:
   -
-    label: 'File uploads and downloads — Stage guide'
-    url: 'https://stage.dev/resources/files'
-  -
     label: 'File transfer guide'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/files.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/files.md'
   -
     label: 'File response implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/FileResponse.php'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/FileResponse.php'
   -
     label: 'Upload implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/UploadedFile.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/UploadedFile.php'
+  -
+    label: 'File uploads and downloads — Stage guide'
+    url: 'https://stage.dev/resources/files'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # File uploads and downloads
 
-Applies to Stage 0.1.5. Uploads and attachment downloads arrived in 0.1.3.
-Inline media with byte ranges arrived in 0.1.5. Sources checked on 9 October 2026.
+Applies to Stage 0.2.0. Uploads and attachment downloads arrived in 0.1.3.
+Inline media with byte ranges arrived in 0.1.5. Sources checked on 17 October 2026.
 
 `UploadedFile::fromPhp($_FILES['file'] ?? [], maxBytes: $limit)` validates one
 native PHP upload. It checks upload errors, the actual size, and the client
@@ -80,6 +81,11 @@ An unsatisfiable range returns 416 with an empty body. Malformed or multiple
 ranges return the full file with 200. `If-Range` also falls back to 200.
 HEAD ignores Range. Attachment downloads do not process Range.
 
+In Stage 0.2, invalid header syntax and duplicate names fail when the request
+is constructed, before file selection. A valid `Range` value containing
+multiple ranges still uses the full-file fallback. `Range` and `range` name
+the same header; direct adapters cannot supply both as separate entries.
+
 Stage checks the syntax of the inline content type, not whether it matches
 the file. The application must authorize access and choose a safe media type.
 Output buffering, compression, concurrent file changes, and storage failures
@@ -88,6 +94,6 @@ These helpers do not establish production throughput or a storage service.
 
 ## Sources
 
-- [File transfer guide](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/files.md)
-- [File response implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/FileResponse.php)
-- [Upload implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/UploadedFile.php)
+- [File transfer guide](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/files.md)
+- [File response implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/FileResponse.php)
+- [Upload implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/UploadedFile.php)

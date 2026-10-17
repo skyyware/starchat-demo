@@ -3,9 +3,9 @@ id: starchat-building
 entity: stage
 title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
-retrieved_at: '2026-10-15'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.5'
+source_version: 'skyyware/starchat v0.8.0'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -89,88 +89,85 @@ follow_ups: {  }
 
 # Build and download a project
 
-With building enabled and `asset.type: project`, Starchat prepares project
-files and local instructions from the conversation.
+With building enabled and `asset.type: project`, visitors can request project
+files and local instructions from their conversation.
 
 ## Define the first useful version
 
-Building is off by default. The operator sets `building.enabled` and
-`building.instructions`, plus `asset.type: project`, in `installation.json`.
-These cannot widen `scope`;
-visitor messages cannot replace them. Install PHP's zip extension on the server
-and rebuild the index. See [Install Starchat](https://stage.dev/resources/starchat-installation)
-for setup.
+Building is off by default. Set `building.enabled`, `building.instructions`,
+and `asset.type: project` in `installation.json`. These cannot widen `scope`;
+visitors cannot replace them. Install PHP's zip extension and rebuild the index.
+See [Install Starchat](https://stage.dev/resources/starchat-installation).
 
 Projects can use any language allowed by your installation, including
-Python or Java, without Stage or PHP. Describe the first useful behavior and
-constraints. Suggestions remain proposals until chosen.
+Python or Java. Describe useful behavior and constraints. Suggestions are proposals.
 
-A concrete goal can produce a first version with open choices. A task list can
-add, edit, complete, and delete tasks while storage remains provisional.
-`PROJECT.md` separates these choices from your decisions. A missing requirement
-that blocks useful work still needs an answer.
+A concrete goal can produce a first version with open choices, such as a task
+list with provisional storage. `PROJECT.md` separates assumptions from decisions.
+Missing requirements that block useful work still need an answer.
 
 ## Offer a ready starter
 
 An operator can set `building.starter` to `starters/minimal.json`. The JSON file
 contains `status: "ready"`, `name`, `summary`, `open_questions`, and `files` with
-`path` and `content`. Review and run this application before release. Its summary
-uses at most four words matching its behavior. Starchat supplies no built-in Stage app. Disabled
-building cannot declare a starter.
+`path` and `content`. Review and run it before release; its summary uses at most
+four words. Starchat supplies no built-in app. Disabled building cannot declare a starter.
 
-The answer and its independent reviewer can select the starter for a compatible
-introductory request. It can appear with the first answer, without a project name or first feature. An explicit different technology or custom feature uses normal
-preparation. Later answers cannot reset a custom project to the starter.
+The answer and independent reviewer may select the starter for an introductory
+request. After the first answer, **Create project ZIP** offers it without a
+project name or first feature. An explicit different technology or custom feature
+uses normal preparation. A custom project cannot be reset to the starter.
 Revising a starter passes its files into custom work.
 
 `starchat index` prepackages it. `GET /project/starter` returns the project and
-base64 ZIP without a generation or review model call. Chat answers still use the
-model. One runtime cache stores this public starter without conversations.
-Missing or changed cache data is rebuilt from validated source and replaced
-atomically. Keep source and cache outside `public/`.
+base64 ZIP without a generation or review model call. Chat answers still use the model.
+One runtime cache stores the public starter without conversations, outside `public/`.
+Missing or changed data is rebuilt from validated source and replaced atomically.
 
 ## Download the current project
 
-The answer appears first. Preparation then runs after the input and suggestions
-while you keep chatting. Progress has no percentage or completion promise.
+The answer appears first. Click **Create project ZIP** beside the suggestions
+to begin. Loading, restored history and completed answers never start a build.
+The click appears in the conversation. The normal progress line replaces the
+composer until preparation finishes, without a percentage or completion promise.
 Generation and independent review use the conversation and previous files.
 Only a reviewed, assembled ZIP becomes downloadable.
 
-The ready card shows a code-folder icon, at most four words describing the
-implemented function, and **Download ZIP** for the current conversation.
-It slides and fades in unless reduced motion is on. Details stay
-in the ZIP's README.md and PROJECT.md; there is no contents disclosure.
-Clicking starts no model call.
+The ready response shows a code-folder icon, at most four words describing the
+implemented function, and **Download ZIP**. It slides and fades in unless reduced
+motion is on. Details stay in README.md and PROJECT.md; there is no contents disclosure.
+The final download starts no model call. Repeating the creation click for the
+same answer reveals its existing result.
 Older saved ZIPs with long summaries use up to four words from their project name.
 
-A new question hides the previous download. Earlier files stay available
-internally for the next revision. There is no **Download last ready ZIP** action.
-Starchat applies changed files and explicit removals, then validates and reviews
-the complete project. Missing essential details, an out-of-scope result, or a
-preparation failure produces no current download.
+Completed packages stay beside their original answer. A later click uses the
+current conversation. Earlier files stay available internally for the next revision.
+There is no **Download last ready ZIP** action. Changed files and removals are
+applied before full validation and review. Missing essential details, scope
+violations or failures produce no replacement; an earlier ZIP is not the updated project.
 
 A temporarily unavailable review may run once more within the same 115-second
 deadline. Cancellation, timeouts, and rejected or malformed reviews do not trigger
 this retry. Generation is not repeated.
 
-A failure offers **Prepare again**, which retries only when selected. Redraws
+A failure offers **Try again**, which retries only when selected. Redraws
 never retry it. Reloading or another tab can prepare again without a matching ZIP.
 
 A successful replacement overwrites the separate `:project` browser-storage
-entry and releases obsolete download URLs. A saved starter selection can restore
-its configured archive, but cannot recover lost custom files.
+entry. Only one archive is persisted; the open page keeps at most twelve package
+responses. Reloaded projects still require a creation click before display.
+A saved starter selection can restore its configured archive, but cannot recover lost custom files.
 
 **New conversation** clears the saved project. Files downloaded onto your device
-remain there. A new question, language change, or reset cancels preparation.
+remain there. A changed conversation, language change, or reset cancels preparation.
 Late results cannot replace the current state. If browser storage fails, a
 current ready ZIP remains available in memory.
 
 ## Continue locally
 
-The ZIP contains source files, `.gitignore`, README setup and check instructions,
-and `PROJECT.md` with confirmed requirements, provisional choices, and open
-questions. `AGENTS.md`, its `CLAUDE.md` import, and `docs/agent-tools.md` help the
-next agent. Existing project-specific instructions remain intact.
+The ZIP contains sources, `.gitignore`, README setup/check instructions, and
+`PROJECT.md` decisions. `AGENTS.md`, its `CLAUDE.md` import, and `docs/agent-tools.md`
+help the next agent. Existing project instructions remain intact.
 
 A fresh Git repository on `main` has no commits, index, identity, hooks, or
 remote. Files are untracked and ready for your first commit. Install dependencies
@@ -181,8 +178,7 @@ works; inspect the files and run their checks.
 See [Continue a downloaded project with an agent](https://stage.dev/resources/starchat-agent-handoff)
 for Codex, Claude Code, Grok Build, and optional plugins.
 
-Changes outside the chat cannot be uploaded or synchronized. A later website ZIP
-does not contain your local edits. Compare it in a separate directory before merging.
+Local edits cannot be uploaded or synchronized. Compare a later ZIP separately before merging.
 
 ## Account for processing and limits
 
@@ -190,11 +186,11 @@ Preparation uses the installation's model account and capacity. Its provider
 receives the conversation and previous files. Document this processing and
 browser storage before enabling building.
 
-Input allows 80 messages and 24 KiB of serialized conversation within a 192 KiB
-HTTP request. The complete project permits 40 UTF-8 text files, 16 KiB each, and
-32 KiB of serialized JSON, including handoff files. Oversized input is rejected
-without dropping earlier requirements. See [operations](https://stage.dev/resources/starchat-operations)
-for deadlines and capacity. Rate limits are not a spending cap.
+Input allows 80 messages and 24 KiB of conversation within a 192 KiB request.
+Projects permit 40 UTF-8 files, 16 KiB each, and 32 KiB of serialized JSON,
+including handoff files. Oversized input is rejected without dropping requirements.
+See [operations](https://stage.dev/resources/starchat-operations) for deadlines
+and capacity. Rate limits are not a spending cap.
 
 Temporary ZIPs are removed after each request. Visitor archives are not retained
 on the server; the public starter cache is separate. Verify provider retention

@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.7.5'
+source_version: 'skyyware/starchat v0.8.0'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -97,19 +97,16 @@ choices that mix familiar applications with less obvious useful ones. Once a
 conversation starts, suggestions answer the open clarification or advance the
 stated goal. An unselected suggestion is never a confirmed fact about the visitor.
 
-An installation can enable project building and select `asset.type: project`.
-A reviewed starter can appear with the first compatible answer. Other technologies
-and custom features use generation and independent review. A custom project
-cannot be reset to the starter.
+With building enabled and `asset.type: project`, visitors click the project
+action beside the suggestions. Loading or receiving an answer never builds a
+project. Visible progress runs, then the reviewed package appears in the
+conversation. A configured starter can serve an introductory request; custom
+features and technologies use generation and independent review.
 
-The answer appears before project preparation. A compact card after the input
-and suggestions shows progress while you keep chatting.
-A concrete goal can produce a first useful version while reversible
-choices remain provisional. Those choices and open questions belong in
-`PROJECT.md`. A new question hides the old download and cancels preparation.
-Only the current ZIP is downloadable, without a model request. Previous files
-stay available internally for revisions.
-Saved files remain on the visitor's device.
+Completed packages stay beside their original answer. A new creation click uses
+the latest requirements and previous files. It cannot reset a custom project to
+the starter. `PROJECT.md` separates provisional choices from confirmed decisions.
+Final downloads start no further model request. Saved files remain on the device.
 
 Each archive includes a documented entry point for people and coding agents.
 The README explains setup and checks. AGENTS.md, a CLAUDE.md import, and optional

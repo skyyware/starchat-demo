@@ -2,10 +2,10 @@
 id: stage-getting-started
 entity: stage
 title: 'Create a Stage application'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/README.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/README.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/getting-started
 topic_terms:
   - 'getting started'
@@ -16,7 +16,7 @@ topic_terms:
   - einstieg
   - start
   - setup
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - 'getting started'
   - installation
@@ -28,24 +28,25 @@ keywords:
   - setup
 links:
   -
-    label: 'Create a Stage application — Stage guide'
-    url: 'https://stage.dev/resources/getting-started'
-  -
     label: 'Stage installation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/README.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/README.md'
   -
     label: 'First HTTP application and checks'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md'
   -
     label: 'Application implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Application.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Application.php'
+  -
+    label: 'Create a Stage application — Stage guide'
+    url: 'https://stage.dev/resources/getting-started'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Create a Stage application
 
-Build a PHP endpoint that returns JSON. This example uses Stage 0.1.5 and
-PHP 8.4 or a later PHP 8 release. Sources checked on 9 October 2026.
+Build a PHP endpoint that returns JSON. This example uses Stage 0.2.0 and
+PHP 8.4 or a later PHP 8 release. Sources checked on 17 October 2026.
 
 ## Install the framework
 
@@ -54,7 +55,7 @@ With PHP and Composer installed, run:
 ```sh
 mkdir stage-app
 cd stage-app
-composer require skyyware/stage:^0.1.5
+composer require skyyware/stage:^0.2
 mkdir public
 ```
 
@@ -124,6 +125,6 @@ Add your own test tools and scripts. Installing Stage does not add a
 
 ## Sources
 
-- [Stage installation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/README.md)
-- [First HTTP application and checks](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/getting-started.md)
-- [Application implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Application.php)
+- [Stage installation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/README.md)
+- [First HTTP application and checks](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/getting-started.md)
+- [Application implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Application.php)

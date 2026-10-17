@@ -2,10 +2,10 @@
 id: stage-cms-api
 entity: stage
 title: 'Stage CMS API and private content'
-source: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/api.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/api.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage-cms v0.5.3"
+source_version: 'skyyware/stage-cms v0.5.4'
 public_path: /resources/cms-api
 topic_terms:
   - api
@@ -17,7 +17,7 @@ topic_terms:
   - private
   - published
   - editorial
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - api
   - bearer
@@ -30,23 +30,24 @@ keywords:
   - editorial
 links:
   -
-    label: 'Stage CMS API and private content — Stage guide'
-    url: 'https://stage.dev/resources/cms-api'
-  -
     label: 'CMS API operations and conflicts'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/api.md'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/api.md'
   -
     label: 'CMS agent guide'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/agents.txt'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/agents.txt'
   -
     label: 'Published and editorial reads'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/src/Content/Pages.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/src/Content/Pages.php'
+  -
+    label: 'Stage CMS API and private content — Stage guide'
+    url: 'https://stage.dev/resources/cms-api'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Stage CMS API and private content
 
-Applies to Stage CMS 0.5.3. Sources checked on 9 October 2026.
+Applies to Stage CMS 0.5.4. Sources checked on 17 October 2026.
 
 The CMS serves public API documentation at `/api/guide` and `/api/schema`.
 Content API requests require a bearer token. A browser session cookie does not
@@ -94,6 +95,6 @@ rules. A public answering service must select public content explicitly.
 
 ## Sources
 
-- [CMS API operations and conflicts](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/api.md)
-- [CMS agent guide](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/agents.txt)
-- [Published and editorial reads](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/src/Content/Pages.php)
+- [CMS API operations and conflicts](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/api.md)
+- [CMS agent guide](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/agents.txt)
+- [Published and editorial reads](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/src/Content/Pages.php)

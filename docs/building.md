@@ -6,12 +6,13 @@ application, even before a visitor names a specific feature. It includes one JSO
 endpoint, local run instructions and checks. The reviewed source lives in
 `starters/minimal.json`, selected by `building.starter`.
 
-The installer packages the starter in advance. Its download needs no project
-generation. A concrete feature or another chosen technology starts a custom
-snapshot in the background after the answer. A download appears only when the complete, reviewed archive is ready.
-The download itself starts no model request. The latest snapshot is saved in the browser.
-The project section stays hidden while an answer is in progress. Preparing the
-latest project shows a compact progress indicator; its ZIP appears only when ready.
+The installer packages the starter in advance. After an answer, the visitor
+clicks **Create project ZIP** beside the suggestions. The click appears as a
+request in the conversation, followed by visible progress and a reviewed package
+response. Loading, restored history and answers alone never start a build.
+A starter needs no project generation; custom behavior uses the current
+conversation and previous files. The final download starts no further model
+request. The composer returns when preparation finishes.
 The ready card uses a code-folder icon and a description of the current function
 in at most four words. It enters with a short slide and fade, disabled by
 reduced-motion preferences. Project details stay in README.md and PROJECT.md inside
@@ -37,19 +38,22 @@ and reviews custom files but does not execute them. Visitors
 run the documented checks in their own environment. Changes made outside this
 chat are not uploaded or synchronized back.
 
-A repeated download reuses the prepared current snapshot. Each completed answer
-prepares the newest useful first slice, including concrete features discussed
-while optional choices remain open. Provisional choices are documented.
-Only a ready archive matching the latest conversation is offered. The previous
-project remains internal revision input until a completed replacement succeeds.
+A repeated creation click for the same answer reveals its existing result.
+Completed packages remain beside the answers they describe. A later creation
+click uses the latest conversation, including concrete features discussed while
+optional choices remain open. Provisional choices are documented. The previous
+project remains revision input until a completed replacement succeeds.
 Unchanged files are preserved; the assembled project receives independent review.
 If an older
 client removed a previously offered starter, the conversation can restore that
 configured starter before preparing a revision. This does not recover lost custom
 files or replace a saved custom project. New conversation clears the project.
-Files already downloaded onto the visitor’s
-device remain theirs. A storage failure is shown while the current download stays
-available in memory. Preparation failures offer a manual retry.
+Files already downloaded onto the visitor's device remain theirs. The open page
+keeps at most twelve package responses; browser storage retains only the latest
+project archive. Even a cached archive needs a creation click before display.
+A storage failure leaves the current download in memory. Preparation failures
+offer a manual retry. Reset, changed locale and a new answer in another tab cancel
+pending preparation and prevent late responses from restoring old results.
 
 Custom generation aims for a compact first slice with native controls and short
 project documents. A temporarily unavailable independent reviewer can retry once

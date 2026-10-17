@@ -2,10 +2,10 @@
 id: stage-cms
 entity: stage
 title: 'Build a site with Stage CMS'
-source: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/README.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/README.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage-cms v0.5.3"
+source_version: 'skyyware/stage-cms v0.5.4'
 public_path: /resources/cms
 topic_terms:
   - cms
@@ -15,7 +15,7 @@ topic_terms:
   - preview
   - translation
   - fields
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - cms
   - theme
@@ -26,26 +26,27 @@ keywords:
   - fields
 links:
   -
-    label: 'Build a site with Stage CMS — Stage guide'
-    url: 'https://stage.dev/resources/cms'
-  -
     label: 'CMS installation and editing'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/README.md'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/README.md'
   -
     label: 'Page types, bindings, languages, and themes'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/themes.md'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/themes.md'
   -
     label: 'Publication rules'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/publication.md'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/publication.md'
   -
     label: 'Markdown implementation'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/src/Presentation/Markdown.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/src/Presentation/Markdown.php'
+  -
+    label: 'Build a site with Stage CMS — Stage guide'
+    url: 'https://stage.dev/resources/cms'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # Build a site with Stage CMS
 
-Applies to Stage CMS 0.5.3. Sources checked on 9 October 2026.
+Applies to Stage CMS 0.5.4. Sources checked on 17 October 2026.
 
 Stage CMS manages one site, called a publication, with one owner. You can write Markdown,
 fill named fields, preview drafts, publish pages, and restore earlier revisions.
@@ -58,7 +59,7 @@ Install PHP 8.4 or 8.5, Composer 2, and the extensions listed in the package's
 `composer.json`. Then run:
 
 ```sh
-composer create-project skyyware/stage-cms my-site "^0.5.3" --no-plugins
+composer create-project skyyware/stage-cms my-site "^0.5.4" --no-plugins
 cd my-site
 php bin/cms setup --name="Your name" --email="you@example.com"
 composer serve
@@ -74,8 +75,13 @@ new private draft. Publish that restored draft to replace the public revision.
 
 ## Add the CMS to an existing application
 
-Run `composer require skyyware/stage-cms:^0.5.3` in the application.
-Keep the lockfile. Register the application's page types in PHP and implement
+Run `composer require skyyware/stage-cms:^0.5.4` in the application.
+Keep the lockfile. CMS 0.5.4 accepts Stage `^0.1.1 || ^0.2`; an existing
+application can keep Stage 0.1. The standalone CMS lockfile installs Stage 0.2.0.
+Stage 0.2's normalized, validated request headers require that newer series.
+No CMS database migration is needed when upgrading from CMS 0.5.
+
+Register the application's page types in PHP and implement
 `StageCms\Presentation\Theme` to render its design. The interface has
 `index(int $page): Response` and `page(Page $page, bool $preview = false): Response`.
 
@@ -108,7 +114,7 @@ It strips raw HTML and blocks unsafe links. It supports Markdown tables.
 
 ## Sources
 
-- [CMS installation and editing](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/README.md)
-- [Page types, bindings, languages, and themes](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/themes.md)
-- [Publication rules](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/publication.md)
-- [Markdown implementation](https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/src/Presentation/Markdown.php)
+- [CMS installation and editing](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/README.md)
+- [Page types, bindings, languages, and themes](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/themes.md)
+- [Publication rules](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/publication.md)
+- [Markdown implementation](https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/src/Presentation/Markdown.php)

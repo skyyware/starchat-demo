@@ -2,10 +2,10 @@
 id: stage-framework
 entity: stage
 title: 'What Stage does'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/framework
 topic_terms:
   - framework
@@ -16,7 +16,7 @@ topic_terms:
   - queue
   - persistence
   - scaling
-phrase_terms: []
+phrase_terms: {  }
 keywords:
   - framework
   - architecture
@@ -28,23 +28,24 @@ keywords:
   - scaling
 links:
   -
-    label: 'What Stage does — Stage guide'
-    url: 'https://stage.dev/resources/framework'
-  -
     label: 'Stage design and limits'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md'
   -
     label: 'Compose features'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/features.md'
   -
     label: 'Caller implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Security/Caller.php'
-based_on: []
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Security/Caller.php'
+  -
+    label: 'What Stage does — Stage guide'
+    url: 'https://stage.dev/resources/framework'
+based_on: {  }
+follow_ups: {  }
 ---
 
 # What Stage does
 
-Applies to Stage 0.1.5. Sources checked on 9 October 2026.
+Applies to Stage 0.2.0. Sources checked on 17 October 2026.
 
 Stage provides an HTTP router, request and response objects, file transfer
 helpers, and optional permission checks. Keep your application's rules in PHP
@@ -54,6 +55,12 @@ An HTTP handler passes input to an application operation and turns its result
 into a response. The operation validates input, checks access, and applies
 the application's rules. Commands and agent adapters can call that same
 operation without going through HTTP.
+
+Stage 0.2 enforces HTTP header syntax and unique lowercase names when a request
+or response is constructed. A test or agent adapter therefore supplies the
+same header map as a web request. Consumers can use that contract directly;
+they do not need their own normalization loop. This protects the HTTP boundary,
+while the operation still owns permissions and application rules.
 
 ## Check permissions inside the operation
 
@@ -81,6 +88,6 @@ or claiming a production capacity.
 
 ## Sources
 
-- [Stage design and limits](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/design.md)
-- [Compose features](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md)
-- [Caller implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Security/Caller.php)
+- [Stage design and limits](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/design.md)
+- [Compose features](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/features.md)
+- [Caller implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Security/Caller.php)

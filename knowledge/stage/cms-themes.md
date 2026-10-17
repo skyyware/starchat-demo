@@ -1,27 +1,37 @@
 ---
-id: "stage-cms-themes"
-entity: "stage"
-title: "CMS page types and themes"
-source: "https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/themes.md"
-retrieved_at: "2026-10-09"
+id: stage-cms-themes
+entity: stage
+title: 'CMS page types and themes'
+source: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/themes.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage-cms v0.5.3"
-public_path: "/resources/cms-themes"
-topic_terms: ["themes", "types", "fields", "templates"]
-keywords: ["themes", "types", "fields", "templates"]
+source_version: 'skyyware/stage-cms v0.5.4'
+public_path: /resources/cms-themes
+topic_terms:
+  - themes
+  - types
+  - fields
+  - templates
+keywords:
+  - themes
+  - types
+  - fields
+  - templates
 links:
+  -
+    label: 'CMS page types and themes source'
+    url: 'https://github.com/skyyware/stage-cms/blob/2e6b5ae174b8bf62f97fde3385ee407c4b652b4e/docs/themes.md'
   -
     label: 'CMS page types and themes — Stage guide'
     url: 'https://stage.dev/resources/cms-themes'
-  -
-    label: 'CMS page types and themes source'
-    url: 'https://github.com/skyyware/stage-cms/blob/7b7d9845e33059bbb490ca3b54c230a008062b6d/docs/themes.md'
-based_on: []
+based_on: {  }
+phrase_terms: {  }
+follow_ups: {  }
 ---
 
 # CMS page types and themes
 
-In Stage CMS 0.5.3, a page type defines the content an editor enters.
+In Stage CMS 0.5.4, a page type defines the content an editor enters.
 A theme is PHP rendering code supplied by the application. Changing content
 does not install a template or execute PHP.
 

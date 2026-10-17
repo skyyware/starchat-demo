@@ -1,27 +1,37 @@
 ---
-id: "stage-features"
-entity: "stage"
-title: "Compose features"
-source: "https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md"
-retrieved_at: "2026-10-09"
+id: stage-features
+entity: stage
+title: 'Compose features'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/features.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
-public_path: "/resources/features"
-topic_terms: ["features", "permissions", "services", "contracts"]
-keywords: ["features", "permissions", "services", "contracts"]
+source_version: 'skyyware/stage v0.2.0'
+public_path: /resources/features
+topic_terms:
+  - features
+  - permissions
+  - services
+  - contracts
+keywords:
+  - features
+  - permissions
+  - services
+  - contracts
 links:
+  -
+    label: 'Compose features source'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/features.md'
   -
     label: 'Compose features — Stage guide'
     url: 'https://stage.dev/resources/features'
-  -
-    label: 'Compose features source'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/features.md'
-based_on: []
+based_on: {  }
+phrase_terms: {  }
+follow_ups: {  }
 ---
 
 # Compose features
 
-In Stage 0.1.5, a feature can be an ordinary PHP object. Put input validation
+In Stage 0.2.0, a feature can be an ordinary PHP object. Put input validation
 and permission checks in the operation that owns the data. HTTP routes,
 commands, and agent adapters can then call the same operation.
 

@@ -2,10 +2,10 @@
 id: stage-http
 entity: stage
 title: 'HTTP routing and request limits'
-source: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/http.md'
-retrieved_at: '2026-10-09T00:00:00+02:00'
+source: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/http.md'
+retrieved_at: '2026-10-17'
 review_status: reviewed
-source_version: "skyyware/stage v0.1.5"
+source_version: 'skyyware/stage v0.2.0'
 public_path: /resources/http
 topic_terms:
   - routing
@@ -16,7 +16,11 @@ topic_terms:
   - head
   - options
   - http
-phrase_terms: []
+  - headers
+  - authorization
+phrase_terms:
+  - 'request headers'
+  - 'header names'
 keywords:
   - routing
   - routes
@@ -26,28 +30,31 @@ keywords:
   - head
   - options
   - http
+  - headers
+  - authorization
 links:
+  -
+    label: 'HTTP reference'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/http.md'
+  -
+    label: 'Request implementation'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Request.php'
+  -
+    label: 'Application implementation'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Application.php'
+  -
+    label: 'Response implementation'
+    url: 'https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Response.php'
   -
     label: 'HTTP routing and request limits — Stage guide'
     url: 'https://stage.dev/resources/http'
-  -
-    label: 'HTTP reference'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/http.md'
-  -
-    label: 'Request implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Request.php'
-  -
-    label: 'Application implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Application.php'
-  -
-    label: 'Response implementation'
-    url: 'https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Response.php'
-based_on: []
+based_on: {  }
+follow_ups: {  }
 ---
 
 # HTTP routing and request limits
 
-Applies to Stage 0.1.5. Sources checked on 9 October 2026.
+Applies to Stage 0.2.0. Sources checked on 17 October 2026.
 
 `Stage\Http\Application` accepts `Route` and `Idea` objects.
 `Route::get()` constructs a GET route. `new Route('POST', '/path', $handler)`
@@ -56,7 +63,7 @@ returns `Response`.
 
 ## Return JSON from a GET route
 
-With PHP 8.4 or a later PHP 8 release, install `skyyware/stage:^0.1.5`
+With PHP 8.4 or a later PHP 8 release, install `skyyware/stage:^0.2`
 through Composer. Create `public/index.php`:
 
 ```php
@@ -112,6 +119,15 @@ run for HEAD, so it must account for side effects such as download counters.
 
 ## Validate input
 
+Stage 0.2 gives every request lowercase header names, including direct PHP
+calls from tests or agent adapters. Read `$request->headers['authorization']`;
+the constructor accepts `Authorization` and preserves the value's bytes.
+Malformed names, control characters in values except horizontal tabs, and
+duplicate names regardless of case throw `InvalidArgumentException` before
+an operation runs. Native malformed input becomes HTTP 400. PHP and the web
+server parse repeated wire headers before Stage validates the resulting map.
+Valid syntax does not authenticate a token or grant permission.
+
 `Request::json()` decodes JSON into PHP values. Malformed JSON throws
 `HttpError(400)`. Valid JSON can be a scalar, array, or null. The application
 must validate the required shape and values before using them.
@@ -133,7 +149,7 @@ automatically. Each response header has one string value; repeated
 
 ## Sources
 
-- [HTTP reference](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/docs/http.md)
-- [Request implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Request.php)
-- [Application implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Application.php)
-- [Response implementation](https://github.com/skyyware/stage/blob/52adc61b10e72ce65a5d0c8fd2bd8242dc831f3b/src/Http/Response.php)
+- [HTTP reference](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/docs/http.md)
+- [Request implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Request.php)
+- [Application implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Application.php)
+- [Response implementation](https://github.com/skyyware/stage/blob/0a11702bfc66e088f9717b32b87e2e1bcf48ae03/src/Http/Response.php)
