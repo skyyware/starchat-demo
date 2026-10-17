@@ -8,7 +8,7 @@ Deutschland
 Vertreten durch Sascha Dobrochynskyy.\
 [office@skyyware.com](mailto:office@skyyware.com)
 
-SKYYWARE UG (haftungsbeschränkt).\
+SKYYWARE UG.\
 Handelsregister: Amtsgericht Stuttgart, HRB 740570.\
 Umsatzsteuer-Identifikationsnummer: DE281935680.
 
@@ -56,7 +56,7 @@ Dieser von uns bereitgestellte Starter enthält kein Gespräch und keine persön
 Angaben. Der Server hält eine vorbereitete Kopie vor. Ihr Download braucht keine
 zusätzliche Modellanfrage.
 
-Für ein individuelles Projekt senden wir nach der Antwort automatisch das aktuelle,
+Wenn Sie „Projekt-ZIP erstellen“ anklicken, senden wir das aktuelle,
 begrenzte Gespräch und gegebenenfalls die bisherigen Projektdateien an denselben
 Anbieter, um einen neuen Stand zu erstellen und zu prüfen. Ein Download erscheint
 erst, wenn die ZIP-Datei fertig ist. Der Klick darauf löst keine weitere
@@ -106,4 +106,4 @@ Baden-Württemberg.
 Der Chat trifft keine Entscheidungen mit rechtlicher oder vergleichbar
 erheblicher Wirkung über Sie.
 
-Verhalten der Projekt-Downloads aktualisiert: 12. Oktober 2026. Übrige Abschnitte zuletzt geprüft: 10. Oktober 2026.
+Verhalten der Projekt-Downloads aktualisiert: 17. Oktober 2026. Übrige Abschnitte zuletzt geprüft: 10. Oktober 2026.

@@ -8,7 +8,7 @@ Germany
 Represented by Sascha Dobrochynskyy.\
 [office@skyyware.com](mailto:office@skyyware.com)
 
-SKYYWARE UG (haftungsbeschränkt).\
+SKYYWARE UG.\
 Commercial register: Amtsgericht Stuttgart, HRB 740570.\
 VAT identification number: DE281935680.
 
@@ -51,7 +51,7 @@ For an introductory request, the chat can offer a prepared minimal application.
 This installation-owned starter contains no conversation or personal information.
 The server keeps one prepared copy; downloading it needs no additional model request.
 
-For a custom project, after the answer we automatically send the current bounded
+When you click “Create project ZIP”, we send the current bounded
 conversation and, if available, the previous project files to the same provider
 to prepare and review a new snapshot. A download appears only when the ZIP is
 ready. Clicking it starts no further model request. The service does not execute
@@ -93,4 +93,4 @@ and Freedom of Information Baden-Württemberg.
 
 The chat makes no decisions with legal or similarly significant effects about you.
 
-Project download behavior updated: 12 October 2026. Other sections last reviewed: 10 October 2026.
+Project download behavior updated: 17 October 2026. Other sections last reviewed: 10 October 2026.
