@@ -5,7 +5,7 @@ title: 'Continue a downloaded project with an agent'
 source: 'https://stage.dev/resources/starchat-agent-handoff'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.0'
+source_version: 'skyyware/starchat v0.10.1'
 public_path: /resources/starchat-agent-handoff
 topic_terms:
   - 'agent handoff'

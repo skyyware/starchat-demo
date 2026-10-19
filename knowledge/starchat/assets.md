@@ -3,9 +3,9 @@ id: starchat-assets
 entity: stage
 title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
-retrieved_at: '2026-10-17'
+retrieved_at: '2026-10-19'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.0'
+source_version: 'skyyware/starchat v0.10.1'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -89,8 +89,8 @@ independently enabled project-building API; remove `asset` and `building` to dis
 
 ## Keep the result current
 
-The answer appears before preparation. Creation actions sit in **Actions** below
-the suggestions. Each area has its own limit of four controls.
+The answer appears before preparation. Filled action buttons sit below questions,
+with no heading. Each area has its own limit of four controls.
 Only a click starts preparation.
 Answers and preparation use three animated dots and a status line in the
 conversation; reviewed cards appear only when ready.

@@ -19,12 +19,14 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 17 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.10.0.
+The 19 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.10.1.
 It explains constructor-owned request headers and both supported CMS framework
-series. Asset creation links sit under **Actions**, below up to four questions,
+series. Filled asset buttons sit below up to four questions,
 with an independent limit of four controls. The groups never fill or displace
-each other. Extra formats page only within **Actions**. Both retain the same
-text layout, arrow and styling. Only a click starts creation. Answers and
+each other. Extra formats page only within the action area. Its localized
+heading is available to screen readers, without visible text. The buttons wrap
+to fit their labels and use the installation's design. Questions retain their
+text-link styling. Only a click starts creation. Answers and
 preparation use the same three animated dots and short status line, then the result appears in the
 conversation. Ready projects keep their code-folder
 icon, four-word function description and reduced-motion-aware entrance.

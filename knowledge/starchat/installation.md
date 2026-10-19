@@ -3,9 +3,9 @@ id: starchat-installation
 entity: stage
 title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
-retrieved_at: '2026-10-17'
+retrieved_at: '2026-10-19'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.0'
+source_version: 'skyyware/starchat v0.10.1'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -77,7 +77,7 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.10.0 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.10.1 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -85,11 +85,11 @@ outside Git and the public directory.
 
 The core is private; the [public example](https://github.com/skyyware/starchat-demo)
 grants no access. With authorized access, copy `examples/installation` from
-Starchat 0.10.0 into an empty project:
+Starchat 0.10.1 into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.10.0 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.10.1 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git and retain both Composer files. Route
@@ -122,7 +122,7 @@ Permission covers styles, fonts, and images, excluding scripts and APIs.
 Without this setting, assets stay local.
 
 Optional `header_link` adds an HTTPS link beside the language selector.
-Questions and **Actions** have separate limits of four controls. Actions sit below
+Questions and actions have separate limits of four controls. Buttons sit below
 questions; neither fills or displaces the other. Extra formats use **More actions**,
 three per page. Four questions use two columns when space allows.
 

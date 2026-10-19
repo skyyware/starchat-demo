@@ -13,12 +13,15 @@ focus changes the fill or underlines the text. Download actions sit vertically
 centered beside the project description. Answers and requested assets use one
 loader with three animated dots and a short localized status line, such as
 **Creating project**. It aligns with the chat's left edge and uses the Stage muted
-text color. Questions and **Actions** have separate limits of four controls.
-Actions appear below the questions; neither area fills or displaces the other.
+text color. Questions and actions have separate limits of four controls.
+Actions use filled, borderless buttons below the questions, without a visible
+heading. Their width fits the label, with a minimum 44px touch target and wrapping
+on narrow screens. The area keeps a localized name for screen readers.
+Neither area fills or displaces the other.
 Four questions use two rows where space allows. Labels keep their own width.
 Extra formats use action-only pages with three formats and **More actions**.
-Requests and results remain in the same conversation. The shared `.suggestions`
-styles also apply to `#action-choices`; no second theme is needed.
+Requests and results remain in the same conversation. Core action layout uses
+the canonical Stage palette and fonts; questions retain their text-link styling.
 Initial, reset and topic-entry focus waits for a ready composer and respects
 typing or a visitor-selected focus.
 

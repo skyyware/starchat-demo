@@ -3,9 +3,9 @@ id: starchat-building
 entity: stage
 title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
-retrieved_at: '2026-10-17'
+retrieved_at: '2026-10-19'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.0'
+source_version: 'skyyware/starchat v0.10.1'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -130,7 +130,7 @@ Missing or changed data is rebuilt from validated source and replaced atomically
 
 ## Download the current project
 
-The answer appears first. Click **Create project ZIP** under **Actions**
+The answer appears first. Click **Create project ZIP** below the questions
 to begin. Loading, restored history and completed answers never start a build.
 The click appears in the conversation. Answers and preparation use the same
 three animated dots and a short status line.

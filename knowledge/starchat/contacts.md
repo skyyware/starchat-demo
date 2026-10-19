@@ -3,9 +3,9 @@ id: starchat-contacts
 entity: stage
 title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
-retrieved_at: '2026-10-17'
+retrieved_at: '2026-10-19'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.0'
+source_version: 'skyyware/starchat v0.10.1'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -70,7 +70,7 @@ Add `actions` to the installation's existing `asset` configuration:
 ```
 
 Actions default to an empty list. They can accompany `none`, `pdf`, `email`, or
-`project`. Project ZIPs and contact actions appear under **Actions**, below the
+`project`. Project ZIPs and contact actions use buttons below the
 suggestions. Each prepares separately after a click. The PDF and Markdown exports
 contain the same reviewed actions. Result cards appear in the conversation.
 See [conversation assets](https://stage.dev/resources/starchat-assets) for downloads.
