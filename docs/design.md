@@ -8,8 +8,11 @@ over installation fallback tokens, so changing a color or font there changes
 both surfaces on their next load.
 
 Chat navigation, suggestions and download actions share one font size and the
-bright text color. Controls and cards have no borders or outlines. Keyboard
-focus changes the fill or underlines the text. Download actions sit vertically
+bright text color. Language and reset controls, the composer, retry controls,
+asset cards and download buttons retain their fine contours. Follow-up questions
+have an accent rule; source links are underlined. Keyboard focus changes the fill
+or underlines the text, and the language selector has an inset accent.
+Download actions sit vertically
 centered beside the project description. Answers and requested assets use one
 loader with three animated dots and a short localized status line, such as
 **Creating project**. It aligns with the chat's left edge and uses the Stage muted

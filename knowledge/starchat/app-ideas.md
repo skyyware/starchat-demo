@@ -5,7 +5,7 @@ title: 'Configure opening app ideas'
 source: 'https://stage.dev/resources/starchat-app-ideas'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.1'
+source_version: 'skyyware/starchat v0.10.2'
 public_path: /resources/starchat-app-ideas
 topic_terms:
   - 'app ideas'

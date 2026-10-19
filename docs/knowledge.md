@@ -19,7 +19,7 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 19 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.10.1.
+The 19 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.10.2.
 It explains constructor-owned request headers and both supported CMS framework
 series. Filled asset buttons sit below up to four questions,
 with an independent limit of four controls. The groups never fill or displace
