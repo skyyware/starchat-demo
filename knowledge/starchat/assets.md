@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.3'
+source_version: 'skyyware/starchat v0.10.4'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -80,25 +80,25 @@ Assets are off by default; set `asset.type` in `installation.json`:
 | `{"type":"pdf"}` | Reviewed conversation summary as a PDF |
 | `{"type":"email","recipient":"hello@example.org"}` | Editable draft in the visitor's mail app |
 
-PDF and email need no building. Optional `actions` and `downloads` accompany any
-type and default to empty lists. With neither, `none` prepares nothing. Visitors
-cannot change these settings. Session context requires fresh scope checks.
+PDF and email need no building. `actions` and `downloads` default to empty lists
+and accompany any type. With neither, `none` prepares nothing. Visitors cannot
+change settings. Session context requires fresh scope checks.
 
 Upgrades from 0.4.x need `asset.type: project` for ZIPs. `none` does not disable an
 independently enabled project-building API; remove `asset` and `building` to disable both.
 
 ## Keep the result current
 
-The answer appears before preparation. Filled action buttons sit below questions,
-without a heading or icons, in regular text. Each area allows four controls.
-Only a click starts preparation.
+Answers appear before preparation. Regular text-only action buttons sit below
+questions without a heading. Each area allows four controls.
+Clicks start preparation.
 Answers and preparation use three animated dots and a status line in the
 conversation; reviewed cards appear only when ready.
-Loading, restored history and completed answers never prepare assets. Failures
-offer manual retry. Ready cards hide actions they cover for this
+Loading, restored history and completed answers never prepare assets. Transient
+failures offer manual retry aligned with the answer. Ready cards hide actions they cover for this
 answer; a PDF with an email card also hides email creation. Other formats and
 later answers remain eligible.
-Cards respect reduced motion. Downloads start no model call.
+Cards respect reduced motion. Downloads have contrasting fills and make no model call.
 PDFs have no inline preview; their button opens the prepared file.
 
 PDF actions skip a first clarification without useful content. Nonempty steps
@@ -107,27 +107,27 @@ steps, wait. Earlier useful answers still qualify. Orientation, missing evidence
 and unavailable answers do not. Primary email drafts can follow a completed
 clarification; empty history prepares none.
 
-The page keeps up to twelve packages by their answers. A later click uses the
-current conversation. Reset, language change or context loss clears results and
-URLs. Changed conversations cancel preparation and fence late responses. PDF and
-contacts stay in memory; reloads require a new click. Context chat starts empty.
+The page keeps up to twelve packages by their answers. New clicks use the current
+conversation. Reset, language change or context loss clears results and URLs.
+Conversation changes cancel preparation and reject late responses. PDF and contact
+results stay in memory; reloads require a new click. Context chat starts empty.
 Project ZIP storage and revision input follow
 [project downloads](https://stage.dev/resources/starchat-building).
 
 ## Prepare a faithful summary
 
 Generation and independent review use the bounded conversation and installation
-scope. Summaries preserve facts, corrections, uncertainty, open decisions and
-attribution. A proposal is not an agreement; a request is not a confirmed appointment.
-Review checks faithfulness, not the truth of every claim.
+scope. Summaries retain facts, corrections, uncertainty, open decisions and
+attribution. Proposals are not agreements; requests are not confirmed appointments.
+Review checks faithfulness, not factual truth.
 
 Links need approved conversation links or verified context; contacts need reviewed
 metadata. See
 [verified session context](https://stage.dev/resources/starchat-request-context).
 
-Input allows 80 messages and 24 KiB. Generation and review share a 45-second
-deadline with no automatic model retry. The browser allows 60 seconds.
-Capacity is shared with chat and building.
+Input allows 80 messages and 24 KiB. Generation and review share 45 seconds,
+without automatic model retry. The browser allows 60 seconds.
+Chat and building share capacity.
 
 ## Add document downloads and contacts
 
@@ -139,12 +139,13 @@ Capacity is shared with chat and building.
 it packs the same PDF and Markdown into a ZIP, not software. Names use the summary
 title in its selected language and an ISO date in the installation timezone,
 with unsafe characters removed.
-Contact actions require [verified contact metadata](https://stage.dev/resources/starchat-contacts).
-No matching contact means no contact action.
+Contextual actions require [verified contacts](https://stage.dev/resources/starchat-contacts)
+selected for the current answer. Missing or expired metadata offers no action.
+Known phone numbers use direct `tel:` buttons without generation.
 
-Actions request only their selected type: email and phone do not render a PDF;
-PDF does not create unrequested Markdown or ZIP files. Unknown or disabled types
-fail before model use. Older clients without a selection retain combined responses.
+Preparation requests select one type; email and phone requests render no PDF.
+PDF creates no extra download. Unknown or disabled types fail before model use.
+Older clients without a selection retain combined responses.
 
 ## Use installation branding in PDFs
 
@@ -156,17 +157,16 @@ Arabic, and missing glyphs fail explicitly. Visitors can choose a German PDF;
 the service does not silently translate. Source Sans and Roboto Slab have PDF
 fonts; D-DIN and system fonts use DejaVu. Output is not tagged for PDF/UA.
 
-The renderer permits no remote images or scripts. Missing logos use the
-installation name. PNG and WebP require PHP GD. Output is limited to eight A4 pages
-and 2 MiB. Temporary files are removed; no server-side PDF archive is kept.
+PDF rendering blocks remote images and scripts. Missing logos use the installation
+name. PNG and WebP require PHP GD. Limits: eight A4 pages and 2 MiB.
+Temporary files are removed; the server keeps no PDF archive.
 
 ## Let the visitor send the email
 
-The primary email action follows a completed exchange. Clicking prepares and
-reviews a draft for `primary`. Mail buttons and exports use the complete draft.
-Email has no preview.
-Limits are 140 characters for the subject, 1,200 for the body, and 8,000 for the
-encoded mailto URI. Mail apps may impose smaller limits.
+The primary email action prepares and reviews a draft for `primary` after a click
+in a completed exchange. Mail buttons and exports use the complete draft, without a preview.
+Limits: subject 140 characters, body 1,200, encoded mailto URI 8,000.
+Mail apps may impose smaller limits.
 
 `asset.contact_locale` sets the recipient's language, defaulting to the
 installation's `locale`. The email uses that language and blank lines between

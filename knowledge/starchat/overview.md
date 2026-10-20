@@ -3,9 +3,9 @@ id: starchat
 entity: stage
 title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.3'
+source_version: 'skyyware/starchat v0.10.4'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -94,8 +94,8 @@ Opening questions introduce the chat's purpose and possible uses without
 assuming the visitor's role or technical knowledge. A building installation can
 instead provide a reviewed pool of app ideas. Each new conversation shows four
 choices that mix familiar applications with less obvious useful ones. Once a
-conversation starts, suggestions answer the open clarification or advance the
-stated goal. An unselected suggestion is never a confirmed fact about the visitor.
+conversation starts, short labels answer the clarification or advance the goal.
+Clicks submit the full suggested reply. An unselected suggestion is not a confirmed fact.
 
 With building enabled and `asset.type: project`, visitors click the project
 action beside the suggestions. Loading or receiving an answer never builds a
@@ -120,8 +120,8 @@ default. The service reviews files but does not execute them. See
 for setup, missing-information cases, manual retry, and limits.
 
 Assets are off by default. An installation can instead offer a reviewed PDF
-summary or an editable email draft. Reviewed email and telephone contacts, or
-Markdown downloads, can accompany the selected type. Starchat sends no email. See
+summary or an editable email draft. Current reviewed contacts can add email-draft
+or direct-call buttons. Markdown downloads can accompany the selected type. See
 [conversation assets](https://stage.dev/resources/starchat-assets) for setup and limits.
 
 ## Facts from a signed-in application

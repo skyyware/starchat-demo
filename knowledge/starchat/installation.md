@@ -5,7 +5,7 @@ title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.3'
+source_version: 'skyyware/starchat v0.10.4'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'starchat installation'
@@ -26,6 +26,7 @@ topic_terms:
   - 'java project'
   - 'projekt zip'
   - 'projekt export'
+  - 'suggestion labels'
 phrase_terms:
   - 'suggested questions and actions'
   - 'separate actions'
@@ -49,6 +50,7 @@ keywords:
   - 'java project'
   - 'projekt zip'
   - 'projekt export'
+  - suggestion_labels
 links:
   -
     label: 'Install Starchat'
@@ -71,13 +73,16 @@ links:
   -
     label: 'Configure opening app ideas'
     url: 'https://stage.dev/resources/starchat-app-ideas'
+  -
+    label: 'Read suggested replies and contacts from the answer API'
+    url: 'https://stage.dev/resources/starchat-answer-api'
 based_on: {  }
 follow_ups: {  }
 ---
 
 # Install Starchat
 
-Starchat 0.10.3 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
+Starchat 0.10.4 requires PHP 8.4 or later PHP 8, Composer, its declared extensions,
 and SQLite FTS5. Serve only `public/` through HTTPS. Keep credentials and runtime
 outside Git and the public directory.
 
@@ -85,11 +90,11 @@ outside Git and the public directory.
 
 The core is private; the [public example](https://github.com/skyyware/starchat-demo)
 grants no access. With authorized access, copy `examples/installation` from
-Starchat 0.10.3 into an empty project:
+Starchat 0.10.4 into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.10.3 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.10.4 --no-plugins --no-scripts
 ```
 
 Keep Composer credentials outside Git. Commit both Composer files.
@@ -106,27 +111,28 @@ Optional `copy.<locale>.missing` sets the no-information answer: 1 to 500
 nonblank plain-text characters. Locale fallback applies.
 Omit it for defaults; service-unavailable messages are unchanged.
 
-Start with general questions; later suggestions follow the visitor's goal.
-Suggestion labels and submitted replies omit trailing full stops, including
-restored suggestions. Question marks and internal punctuation remain.
+Suggestions use short single-line labels and submit their full question.
+The [answer API](https://stage.dev/resources/starchat-answer-api) defines both fields.
+Labels and submitted replies omit trailing full stops, including restored choices.
+Question marks and internal punctuation remain.
 
 Building installations can mix four familiar and less obvious
 [opening app ideas](https://stage.dev/resources/starchat-app-ideas) per conversation.
 
-Set `brand.home_url` to your HTTPS homepage. The logo opens it in the same tab,
-or `/` when unset. Set fonts, logo, favicon, and stylesheet through `brand`.
+Set fonts, logo, favicon, and stylesheet through `brand`. The logo opens
+`brand.home_url` in the same tab, or `/` when unset. Use an HTTPS homepage.
 
 For shared branding, set `brand.asset_origin` to a trusted HTTPS origin with
 paths under `/branding/`. Revalidate styles and allow cross-origin font reads.
 This permits styles, fonts, and images, not scripts or APIs. Otherwise assets stay local.
 
 `header_link` adds an HTTPS link beside the language selector.
-Questions and actions have separate limits of four controls; neither fills or displaces the other.
-Actions sit below questions. Buttons use regular text without icons. Extra formats
-use **More actions**, three per page. Four questions use two columns when space allows.
+Questions and actions each allow four controls. Neither displaces the other.
+Actions sit below questions, using regular text without icons.
+**More actions** pages extra formats, three per page. Four questions use two columns when space allows.
 
-Suggestions have no custom keyboard shortcuts or numbers. Tab focuses; Enter or Space
-activates. Clicking and tapping work. Number keys do not select suggestions.
+Tab focuses suggestions; Enter, Space, clicks and taps activate.
+Number keys and custom shortcuts do not select suggestions.
 Remove `suggestion_shortcuts` when upgrading.
 
 Replace the starter article with reviewed Markdown under `knowledge/<category>/`.
@@ -138,8 +144,8 @@ Build the index from the project directory:
 vendor/bin/starchat index
 ```
 
-Expect the installation ID and article count. Failed validation preserves the
-index; indexing does not check facts.
+The command reports the ID and article count. Validation failure preserves the
+index. Indexing does not check facts.
 
 ## Connect the model
 

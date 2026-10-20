@@ -7,10 +7,12 @@ The chat retains the engine's layout and behavior. The shared stylesheet wins
 over installation fallback tokens, so changing a color or font there changes
 both surfaces on their next load.
 
-Chat navigation, suggestions and download actions share one font size and the
-bright text color. The legal footer uses smaller 13px text.
+Chat navigation, suggestions and download actions share one font size.
+Navigation and suggestions use bright text; downloads have a contrasting light
+fill and dark text. The legal footer uses smaller 13px text.
 Language and reset controls, the composer, retry controls,
-asset cards and download buttons retain their fine contours. Follow-up questions
+and asset cards retain their fine contours. Retry buttons align with their
+message's leading edge. Follow-up questions
 have an accent rule; source links are underlined. Keyboard focus changes the fill
 or underlines the text, and the language selector has an inset accent.
 Download actions sit vertically
@@ -23,7 +25,9 @@ heading. Their width fits the label, with a minimum 44px touch target and wrappi
 on narrow screens. Labeled buttons use regular-weight text without decorative
 icons. The area keeps a localized name for screen readers.
 Neither area fills or displaces the other.
-Four questions use two rows where space allows. Labels keep their own width.
+Four questions use two rows where space allows. Short labels keep their own width
+on one line. The control title and click preserve the full suggested reply.
+Older or unusually wide labels can show a visual ellipsis.
 Labels and submitted suggested replies omit trailing full stops, including
 restored suggestions. Questions and internal punctuation stay intact.
 Extra formats use action-only pages with three formats and **More actions**.

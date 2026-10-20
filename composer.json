@@ -6,7 +6,7 @@
   "require": {
     "php": "^8.4",
     "ext-zip": "*",
-    "skyyware/starchat": "^0.10.3"
+    "skyyware/starchat": "^0.10.4"
   },
   "repositories": [
     {

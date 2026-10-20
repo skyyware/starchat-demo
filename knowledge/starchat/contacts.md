@@ -3,9 +3,9 @@ id: starchat-contacts
 entity: stage
 title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
-retrieved_at: '2026-10-19'
+retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.3'
+source_version: 'skyyware/starchat v0.10.4'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -19,6 +19,8 @@ topic_terms:
   - 'contact language'
   - 'recipient language'
   - 'primary email'
+  - 'direct call'
+  - 'contact expiry'
 phrase_terms:
   - 'email and phone'
   - 'contact verification'
@@ -40,6 +42,9 @@ keywords:
   - 'primary email'
   - contact_locale
   - Empfängersprache
+  - expires
+  - 'direct call'
+  - 'contact expiry'
 links:
   -
     label: 'Offer verified email and phone contacts'
@@ -50,16 +55,18 @@ links:
   -
     label: 'Maintain an installation knowledge base with an agent'
     url: 'https://stage.dev/resources/starchat-knowledge'
+  -
+    label: 'Read suggested replies and contacts from the answer API'
+    url: 'https://stage.dev/resources/starchat-answer-api'
 based_on: {  }
 follow_ups: {  }
 ---
 
 # Offer verified email and phone contacts
 
-Starchat can suggest an editable email or preparation for a telephone call after
-an answer. The operator enables the channels and maintains their recipients
-in reviewed installation knowledge. Conversation text cannot introduce a recipient.
-Starchat sends no message, makes no call, and submits no application.
+Starchat offers email drafts and direct call buttons for reviewed contacts.
+Operators enable channels and maintain recipients in installation knowledge.
+Conversation text cannot introduce a recipient. Visitors initiate calls or send drafts.
 
 ## Enable the channels you support
 
@@ -69,10 +76,10 @@ Add `actions` to the installation's existing `asset` configuration:
 {"asset":{"type":"pdf","contact_locale":"de","actions":["email","phone"]}}
 ```
 
-Actions default to an empty list. They can accompany `none`, `pdf`, `email`, or
-`project`. Project ZIPs and contact actions use buttons below the
-suggestions. Each prepares separately after a click. The PDF and Markdown exports
-contain the same reviewed actions. Result cards appear in the conversation.
+Actions default to an empty list and can accompany any asset type.
+Known telephone numbers use direct `tel:` buttons without generation.
+Email and document preparation require a click; result cards appear in the
+conversation. PDF and Markdown exports contain the same reviewed actions.
 See [conversation assets](https://stage.dev/resources/starchat-assets) for downloads.
 
 ## Choose the recipient's language
@@ -109,9 +116,8 @@ contacts:
     verified_at: '2026-10-14'
 ```
 
-These are fictional addresses. Replace them, their purpose, and their verification
-date with checked source facts. Do not mark an inferred address as verified.
-Keep the verification evidence with the installation. Rebuild its knowledge index.
+Replace these fictional contacts and dates with checked source facts.
+Keep verification evidence with the installation and rebuild its index.
 
 Each entry requires `id`, `kind`, `address`, `label`, `purpose`, and `verified_at`.
 Only `locale` is optional.
@@ -132,11 +138,13 @@ search for contact sources, and source links in the latest answer. At most twelv
 contacts reach the model. Fresh verified request documents take precedence over
 public documents with the same ID. Stale contacts and disabled channels are excluded.
 
-The model chooses a catalogue ID and cannot supply a new destination.
-No matching contact means no action. Independent review checks up to four actions using their contact key, label,
-subject, exact body and checklist. Recipient, language and purpose come from
-the trusted catalogue. The server adds resolved destinations after review.
-Unapproved links are rejected; old topics must not supply irrelevant contacts.
+The answer selects up to four catalogue IDs for its current concern.
+Independent review checks their purpose before the server exposes destinations.
+Offers expire at the next installation-local midnight. Missing or expired contact
+metadata offers no contextual action, including in older saved answers.
+The [answer API](https://stage.dev/resources/starchat-answer-api) defines these fields.
+Draft review checks the contact key, label, subject, exact body and checklist.
+Recipient and language come from the trusted catalogue; unapproved links are rejected.
 
 A current email draft with a matching verified recipient must offer that email
 action. It preserves the latest corrections and placeholders. A writing-only
@@ -159,12 +167,13 @@ The interface and exported PDF or Markdown use the same validated content.
 
 ## Keep scope and privacy intact
 
-Only a creation click prepares contacts. Completed results stay by their original
-answer; a later click uses the current conversation. A first clarification alone
-offers no summary action. A primary `asset.type: email` draft can follow that
-completed exchange, after successful preparation and review. Empty history shows
-no contact card. Its configured recipient enters the trusted catalogue as `primary`;
-generation must include its draft before an email button appears.
+Creation clicks resolve contacts again from fresh sources. No suitable result
+removes that creation choice for the current transcript; transient failures allow retry.
+Completed results stay by their answer. A first clarification offers no summary.
+A primary `asset.type: email` can follow an answered in-scope exchange without
+contextual contact metadata. Its configured recipient enters the catalogue as
+`primary`; generation must include its draft before an email button appears.
+Empty history offers none.
 
 With verified session context, preparation and display require fresh checks.
 Changed or unavailable context, reset, or a hidden page clears actions and
