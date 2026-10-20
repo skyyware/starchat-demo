@@ -6,7 +6,7 @@
   "require": {
     "php": "^8.4",
     "ext-zip": "*",
-    "skyyware/starchat": "^0.10.4"
+    "skyyware/starchat": "^0.11.0"
   },
   "repositories": [
     {
@@ -22,6 +22,7 @@
   "scripts": {
     "check": [
       "@composer validate --strict",
+      "@php bin/check-projects",
       "@php bin/check"
     ]
   }

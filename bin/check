@@ -71,7 +71,8 @@ try {
     $fail(preg_match('~<div id="suggestions"[^>]*data-assets=~', $page->body) === 0, 'Questions still own asset actions');
     $icons = $app->handle(new Request('GET', '/starchat/asset-icons.svg'));
     $sprite = '/starchat/asset-icons.svg?v=' . substr(hash('sha256', $icons->body), 0, 12);
-    $fail($icons->status === 200 && str_contains($icons->body, 'id="project"'), 'Project code-folder icon absent');
+    $fail($icons->status === 200 && str_contains($icons->body, 'id="project"'), 'Project package icon absent');
+    $fail(str_contains($page->body, 'data-project-policy="stage-web-v1"'), 'Stage export policy missing from the browser');
     $fail(str_contains($page->body, 'data-asset-icons="' . $sprite . '"'), 'Dynamic card sprite version differs');
     $fail(!str_contains($page->body, 'class="asset-details"'), 'Project contents disclosure returned');
     $fail($app->handle(new Request('GET', '/starchat/project.js'))->status === 200, 'Project browser module absent');

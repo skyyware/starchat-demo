@@ -16,8 +16,11 @@ The website's Start building action opens the chat in the same tab.
 This installation explicitly enables Starchat's optional project-building feature.
 It explicitly selects asset.type=project for the current ZIP and preparation
 progress. Keep implementation in the private engine, not in a demo-only wrapper.
-Respect the visitor's chosen technology and installation constraints; do not
-force Stage into unrelated platforms. See docs/building.md for the ZIP contract.
+Every exported project must actually use Stage for its application, including
+custom features and revisions. Explain incompatible platform requests honestly;
+do not silently turn them into unrelated Stage projects. Keep this requirement
+in installation policy and tests; the private engine remains technology-neutral.
+See docs/building.md for the ZIP contract.
 
 The active installations are Esslingen, Stage chat, Sonnenzeit and the fresh
 SKYYWARE adviser authorized on 14 October 2026. Sonnenzeit

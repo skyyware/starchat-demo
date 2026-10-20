@@ -8,11 +8,11 @@
   "files": [
     {
       "path": "composer.json",
-      "content": "{\n  \"type\": \"project\",\n  \"require\": {\n    \"php\": \"^8.4\",\n    \"skyyware/stage\": \"^0.1.5\"\n  },\n  \"config\": {\n    \"allow-plugins\": false,\n    \"sort-packages\": true\n  },\n  \"scripts\": {\n    \"start\": \"@php -S 127.0.0.1:8080 -t public public/index.php\",\n    \"check\": \"@php tests/check.php\"\n  }\n}\n"
+      "content": "{\n  \"type\": \"project\",\n  \"require\": {\n    \"php\": \"^8.4\",\n    \"skyyware/stage\": \"^0.2\"\n  },\n  \"config\": {\n    \"allow-plugins\": false,\n    \"sort-packages\": true\n  },\n  \"scripts\": {\n    \"start\": \"@php -S 127.0.0.1:8080 -t public public/index.php\",\n    \"check\": \"@php tests/check.php\"\n  }\n}\n"
     },
     {
       "path": "app.php",
-      "content": "<?php\ndeclare(strict_types=1);\n\nuse Stage\\Http\\Application;\nuse Stage\\Http\\Response;\nuse Stage\\Http\\Route;\n\nreturn new Application(\n    Route::get('/', fn () => Response::json(['hello' => 'world'])),\n);\n"
+      "content": "<?php\ndeclare(strict_types=1);\n\nuse Stage\\Http\\Response;\nuse Stage\\Http\\Route;\n\nreturn new \\Stage\\Http\\Application(\n    Route::get('/', fn () => Response::json(['hello' => 'world'])),\n);\n"
     },
     {
       "path": "public/index.php",
@@ -32,7 +32,7 @@
     },
     {
       "path": "PROJECT.md",
-      "content": "# Current project\n\n## Starting point\n\nThe Stage chat offers this minimal application before visitor-specific requirements\nare known. PHP and Stage are the installation's default starting point, not a\nconfirmed requirement from the visitor. Another chosen language or platform replaces\nthis default.\n\n## Implemented\n\n- GET / returns the JSON object {\"hello\":\"world\"}\n- Unrecognized routes return 404\n- Local run and application checks are included\n\n## Open decisions\n\nWhat should the first useful feature do, and who will use it? No audience, data\nstorage, authentication, integrations or deployment choices have been assumed.\nContinue the conversation to develop the project, or edit these files locally.\nExternal edits are not synchronized back into the chat.\n"
+      "content": "# Current project\n\n## Starting point\n\nThe Stage chat offers this minimal application before visitor-specific requirements\nare known. PHP and Stage are mandatory for exports from this installation. The visitor chooses\nthe application behavior; an incompatible platform requires a different building\nenvironment. This constraint is not a preference inferred from the visitor.\n\n## Implemented\n\n- GET / returns the JSON object {\"hello\":\"world\"}\n- Unrecognized routes return 404\n- Local run and application checks are included\n\n## Open decisions\n\nWhat should the first useful feature do, and who will use it? No audience, data\nstorage, authentication, integrations or deployment choices have been assumed.\nContinue the conversation to develop the project, or edit these files locally.\nExternal edits are not synchronized back into the chat.\n"
     }
   ]
 }

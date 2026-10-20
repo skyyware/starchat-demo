@@ -1,0 +1,46 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/src/ProjectPolicy.php';
+
+use StageDemo\ProjectPolicy;
+use Starchat\Project;
+use Starchat\ProjectRevision;
+
+$starter = json_decode(file_get_contents(dirname(__DIR__) . '/starters/minimal.json'), true, flags: JSON_THROW_ON_ERROR);
+$check = static function (bool $accepted, array $data, string $name): void {
+    if (ProjectPolicy::accepts(new Project($data)) !== $accepted) { throw new RuntimeException($name); }
+};
+$replace = static function (string $path, string $content) use ($starter): array {
+    $data = $starter;
+    foreach ($data['files'] as &$file) {
+        if ($file['path'] === $path) { $file['content'] = $content; }
+    }
+    return $data;
+};
+$check(true, $starter, 'Prepared starter must run Stage');
+$files = array_column($starter['files'], 'content', 'path');
+$check(true, $replace('app.php', "<?php\n\$handler = function () { return \\Stage\\Http\\Response::json(['items' => []]); };\nreturn new \\Stage\\Http\\Application(\\Stage\\Http\\Route::get('/items', \$handler));\n"), 'A custom route must remain exportable');
+$check(false, $replace('app.php', "<?php\nreturn new stdClass();\n"), 'A dependency alone is insufficient');
+$check(false, $replace('app.php', "<?php\n\$unused = new \\Stage\\Http\\Application();\nreturn new stdClass();\n"), 'An unused application is insufficient');
+$check(false, $replace('app.php', "<?php\nreturn 'new \\\\Stage\\\\Http\\\\Application()';\n"), 'Quoted Stage code is not an application');
+$check(false, $replace('app.php', "<?php\nreturn new \\Stage\\Http\\Application();\necho 'other app';\n"), 'A second application must not follow the return');
+$check(false, $replace('app.php', "<?php\nreturn new \\Stage\\Http\\Application(\n"), 'Invalid PHP must fail closed');
+$check(false, $replace('public/index.php', "<?php\nrequire dirname(__DIR__) . '/vendor/autoload.php';\necho 'standalone app';\n"), 'A bypass entry point is insufficient');
+$composer = json_decode($files['composer.json'], true, flags: JSON_THROW_ON_ERROR);
+unset($composer['require']['skyyware/stage']);
+$check(false, $replace('composer.json', json_encode($composer)), 'A missing runtime dependency must fail');
+$composer['require']['skyyware/stage'] = '^0.2';
+$composer['repositories'] = [['type' => 'path', 'url' => 'fake-stage']];
+$check(false, $replace('composer.json', json_encode($composer)), 'A replacement package must fail');
+$previous = $starter;
+$previous['files'][] = ['path' => 'AGENTS.md', 'content' => 'Preserve my manual project instructions.'];
+$revision = ['status' => 'ready', 'name' => 'inventory', 'summary' => 'List inventory items', 'open_questions' => [], 'files' => [], 'removed_files' => []];
+$assembled = ProjectRevision::apply($revision, new Project($previous));
+$check(true, $assembled->data, 'Unchanged required files must survive a revision');
+if (array_column($assembled->data['files'], 'content', 'path')['AGENTS.md'] !== 'Preserve my manual project instructions.') { throw new RuntimeException('Manual instructions lost'); }
+$revision['removed_files'] = ['app.php'];
+$check(false, ProjectRevision::apply($revision, new Project($previous))->data, 'Removing the Stage application must fail');
+echo "Stage entry, dependency, custom routes and revision boundaries verified\n";

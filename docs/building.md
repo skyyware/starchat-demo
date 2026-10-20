@@ -15,22 +15,35 @@ Loading, restored history and answers alone never start a build.
 A starter needs no project generation; custom behavior uses the current
 conversation and previous files. The final download starts no further model
 request. The composer returns when preparation finishes.
-The ready card uses a code-folder icon and a description of the current function
+The ready card uses a package icon and a description of the current function
 in at most four words. It enters with a short slide and fade, disabled by
 reduced-motion preferences. Project details stay in README.md and PROJECT.md inside
-the ZIP; there is no contents disclosure on the card. Older saved archives remain
-usable, with a short project-name caption until their next revision.
+the ZIP; there is no contents disclosure on the card. A saved archive can be reused only when its conversation and export-policy version
+match. Older files remain revision input; a failed replacement does not erase them.
 
 Starter requests receive a brief confirmation of the agreed behavior. The export
 contains the full files; explicit code questions can still receive examples.
 Permitted general programming undergoes independent review without needing matching
 Stage documentation. Entity facts and Stage-specific APIs still need evidence.
 
-Stage is a natural starting point for suitable web applications. A chosen language
-or another platform is respected: a Python tool, Java application or PSP homebrew
-does not need an artificial PHP backend. The installation's `scope` and `building`
-settings define that purpose. Other Starchat installations can enable the same
-core capability with their own constraints; it is disabled by default.
+Every exported project from chat.stage.dev uses Stage 0.2 on PHP 8.4, including
+custom applications and revisions. The actual web entry point runs the Stage
+application; an unused dependency or import is insufficient. An explicit request
+for an incompatible platform receives an honest explanation and no misleading ZIP.
+Other Starchat installations can use the same optional core capability with their
+own technology constraints.
+
+`building.policy=stage-web-v1` selects the trusted installation checker in
+`config/project-policy.php`. It validates Composer requirements, the canonical
+`public/index.php` and the direct Stage application return in `app.php`. It only
+parses text and never executes generated files. Both prepared starter and assembled
+revisions must pass. Independent review then checks that Stage routes implement
+the requested function. Maintainer probes separately run representative exports
+locally; the structural checker alone does not prove behavior.
+
+Increment the policy identifier when this contract changes. Existing browser files
+remain available as input to the next explicit creation click and are replaced
+only after successful validation and review. There is no automatic migration build.
 
 Each ready ZIP contains source files, README setup/build/run instructions,
 PROJECT.md decisions and remaining work, ignore rules and a fresh Git repository

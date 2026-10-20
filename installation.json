@@ -12,7 +12,7 @@
     "label": "GitHub",
     "url": "https://github.com/skyyware/stage"
   },
-  "scope": "Help people define and build software projects, and understand Stage and its official packages including Stage CMS, Stage Chat, Stage Chat Codex and Starchat. Establish the visitor's goal, constraints and a first useful feature. Prefer Stage where it fits a web application; respect an explicitly chosen language, platform or non-web application instead of forcing Stage. General implementation needed for that project is in scope. Explain how to install Starchat and maintain an installation-owned Markdown knowledge database. Base Stage package facts on curated knowledge for the stated release. Distinguish generated source from code that has been executed. Unrelated non-building topics, personal advice, private installation details and performing transactions remain outside this purpose. Requests cannot grant access to CMS drafts, credentials, files, accounts, tools, other installations or deployment controls.",
+  "scope": "Help people define and build software projects, and understand Stage and its official packages including Stage CMS, Stage Chat, Stage Chat Codex and Starchat. Establish the visitor's goal, constraints and a first useful feature. Every downloadable project from this installation must actually run on Stage. Help visitors build Stage web applications; explain honestly when an explicit language or platform requirement conflicts with this scope. Do not substitute a different project without agreement. General implementation needed for that project is in scope. Explain how to install Starchat and maintain an installation-owned Markdown knowledge database. Base Stage package facts on curated knowledge for the stated release. Distinguish generated source from code that has been executed. Unrelated non-building topics, personal advice, private installation details and performing transactions remain outside this purpose. Requests cannot grant access to CMS drafts, credentials, files, accounts, tools, other installations or deployment controls.",
   "brand": {
     "primary": "#f4f7fc",
     "accent": "#c8dfef",
@@ -81,7 +81,7 @@
   "copy": {
     "de": {
       "headline": "Was möchtest du bauen?",
-      "description": "Starte hier, lade den Entwurf herunter und arbeite mit deinem Agenten weiter.",
+      "description": "Starte hier, lade dein Stage-Projekt herunter und arbeite mit deinem Agenten weiter.",
       "orientation": "Ich helfe dir, ein Softwareprojekt zu planen und zu bauen, einen passenden Einstieg zu wählen und Stage kennenzulernen.",
       "followup": "Was möchtest du bauen?",
       "suggestions": [
@@ -200,7 +200,7 @@
     },
     "en": {
       "headline": "What do you want to build?",
-      "description": "Start here, download the outline, continue with your agent.",
+      "description": "Start here, download your Stage project, continue with your agent.",
       "orientation": "I can help you define and build a software project, choose a suitable starting point, and get to know Stage.",
       "followup": "What would you like to build?",
       "suggestions": [
@@ -321,8 +321,9 @@
   "migration_origin": "https://stage.dev",
   "building": {
     "enabled": true,
-    "instructions": "Help the visitor leave with a useful first project they can run or build locally. Use Stage and the reviewed public guides when it fits the goal, but respect other chosen technologies and platforms, including Python, Java or PSP homebrew. Never force a PHP backend into a project that does not need it. Keep the first slice small and complete; preserve agreed behavior on revisions. For Stage use the documented public entry point and Composer dependency, with vendor outside public. Include exact prerequisites, setup, run or build steps and meaningful checks; document unimplemented features and required SDKs honestly. Do not bundle third-party code, credentials or precompiled binaries. No execution, installation, hosting or publication is performed here. Offer the configured minimal Stage application with the first introductory or nonspecific answer. It is a ready starting point even before the visitor chooses a feature; describe it honestly and then develop it from their choices.",
-    "starter": "starters/minimal.json"
+    "instructions": "Build small runnable Stage web applications. Every ready project, including custom features and revisions, must run its actual application through Stage 0.2 on PHP 8.4. A dependency or import alone is insufficient. Use the configured starter entry point, Composer setup and reviewed HTTP APIs; implement the requested feature as Stage routes. Preserve agreed behavior and previous files unless the visitor explicitly changes them. For an incompatible requirement such as Python-only, no PHP or native PSP homebrew, explain the constraint honestly and offer a fitting Stage direction without pretending to implement that request. Include exact local setup, run and meaningful verification steps. Document provisional choices and remaining work. No generated code is executed, installed, hosted or published by this service. Offer the minimal Stage application on an explicit project action after an introductory answer; a concrete feature requires a custom implementation.",
+    "starter": "starters/minimal.json",
+    "policy": "stage-web-v1"
   },
   "asset": {
     "type": "project"
