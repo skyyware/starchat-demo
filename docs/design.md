@@ -8,7 +8,8 @@ over installation fallback tokens, so changing a color or font there changes
 both surfaces on their next load.
 
 Chat navigation, suggestions and download actions share one font size and the
-bright text color. Language and reset controls, the composer, retry controls,
+bright text color. The legal footer uses smaller 13px text.
+Language and reset controls, the composer, retry controls,
 asset cards and download buttons retain their fine contours. Follow-up questions
 have an accent rule; source links are underlined. Keyboard focus changes the fill
 or underlines the text, and the language selector has an inset accent.
@@ -19,9 +20,12 @@ loader with three animated dots and a short localized status line, such as
 text color. Questions and actions have separate limits of four controls.
 Actions use filled, borderless buttons below the questions, without a visible
 heading. Their width fits the label, with a minimum 44px touch target and wrapping
-on narrow screens. The area keeps a localized name for screen readers.
+on narrow screens. Labeled buttons use regular-weight text without decorative
+icons. The area keeps a localized name for screen readers.
 Neither area fills or displaces the other.
 Four questions use two rows where space allows. Labels keep their own width.
+Labels and submitted suggested replies omit trailing full stops, including
+restored suggestions. Questions and internal punctuation stay intact.
 Extra formats use action-only pages with three formats and **More actions**.
 Requests and results remain in the same conversation. Core action layout uses
 the canonical Stage palette and fonts; questions retain their text-link styling.
