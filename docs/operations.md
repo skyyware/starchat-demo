@@ -26,3 +26,19 @@ links at stage.dev/?q=... continue to the new chat.
 GitHub Actions and dependency automation are disabled. Deployment is deliberate,
 not a side effect of a push. Operator-specific commands, rollback receipts and
 host configuration belong outside this public repository.
+
+## Verified release on 20 October 2026
+
+Build 46 serves commit `1cc9cf4427df563d0befbf544e0baa22f6c47b55` with
+Starchat 0.10.4 and 29 reviewed guides. Build 45 remains the rollback release.
+The snapshot is bound to website source
+`a44d7cad3120f0a2b04c71587b8f63b18ae5b329` in `knowledge/sources.json`.
+It includes the [answer API guide](https://stage.dev/resources/starchat-answer-api).
+
+Public checks confirm the build, guide count, served core files and shared theme.
+Native browser checks at 1,280 and 390 pixels confirm single-line opening labels,
+regular control text, the smaller legal footer and no page overflow or console
+errors. The existing empty conversation remains unchanged. These release checks
+send no message and create no asset; they do not establish fresh model availability.
+Action, retry and download behavior was checked locally with a controlled connector
+before delivery. This documentation update does not change the deployed commit.
