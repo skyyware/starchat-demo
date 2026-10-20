@@ -5,7 +5,7 @@ title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.10.4'
+source_version: 'skyyware/starchat v0.11.0'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -113,9 +113,9 @@ The README explains setup and checks. AGENTS.md, a CLAUDE.md import, and optiona
 tool guidance help the next agent continue from the recorded requirements.
 Plugins are optional and are not installed by downloading the project.
 
-The operator's scope and building settings define the permitted work and
-technologies. Projects can use languages other than PHP. Building is off by
-default. The service reviews files but does not execute them. See
+Building is off by default. The operator defines permitted technologies; the
+engine allows non-PHP projects. The Stage demo requires real Stage web applications
+for every export. The service reviews files but does not execute them. See
 [Build and download a project](https://stage.dev/resources/starchat-building)
 for setup, missing-information cases, manual retry, and limits.
 

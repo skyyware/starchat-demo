@@ -19,7 +19,7 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 20 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.10.4.
+The 20 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.11.0.
 It explains constructor-owned request headers and both supported CMS framework
 series. Filled asset buttons sit below up to four questions,
 with an independent limit of four controls. The groups never fill or displace
@@ -31,7 +31,7 @@ submit the full suggested reply. Suggestion labels and submitted replies omit tr
 full stops, including restored suggestions. Internal punctuation and question
 marks remain. The legal footer uses smaller 13px text. Only a click starts creation.
 Answers and preparation use the same three animated dots and short status line,
-then the result appears in the conversation. Ready projects keep their code-folder
+then the result appears in the conversation. Ready projects use a package
 icon, four-word function description and reduced-motion-aware entrance.
 Full project details remain in README and PROJECT inside the ZIP. This demo
 enables project ZIPs only; other asset types remain disabled.
@@ -47,3 +47,10 @@ The answer API guide describes optional `suggestion_labels` and reviewed
 Old answers without contact metadata offer no contextual email or telephone
 action. Configured primary email recipients retain their in-scope behavior.
 Known phone contacts use direct `tel:` buttons without generation.
+
+The building guide distinguishes this installation's required Stage application
+from the engine's optional, technology-neutral project capability. Starter and
+custom exports use Stage 0.2 on PHP 8.4, including revisions. The versioned
+installation policy validates files before packaging; independent review checks
+that Stage routes implement the requested function. Old browser files remain
+revision input but need a new creation click before becoming a current export.
