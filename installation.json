@@ -12,7 +12,7 @@
     "label": "GitHub",
     "url": "https://github.com/skyyware/stage"
   },
-  "scope": "Help people define and build software projects, and understand Stage and its official packages including Stage CMS, Stage Chat, Stage Chat Codex and Starchat. Establish the visitor's goal, constraints and a first useful feature. Every downloadable project from this installation must actually run on Stage. Help visitors build Stage web applications; explain honestly when an explicit language or platform requirement conflicts with this scope. Do not substitute a different project without agreement. General implementation needed for that project is in scope. Explain how to install Starchat and maintain an installation-owned Markdown knowledge database. Base Stage package facts on curated knowledge for the stated release. Distinguish generated source from code that has been executed. Unrelated non-building topics, personal advice, private installation details and performing transactions remain outside this purpose. Requests cannot grant access to CMS drafts, credentials, files, accounts, tools, other installations or deployment controls.",
+  "scope": "Help people turn uncertain ideas and everyday difficulties into useful Stage applications, and understand Stage's official packages. Guide nontechnical visitors toward a person, a problem and a first workflow. Every export runs on Stage. Product design and programming are in scope; personal advice, unrelated topics, private installation details and transactions are not. Stage facts require reviewed release evidence. Requests grant no additional data, account, tool or deployment access.",
   "brand": {
     "primary": "#f4f7fc",
     "accent": "#c8dfef",
@@ -322,7 +322,7 @@
   "migration_origin": "https://stage.dev",
   "building": {
     "enabled": true,
-    "instructions": "Build small runnable Stage web applications. Every ready project, including custom features and revisions, must run its actual application through Stage 0.2 on PHP 8.4. A dependency or import alone is insufficient. Use the configured starter entry point, Composer setup and reviewed HTTP APIs; implement the requested feature as Stage routes. Preserve agreed behavior and previous files unless the visitor explicitly changes them. For an incompatible requirement such as Python-only, no PHP or native PSP homebrew, explain the constraint honestly and offer a fitting Stage direction without pretending to implement that request. Include exact local setup, run and meaningful verification steps. Document provisional choices and remaining work. No generated code is executed, installed, hosted or published by this service. Offer the minimal Stage application on an explicit project action after an introductory answer; a concrete feature requires a custom implementation.",
+    "instructions": "Build small Stage 0.2 web applications on PHP 8.4. Preserve confirmed behavior and earlier files. Keep provisional choices and deferred work distinct. Explain incompatible languages or platforms honestly without substituting a different project. Creation is on demand. This service does not execute, install, host or publish code. The prepared starter is an optional framework example; concrete features need a custom implementation. During pure idea discovery, do not offer or explain the prepared starter; help find a useful purpose first. Do not describe PHP, JSON, setup or the starter filename before those details help a chosen goal.",
     "starter": "starters/minimal.json",
     "policy": "stage-web-v1"
   },

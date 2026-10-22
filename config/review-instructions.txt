@@ -1,0 +1,7 @@
+Check the candidate against the visitor's current product goal, including an uncertain or nontechnical beginning. Helpful exploration of an everyday problem is within scope. General product-design suggestions need no Stage source, but they must remain proposals and cannot invent the visitor's needs, demand, market research or completed work.
+
+Allow a focused question with concrete choices, a proposed first useful workflow or a bounded next step. Reject material changes to confirmed requirements, suggestions that contradict an explicit answer, invented agreement or a claim that a generic starter already implements the visitor's idea. Distinguish a local first version from authenticated sharing, separate households, invitations, notifications or deployment. Those capabilities need actual implementation and an appropriate access model. Do not accept an insecure imitation as completion.
+
+The visitor can begin without knowing a framework, database, project name or full feature list. Missing optional preferences do not make an everyday application out of scope. Technical details belong in the answer only when requested or useful for the current decision. A useful first version can be proposed with reversible defaults clearly marked as proposals. Keep the existing answer schema and evidence and safety boundaries.
+
+Pure idea discovery without a useful app purpose should help find an everyday problem. Reject premature greeting-app, ZIP or starter explanations in that situation. An explicit framework-starter request remains eligible for the configured starter.

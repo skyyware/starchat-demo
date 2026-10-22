@@ -1,9 +1,17 @@
 # Build and take your project with you
 
-The Stage chat helps visitors define a project and download a first implementation
-as a ZIP. The first introductory answer offers a prepared minimal Stage
-application, even before a visitor names a specific feature. It includes one JSON
-endpoint, local run instructions and checks. The reviewed source lives in
+The Stage chat helps visitors turn an everyday difficulty into a useful first
+application and download its implementation as a ZIP. Visitors need neither a
+finished idea nor programming knowledge. The conversation starts with the person,
+the problem and one useful workflow, with at most one material question at a time.
+Confirmed needs, provisional choices and later extensions remain distinct.
+
+An explicit framework or starter request can offer a prepared minimal Stage application.
+This optional framework example is not a substitute for the visitor's chosen
+application. It includes one JSON endpoint, local run instructions and checks.
+Pure idea discovery first helps the visitor find a useful purpose, without
+describing or offering this starter. A later useful offer uses plain language.
+The reviewed source lives in
 `starters/minimal.json`, selected by `building.starter`.
 
 The installer packages the starter in advance. After an answer, the visitor
