@@ -3,9 +3,9 @@ id: starchat-installation
 entity: stage
 title: 'Install Starchat'
 source: 'https://stage.dev/resources/starchat-installation'
-retrieved_at: '2026-10-20'
+retrieved_at: '2026-10-22'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.0'
+source_version: 'skyyware/starchat v0.11.3'
 public_path: /resources/starchat-installation
 topic_terms:
   - 'configure building policy'
@@ -87,18 +87,18 @@ follow_ups: {  }
 
 # Install Starchat
 
-Starchat 0.11.0 needs PHP 8.4 or later PHP 8, Composer, its declared extensions
+Starchat 0.11.3 needs PHP 8.4 or later PHP 8, Composer, its declared extensions
 and SQLite FTS5. Serve only `public/` over HTTPS; keep credentials and runtime outside it and Git.
 
 ## Create the project
 
 The core is private; the [public example](https://github.com/skyyware/starchat-demo)
-grants no access. With authorized access, copy `examples/installation` from
-Starchat 0.11.0 into an empty project:
+grants no access. With access, copy Starchat 0.11.3's `examples/installation`
+into an empty project:
 
 ```sh
 composer config repositories.starchat vcs https://github.com/skyyware/starchat
-composer require skyyware/starchat:^0.11.0 --no-plugins --no-scripts
+composer require skyyware/starchat:^0.11.3 --no-plugins --no-scripts
 ```
 
 Commit both Composer files. Route non-file requests to `public/index.php`,
@@ -110,8 +110,8 @@ In `installation.json`, set a unique `id`, allowed HTTPS `hosts`, `website`,
 `scope`, interface `copy` and `brand`. Host and knowledge owner must agree.
 Visitors cannot select another installation.
 
-Optional `copy.<locale>.missing` sets the no-information answer: 1–500 nonblank
-plain-text characters, with locale fallback. It does not change service errors.
+Optional `copy.<locale>.missing` sets a 1–500-character nonblank plain-text no-information
+answer with locale fallback, without changing service errors.
 
 Suggestions use short single-line labels and submit their full question.
 See the [answer API](https://stage.dev/resources/starchat-answer-api).
@@ -121,16 +121,19 @@ Question marks and internal punctuation remain.
 Building installations can mix four familiar and less obvious
 [opening app ideas](https://stage.dev/resources/starchat-app-ideas) per conversation.
 
-Set fonts, logo, favicon, and stylesheet through `brand`. The logo opens
-`brand.home_url` in the same tab, or `/` when unset. Use an HTTPS homepage.
+`brand` sets fonts, logo, favicon and stylesheet. The logo opens HTTPS
+`brand.home_url` in the same tab, or `/` when unset.
 
 `brand.asset_origin` permits styles, fonts and images under a trusted HTTPS
 origin's `/branding/`, never scripts or APIs. Revalidate styles and font CORS.
 Otherwise assets stay local.
 
 `header_link` adds an HTTPS link beside the language selector.
-Questions and actions each allow four controls. Neither displaces the other.
-Actions sit below questions, using regular text without icons.
+Questions and actions each allow four controls independently.
+Actions appear below questions with regular text and no icons.
+`brand.reset_icon: true` adds a desktop plus to **New conversation**; mobile
+keeps its accessible 44px icon button. The boolean defaults to false; other
+actions remain icon-free.
 **More actions** pages extra formats, three per page. Four questions use two columns when space allows.
 
 Tab focuses suggestions; Enter, Space, clicks and taps activate.
@@ -140,7 +143,7 @@ Remove `suggestion_shortcuts` when upgrading.
 Put reviewed Markdown under `knowledge/<category>/`, with `entity` set to your
 installation ID. Supply legal notices.
 
-Build the index from the project directory:
+Index from the project directory:
 
 ```sh
 vendor/bin/starchat index
@@ -181,16 +184,16 @@ Adapt these fields in `installation.json` to the work you support:
 ```
 
 `building.instructions` cannot widen `scope`; visitors cannot replace either.
-Reindex. Upgrades leave assets off. Remove both `asset` and `building`
-to disable downloads and generation.
+Reindex. Upgrades leave assets off. Remove `asset` and `building` to disable them.
 
-Optional `building.policy` names a version such as `web-app-v1`. Supply trusted
-`config/project-policy.php` returning a closure that accepts `Starchat\Project`
-and returns strict `true` on success. A missing closure fails validation.
-Inspect text only; never execute generated files. It checks the starter and each
-assembled ready revision before review and packaging. Increment the identifier
-when requirements change; old files remain revision input after an explicit click.
-The Stage demo uses `stage-web-v1` to require actual Stage web applications.
+Optional `building.policy` names a version such as `web-app-v1`. Trusted
+`config/project-policy.php` returns a closure accepting `Starchat\Project`
+and strict `true` on success; a missing closure fails validation. Inspect text,
+never execute files. It checks starters and assembled revisions before review
+and packaging. Increment the version when requirements change; old files remain
+revision input after an explicit click.
+The Stage demo uses `stage-web-v2`. Its generation and review instructions
+also require responsive interfaces for human-facing projects.
 
 Click **Create project ZIP** after an answer. Three animated dots and a status
 line precede the result; answers alone never build it.
@@ -209,16 +212,13 @@ Markdown downloads can accompany the selected type. See
 
 ## Connect a signed-in application
 
-For optional account facts, see
-[verified session context](https://stage.dev/resources/starchat-request-context).
-It cannot share an installation with building or origin migration. Summaries
-and contacts require fresh context checks before preparation and display.
+Optional [session context](https://stage.dev/resources/starchat-request-context)
+cannot coexist with building or origin migration. Summaries and contacts require
+fresh context checks before preparation and display.
 
 ## Check the installation
 
-Check `/health` for ID, article count and `aggregate_rate_limit`.
-Try synthetic questions on desktop and mobile; read answers and sources.
-
-Keep previous code and index for rollback; preserve data and credentials.
-See [operations](https://stage.dev/resources/starchat-operations) for deployment
-checks, deadlines, and rate limits.
+Check `/health`: ID, article count and `aggregate_rate_limit`. Read synthetic
+answers and sources on desktop and mobile. Keep rollback code and index;
+preserve data and credentials. See [operations](https://stage.dev/resources/starchat-operations)
+for deployment, deadlines and rate limits.

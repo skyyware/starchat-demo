@@ -3,9 +3,9 @@ id: starchat
 entity: stage
 title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
-retrieved_at: '2026-10-20'
+retrieved_at: '2026-10-22'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.0'
+source_version: 'skyyware/starchat v0.11.3'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -100,8 +100,9 @@ Clicks submit the full suggested reply. An unselected suggestion is not a confir
 With building enabled and `asset.type: project`, visitors click the project
 action beside the suggestions. Loading or receiving an answer never builds a
 project. Visible progress runs, then the reviewed package appears in the
-conversation. A configured starter can serve an introductory request; custom
-features and technologies use generation and independent review.
+conversation. A configured starter can serve an explicit framework or example
+request. Pure idea discovery first identifies a useful purpose. Custom features
+and technologies use generation and independent review.
 
 Completed packages stay beside their original answer. A new creation click uses
 the latest requirements and previous files. It cannot reset a custom project to

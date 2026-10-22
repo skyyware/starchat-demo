@@ -3,9 +3,9 @@ id: starchat-operations
 entity: stage
 title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-22'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.0'
+source_version: 'skyyware/starchat v0.11.3'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -79,10 +79,10 @@ Ordinary chat needs at least 55 seconds at the proxy and PHP worker.
 Selection, answering, and review have a 25-second limit within a shared
 45-second deadline. The browser allows 50 seconds.
 
-Building needs at least 130 seconds at the proxy and worker. Generation has
-a 90-second limit; each review call has a 25-second limit. Review may retry once
+Building needs at least 165 seconds at the proxy and worker. Generation has
+a 120-second limit; each review call has a 25-second limit. Review may retry once
 if its service is unavailable. All phases must fit the remaining time in the shared
-115-second deadline. The browser allows 120 seconds. These bounds promise no
+150-second deadline. The browser allows 155 seconds. These bounds promise no
 delivery time. Disconnecting may leave provider work running.
 
 In ordinary chat, the browser keeps the conversation until it is reset or cleared.

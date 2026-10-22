@@ -5,7 +5,7 @@ title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.0'
+source_version: 'skyyware/starchat v0.11.3'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'

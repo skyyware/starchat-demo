@@ -5,7 +5,7 @@ title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.0'
+source_version: 'skyyware/starchat v0.11.3'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'

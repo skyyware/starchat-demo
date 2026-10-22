@@ -19,14 +19,16 @@ history or another installation's corpus. No runtime crawler, Markdown mount,
 watcher or scheduled maintenance job is required. Shared design updates are
 independent of this deliberate knowledge review.
 
-The 20 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.11.0.
+The 22 October 2026 snapshot covers Stage 0.2.0, CMS 0.5.4 and Starchat 0.11.3.
 It explains constructor-owned request headers and both supported CMS framework
 series. Filled asset buttons sit below up to four questions,
 with an independent limit of four controls. The groups never fill or displace
 each other. Extra formats page only within the action area. Its localized
 heading is available to screen readers, without visible text. The buttons wrap
 to fit their labels and use regular text without decorative icons. Questions retain
-their borderless text-link styling. Short labels stay on one line, while clicks
+their borderless text-link styling. The enabled reset icon is the exception:
+**New conversation** has a plus and label on desktop and an accessible 44px icon
+button on mobile. Short labels stay on one line, while clicks
 submit the full suggested reply. Suggestion labels and submitted replies omit trailing
 full stops, including restored suggestions. Internal punctuation and question
 marks remain. The legal footer uses smaller 13px text. Only a click starts creation.
@@ -54,3 +56,15 @@ custom exports use Stage 0.2 on PHP 8.4, including revisions. The versioned
 installation policy validates files before packaging; independent review checks
 that Stage routes implement the requested function. Old browser files remain
 revision input but need a new creation click before becoming a current export.
+
+Idea discovery starts with an everyday problem and one useful workflow. Only
+an explicit framework or runnable-example request offers the configured starter.
+Policy `stage-web-v2` also requires responsive interfaces, readable type, labeled
+inputs, validation and the agreed create, edit and delete flows for human-facing
+projects. API-only requests remain APIs. Generation and independent review do
+not establish execution or visual quality; downloaded applications still need
+their own checks.
+
+Project generation allows 120 seconds, each review 25 seconds, and the shared
+budget is 150 seconds. The browser allows 155 seconds; building hosts need at
+least 165 seconds at the proxy and worker. Ordinary chat limits are unchanged.

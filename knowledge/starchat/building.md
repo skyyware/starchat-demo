@@ -3,9 +3,9 @@ id: starchat-building
 entity: stage
 title: 'Build and download a project'
 source: 'https://stage.dev/resources/starchat-building'
-retrieved_at: '2026-10-20'
+retrieved_at: '2026-10-22'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.0'
+source_version: 'skyyware/starchat v0.11.3'
 public_path: /resources/starchat-building
 topic_terms:
   - building
@@ -105,7 +105,7 @@ links:
     url: 'https://stage.dev/resources/starchat-agent-handoff'
   -
     label: 'Stage demo export contract'
-    url: 'https://github.com/skyyware/starchat-demo/blob/0af5901e14ed7ad1c53350f85bd6949f9cb57019/docs/building.md'
+    url: 'https://github.com/skyyware/starchat-demo/blob/42491f8fd4175bd2d937792f37df68dd6e8bb0cb/docs/building.md'
 based_on: {  }
 follow_ups: {  }
 ---
@@ -121,16 +121,22 @@ Install PHP's zip extension and rebuild the index.
 Projects can use any language allowed by your installation, including
 Python or Java. The engine imposes no framework.
 
-At **chat.stage.dev**, every project uses Stage 0.2 and PHP 8.4, including inventories
-and revisions. `public/index.php` runs the Stage application from `app.php`;
-its routes implement the requested feature. An unused dependency is insufficient.
-A Python-only or incompatible native-platform request receives an honest scope
-explanation, not a substituted project. Other installations choose their own scope.
+At **chat.stage.dev**, all projects and revisions run on Stage 0.2 and PHP 8.4.
+`public/index.php` runs `app.php`; Stage routes implement the feature. An unused
+dependency is insufficient. Incompatible platforms receive an honest scope
+explanation, not a substituted project.
 
-`PROJECT.md` separates provisional local defaults from confirmed decisions.
+The Stage demo helps people without an idea or programming knowledge find an
+everyday problem and one useful workflow, asking one material question at a time.
+`PROJECT.md` separates provisional choices, agreements and later work.
+
+Human-facing exports require responsive views, local styles, readable type,
+keyboard focus, labeled inputs, validation, empty states and saved results.
+The primary workflow includes agreed edits and deletion. Explicit API-only
+requests remain APIs. Generation and review do not prove execution or visual quality.
 
 Optional `building.policy` enforces an installation's export contract before
-independent review and packaging. The Stage demo uses `stage-web-v1`.
+independent review and packaging. The Stage demo uses `stage-web-v2`.
 Changing the policy version makes an old snapshot revision input, not a current
 download. Only a creation click requests replacement; failure preserves its files.
 See [Install Starchat](https://stage.dev/resources/starchat-installation).
@@ -142,43 +148,40 @@ See [Install Starchat](https://stage.dev/resources/starchat-installation).
 Review and run it before release. Starchat supplies no built-in app.
 Disabled building cannot declare a starter.
 
-The answer and reviewer may select it for an introductory request.
-After the first answer, **Create project ZIP** offers it without a
-project name or first feature. An explicit different technology must still fit
-installation scope. A custom project cannot be reset to the starter.
+An explicit framework, runnable-example or starter request can offer it without
+a project name or first feature. Pure idea discovery first finds a useful purpose;
+it does not explain or offer a greeting starter. Installation rules may narrow
+eligibility. An explicit different technology must still fit installation scope.
+A custom project cannot be reset to the starter.
 Revising a starter passes its files into custom work. On first custom generation,
 `starter_project` supplies reference files; they are not merged automatically.
 
 `starchat index` prepackages it. `GET /project/starter` returns the project and
-base64 ZIP without a generation or review model call. Chat answers still use the model.
-The public starter's runtime cache stays outside `public/`, without conversations.
-Missing or changed data is rebuilt from validated source and replaced atomically.
+base64 ZIP without generation or review; chat answers still use the model.
+The conversation-free cache stays outside `public/`. Missing or changed entries
+are rebuilt from validated source and replaced atomically.
 
 ## Download the current project
 
 The answer appears first. Click **Create project ZIP** below the questions
-to begin. Loading, restored history and completed answers never start a build.
-The click appears in the conversation. Answers and preparation use the same
-three animated dots and a short status line.
-Preparation says **Creating project**.
-Generation and independent review use the conversation and previous files.
-Only a reviewed, assembled ZIP becomes downloadable.
+to begin; loading, history restoration and answers never start a build.
+The click appears in the conversation. Preparation uses the same three animated
+dots as answers, with **Creating project**. Generation and independent review
+use the conversation and previous files. Only a reviewed ZIP becomes downloadable.
 
-The ready response shows a package icon, at most four words describing the
-implemented function, and **Download ZIP**. There is no contents disclosure;
-details stay in README.md and PROJECT.md. The download starts no model call.
-It hides creation for that answer; a later answer can offer another project.
-Older saved ZIPs with long summaries use up to four words from their project name.
+Ready responses show a package icon, up to four words describing its function and
+**Download ZIP**, which starts no model call. Details stay inside README.md and
+PROJECT.md. Creation hides for that answer; later answers can offer new projects.
+Old ZIPs with long summaries use up to four words from their project name.
 
-Completed packages stay beside their original answer. A later click uses the
-current conversation. Earlier files stay available internally for the next revision.
-There is no **Download last ready ZIP** action. Changed files and removals are
-applied before full validation and review. Missing essential details, scope
-violations or failures produce no replacement; an earlier ZIP is not the updated project.
+Packages stay beside their original answer. Later clicks use the current
+conversation and earlier files. There is no **Download last ready ZIP** action.
+Changed files and removals are applied before validation and review. Missing
+essentials, scope violations or failures leave the earlier project unreplaced.
 
-A temporarily unavailable review may run once more within the same 115-second
-deadline. Cancellation, timeouts, and rejected or malformed reviews do not trigger
-this retry. Generation is not repeated.
+An unavailable review may retry once within the same 150-second deadline.
+Cancellation, timeouts and rejected or malformed reviews do not retry.
+Generation is not repeated.
 
 A failure offers **Try again**, only when selected. Reloading or another tab
 can prepare again without a matching ZIP; redraws never retry.
@@ -197,15 +200,14 @@ The ZIP contains sources, `.gitignore`, README instructions and `PROJECT.md`.
 AGENTS.md, CLAUDE.md and optional tool guidance help the next agent.
 Existing project instructions remain intact.
 
-A fresh Git repository on `main` has no commits, index, identity, hooks, or
-remote. Install dependencies and SDKs locally; no third-party binaries or dependency
-trees are bundled.
+A fresh Git repository on `main` has no commits, index, identity, hooks, or remote.
+Install dependencies and SDKs locally; no binaries or dependency trees are bundled.
 
 The service neither executes nor deploys generated code. Run its checks locally.
 See [Continue a downloaded project with an agent](https://stage.dev/resources/starchat-agent-handoff)
 for coding hosts and optional plugins.
 
-Local edits cannot be uploaded or synchronized. Compare a later ZIP separately before merging.
+Local edits do not synchronize. Compare later ZIPs before merging.
 
 ## Account for processing and limits
 
