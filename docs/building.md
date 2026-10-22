@@ -41,7 +41,7 @@ for an incompatible platform receives an honest explanation and no misleading ZI
 Other Starchat installations can use the same optional core capability with their
 own technology constraints.
 
-`building.policy=stage-web-v1` selects the trusted installation checker in
+`building.policy=stage-web-v2` selects the trusted installation checker in
 `config/project-policy.php`. It validates Composer requirements, the canonical
 `public/index.php` and the direct Stage application return in `app.php`. It only
 parses text and never executes generated files. Both prepared starter and assembled
@@ -78,10 +78,29 @@ A storage failure leaves the current download in memory. Preparation failures
 offer a manual retry. Reset, changed locale and a new answer in another tab cancel
 pending preparation and prevent late responses from restoring old results.
 
-Custom generation aims for a compact first slice with native controls and short
-project documents. A temporarily unavailable independent reviewer can retry once
+Generation and review require a coherent responsive interface: readable
+type, consistent spacing, a clear primary action, labeled inputs, useful empty
+states, validation and a visible saved result. The agreed workflow includes its
+editing, deletion and return paths. Keyboard focus, contrast, touch targets and
+long content are part of the review. Local styles and system fonts keep the
+application independent of external assets. Explicit API-only requests remain
+APIs. The 32 KiB hard limit still applies, including the agent handoff files.
+
+Generated checks use isolated data; the service never runs them. Maintainer
+probes inspect and run representative exports locally, including desktop and
+phone browser checks. These observations apply to the tested export, not every
+possible future generation. Deferred households or invitations stay in the
+project's later-work notes. When requested for the current version, sharing needs
+real authorization and data isolation; a household selector alone is insufficient.
+
+A temporarily unavailable independent reviewer can retry once
 with the same candidate and remaining request deadline. Generation, timeouts,
 invalid responses and rejected projects are not automatically retried.
+
+Starchat 0.11.3 allows 120 seconds for generation and 25 seconds per review,
+within a shared 150-second request deadline. The browser allows 155 seconds;
+building hosts need proxy and worker limits of at least 165 seconds. Ordinary
+chat keeps its existing limits. These bounds are not delivery-time promises.
 
 At the start, four concrete app ideas are drawn from the installation's reviewed
 English/German pool. Both familiar and unexpected ideas appear; the long-run
