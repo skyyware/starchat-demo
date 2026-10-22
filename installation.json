@@ -23,7 +23,8 @@
     "stylesheet": "/branding/stage.css",
     "favicon": "/branding/stage-star.svg",
     "asset_origin": "https://stage.dev",
-    "home_url": "https://stage.dev"
+    "home_url": "https://stage.dev",
+    "reset_icon": true
   },
   "navigation": [
     {

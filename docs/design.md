@@ -23,7 +23,10 @@ text color. Questions and actions have separate limits of four controls.
 Actions use filled, borderless buttons below the questions, without a visible
 heading. Their width fits the label, with a minimum 44px touch target and wrapping
 on narrow screens. Labeled buttons use regular-weight text without decorative
-icons. The area keeps a localized name for screen readers.
+icons. This installation opts into `brand.reset_icon: true`: **New conversation**
+has a plus beside its regular-weight label on desktop and an accessible 44px
+icon control on mobile. Other labeled actions remain icon-free.
+The area keeps a localized name for screen readers.
 Neither area fills or displaces the other.
 Four questions use two rows where space allows. Short labels keep their own width
 on one line. The control title and click preserve the full suggested reply.
