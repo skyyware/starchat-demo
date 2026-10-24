@@ -1,5 +1,18 @@
 # Operate an installation
 
+## Mobile taps: Build 49, 24 October 2026
+
+Build 49 serves `3eebdad53c023e85da71f91f91b34f5cf57fa3be` with Starchat
+0.11.4 and the same 29 guides. Build 48 remains previous. Installation checks,
+exact live asset comparisons and health pass. Native checks at 390 pixels have
+no overflow or browser errors and preserve all ten existing messages and the
+empty draft. A separate stateless discovery question produces a reviewed answer.
+No project is generated during this release check.
+
+The shared touch tests cover immediate activation and delayed duplicate clicks.
+Physical iPhone acceptance remains separate from native responsive and event tests.
+This documentation-only receipt does not change the deployed source.
+
 Build from the exact reviewed commit and Composer lock with existing authorized
 private dependency access. Keep credentials out of the artifact. Prepare the
 knowledge index separately, check its entity and article count, and deploy the
