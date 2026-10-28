@@ -1,5 +1,20 @@
 # Operate an installation
 
+## Faster startup: Build 52, 28 October 2026
+
+Build 52 serves `f68bba3563f1c7257938c138880f1844b69d95a5` with Starchat
+0.11.7 and the same 29 guides. It preloads browser dependencies while preserving
+the Safari-compatible module order. Installation checks pass; other dependencies,
+provider settings and content remain unchanged.
+
+Live health and the expected versioned module hints match. The native 390px
+view initializes without overflow or console warnings/errors and preserves the
+existing conversation. A separate stateless route question reaches answer
+review but returns `review.unavailable`; it is not a completed answer or a
+latency improvement. No project is generated. Deployment retains the preceding
+release and its conditional rollback. This documentation-only receipt needs no
+new build.
+
 ## Safari startup: Build 51, 28 October 2026
 
 Build 51 serves `4dbed8a8d3bdd4e1fae8e78f437c44075c093ee9` with Starchat
