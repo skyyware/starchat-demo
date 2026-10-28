@@ -1,5 +1,20 @@
 # Operate an installation
 
+## Safari startup: Build 51, 28 October 2026
+
+Build 51 serves `4dbed8a8d3bdd4e1fae8e78f437c44075c093ee9` with Starchat
+0.11.6 and the same 29 guides. It replaces Build 50. The package fixes a Safari
+module-initialization failure that prevented all application controls from
+attaching; its regression executes the dependency graph in Apple JavaScriptCore.
+Installation checks pass and other dependencies are unchanged.
+
+Live health, module hashes and security headers match the release. The native
+390px view initializes without overflow or console errors while preserving the
+existing conversation. A separate provider check returns `review.unavailable`,
+so page availability does not establish successful answer generation. No project
+is generated. Physical iPhone acceptance remains separate. This documentation-only
+receipt does not change the deployed application source.
+
 ## Mobile taps: Build 49, 24 October 2026
 
 Build 49 serves `3eebdad53c023e85da71f91f91b34f5cf57fa3be` with Starchat
