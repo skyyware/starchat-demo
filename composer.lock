@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbfbe5bbef15d285747ac8f6b27ed422",
+    "content-hash": "b71e9aa886fe5ef1dac3487dbb1f2391",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -966,16 +966,16 @@
         },
         {
             "name": "skyyware/starchat",
-            "version": "v0.11.6",
+            "version": "v0.11.7",
             "source": {
                 "type": "git",
                 "url": "git@github.com:skyyware/starchat.git",
-                "reference": "36c2315a18cc93156a198a1857209dbadaa3d9a6"
+                "reference": "266657de19007ad383a9813441541ae0363ed208"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skyyware/starchat/zipball/36c2315a18cc93156a198a1857209dbadaa3d9a6",
-                "reference": "36c2315a18cc93156a198a1857209dbadaa3d9a6",
+                "url": "https://api.github.com/repos/skyyware/starchat/zipball/266657de19007ad383a9813441541ae0363ed208",
+                "reference": "266657de19007ad383a9813441541ae0363ed208",
                 "shasum": ""
             },
             "require": {
@@ -1019,7 +1019,7 @@
                 "source": "https://github.com/skyyware/starchat",
                 "issues": "https://github.com/skyyware/starchat/issues"
             },
-            "time": "2026-10-28T14:58:14+00:00"
+            "time": "2026-10-28T16:42:25+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
