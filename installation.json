@@ -322,9 +322,10 @@
   "migration_origin": "https://stage.dev",
   "building": {
     "enabled": true,
-    "instructions": "Build small Stage 0.2 web applications on PHP 8.4. Human-facing apps require a coherent responsive interface and a complete useful workflow; explicit API-only requests remain APIs. Preserve confirmed behavior and earlier files. Keep provisional choices and deferred work distinct. Explain incompatible languages or platforms honestly without substituting a different project. Creation is on demand. This service does not execute, install, host or publish code. The prepared starter is an optional framework example; concrete features need a custom implementation. During pure idea discovery, do not offer or explain the prepared starter; help find a useful purpose first. Do not describe PHP, JSON, setup or the starter filename before those details help a chosen goal.",
+    "instructions": "Build small Stage web applications using verified compatible stable releases at creation; honor supported explicit versions. Human-facing apps need a coherent responsive interface and complete useful workflow; API-only requests remain APIs. Preserve confirmed behavior and previous files. Keep provisional choices and deferred work distinct. Explain incompatible platforms without substituting another project. Create only on demand; never execute, install, host or publish generated code. The prepared starter is an optional framework example, not a replacement for concrete features. During idea discovery help find a useful purpose; do not discuss PHP, JSON, setup or the starter before they help a chosen goal.",
     "starter": "starters/minimal.json",
-    "policy": "stage-web-v2"
+    "policy": "stage-web-v3",
+    "environment": "official-releases-v1"
   },
   "asset": {
     "type": "project"

@@ -12,8 +12,8 @@ final class ProjectPolicy
         $files = array_column($project->data['files'], 'content', 'path');
         try {
             $composer = json_decode($files['composer.json'] ?? '', true, flags: JSON_THROW_ON_ERROR);
-            if (($composer['require']['skyyware/stage'] ?? null) !== '^0.2'
-                || ($composer['require']['php'] ?? null) !== '^8.4'
+            if (!is_string($composer['require']['skyyware/stage'] ?? null) || !preg_match('/^(?:\^|~)?0\.2(?:\.[0-9]+)?$/D', $composer['require']['skyyware/stage'])
+                || !is_string($composer['require']['php'] ?? null) || !preg_match('/^\^8\.[4-9]$/D', $composer['require']['php'])
                 || ($composer['config']['allow-plugins'] ?? null) !== false
                 || isset($composer['repositories'])
                 || ($composer['scripts']['start'] ?? null) !== '@php -S 127.0.0.1:8080 -t public public/index.php') {

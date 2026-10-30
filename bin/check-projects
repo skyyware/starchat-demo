@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/src/ProjectPolicy.php';
+require_once dirname(__DIR__) . '/src/ProjectReleases.php';
 
 use StageDemo\ProjectPolicy;
 use Starchat\Project;
@@ -44,3 +45,45 @@ if (array_column($assembled->data['files'], 'content', 'path')['AGENTS.md'] !== 
 $revision['removed_files'] = ['app.php'];
 $check(false, ProjectRevision::apply($revision, new Project($previous))->data, 'Removing the Stage application must fail');
 echo "Stage entry, dependency, custom routes and revision boundaries verified\n";
+
+$runtime = dirname(__DIR__) . '/.runtime/project-release-check-' . bin2hex(random_bytes(6));
+mkdir($runtime, 0700, true);
+$release = ['name' => 'skyyware/stage', 'version' => 'v0.2.0', 'source' => ['type' => 'git', 'url' => 'https://github.com/skyyware/stage.git', 'reference' => str_repeat('a', 40)], 'dist' => ['type' => 'zip', 'url' => 'https://api.github.com/repos/skyyware/stage/zipball/' . str_repeat('a', 40), 'reference' => str_repeat('a', 40)], 'require' => ['php' => '^8.4', 'ext-json' => '*'], 'type' => 'library', 'autoload' => ['psr-4' => ['Stage\\' => 'src/']]];
+$fetches = [];
+$fetch = static function (string $url) use (&$fetches, $release): string {
+    $fetches[] = $url;
+    return json_encode(str_contains($url, 'packagist.org') ? ['package' => ['name' => 'skyyware/stage', 'versions' => ['v0.2.0' => $release, 'v0.3.0-beta' => array_replace($release, ['version' => 'v0.3.0-beta'])]]] : ['8' => ['version' => '8.5.12', 'supported_versions' => ['8.3', '8.4', '8.5']]]);
+};
+try {
+    $catalog = new StageDemo\ProjectReleases($runtime, $fetch);
+    $environment = $catalog->environment(new DateTimeImmutable('2026-10-30'));
+    if ($environment->data['stage']['default'] !== '0.2.0' || $environment->data['php']['default'] !== '8.5.12') { throw new RuntimeException('Stable verified defaults required'); }
+    $catalog->environment(new DateTimeImmutable('2026-10-30 23:59:59'));
+    if (count($fetches) !== 2) { throw new RuntimeException('Same-day evidence must be reused'); }
+    $catalog->environment(new DateTimeImmutable('2026-10-31'));
+    if (count($fetches) !== 4) { throw new RuntimeException('A new generation day requires fresh evidence'); }
+    $prepared = $environment->prepare(new Project($starter));
+    $check(true, $prepared->data, 'Prepared versions must satisfy the Stage policy');
+    $preparedFiles = array_column($prepared->data['files'], 'content', 'path');
+    $manifest = json_decode($preparedFiles['composer.json'], true);
+    $locked = json_decode($preparedFiles['composer.lock'], true);
+    if ($manifest['require']['skyyware/stage'] !== '0.2.0' || $locked['packages'][0]['source']['reference'] !== str_repeat('a', 40)) { throw new RuntimeException('Lock must bind verified immutable metadata'); }
+    if ($preparedFiles['app.php'] !== $files['app.php']) { throw new RuntimeException('Release preparation must preserve the application'); }
+    if ($manifest['require']['php'] !== '^8.4') { throw new RuntimeException('Explicit supported runtime choices must survive'); }
+    $currentStarter = $catalog->environment(new DateTimeImmutable('2026-10-31'), true)->prepare(new Project($starter));
+    $starterManifest = json_decode(array_column($currentStarter->data['files'], 'content', 'path')['composer.json'], true);
+    if ($starterManifest['require']['php'] !== '^8.5') { throw new RuntimeException('The generic starter must use the verified current runtime'); }
+    foreach (['repositories' => [['type' => 'path', 'url' => 'unverified']], 'require-dev' => ['unverified/package' => '*'], 'config' => ['allow-plugins' => false, 'platform' => ['php' => '8.5.12']]] as $key => $value) {
+        $invalid = json_decode($files['composer.json'], true);
+        $invalid[$key] = $value;
+        try { $environment->prepare(new Project($replace('composer.json', json_encode($invalid)))); throw new LogicException('Unverified dependency change accepted'); }
+        catch (RuntimeException) {}
+    }
+    $offline = new StageDemo\ProjectReleases($runtime, static fn () => throw new RuntimeException('Offline fixture'));
+    try { $offline->environment(new DateTimeImmutable('2026-11-01')); throw new LogicException('Old evidence advertised as current'); }
+    catch (RuntimeException) {}
+    echo "Daily official release evidence, stable defaults, immutable lock and failure boundaries verified\n";
+} finally {
+    foreach (glob($runtime . '/*') as $file) { unlink($file); }
+    rmdir($runtime);
+}

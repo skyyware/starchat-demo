@@ -1,5 +1,27 @@
 # Operate an installation
 
+## Verified project candidate, 31 October 2026
+
+Starchat 0.12.0 separates Default chat from the fastest currently supported asset
+profile. The local candidate selects verified compatible releases on the generation
+day, pins dependencies and includes the lock and release evidence in independent
+review. Project creation remains explicit; page loads and chat answers do not build.
+
+The candidate passes installation and dependency-boundary checks. A returned
+reading-tracker ZIP installs from its immutable lock on PHP 8.5.12 with plugins
+and install scripts disabled. Its isolated tests cover create, search, status and
+note edits, deletion, invalid writes, output escaping, asset routes and storage
+errors. Native desktop and phone views confirm create, edit and search without
+overflow or console errors. The controlled chat displays creation progress, its
+star icon and the download control. The native browser starts that download but
+cancels file saving; the API ZIP was separately extracted and verified.
+
+No public activation is claimed by this candidate record. Retain the configured
+release and capability catalog until the final source snapshot and reversible
+activation are verified. Provider timing varies; one Default answer completed in
+11.4 seconds. A project generation and its later independent review took 63.4 and
+10.8 seconds respectively, with the same generated application files.
+
 ## Dependency patch preparation, 30 October 2026
 
 The candidate lock updates CommonMark to 2.10.6, Nette Schema to 1.3.7,

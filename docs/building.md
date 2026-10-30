@@ -23,7 +23,7 @@ Loading, restored history and answers alone never start a build.
 A starter needs no project generation; custom behavior uses the current
 conversation and previous files. The final download starts no further model
 request. The composer returns when preparation finishes.
-The ready card uses a package icon and a description of the current function
+The ready card uses a stroked star and a description of the current function
 in at most four words. It enters with a short slide and fade, disabled by
 reduced-motion preferences. Project details stay in README.md and PROJECT.md inside
 the ZIP; there is no contents disclosure on the card. A saved archive can be reused only when its conversation and export-policy version
@@ -34,20 +34,51 @@ contains the full files; explicit code questions can still receive examples.
 Permitted general programming undergoes independent review without needing matching
 Stage documentation. Entity facts and Stage-specific APIs still need evidence.
 
-Every exported project from chat.stage.dev uses Stage 0.2 on PHP 8.4, including
+Every exported project from chat.stage.dev uses a verified compatible stable Stage
+release and PHP runtime, including
 custom applications and revisions. The actual web entry point runs the Stage
 application; an unused dependency or import is insufficient. An explicit request
 for an incompatible platform receives an honest explanation and no misleading ZIP.
 Other Starchat installations can use the same optional core capability with their
 own technology constraints.
 
-`building.policy=stage-web-v2` selects the trusted installation checker in
+`building.policy=stage-web-v3` selects the trusted installation checker in
 `config/project-policy.php`. It validates Composer requirements, the canonical
 `public/index.php` and the direct Stage application return in `app.php`. It only
 parses text and never executes generated files. Both prepared starter and assembled
 revisions must pass. Independent review then checks that Stage routes implement
 the requested function. Maintainer probes separately run representative exports
 locally; the structural checker alone does not prove behavior.
+
+`building.environment=official-releases-v1` reads official Packagist and PHP
+release metadata only on an explicit creation request. Valid evidence is reused
+within the same Europe/Berlin calendar day. A new generation day requires fresh
+reads; failed or incompatible metadata does not silently reuse yesterday's claim.
+The supported Stage API family is currently 0.2, with PHP 8.4-compatible source
+syntax running on the latest verified compatible PHP runtime. An unverified new
+Stage API family stops creation until its compatibility is checked.
+
+Generation receives the verified version choices. Default projects use the latest
+compatible stable choices; explicit supported version requests are preserved.
+Preparation pins the selected Stage version and adds `composer.lock` with the
+registry's immutable source reference plus `docs/technology.json` with the evidence
+date, sources and choices. The independent review sees these files before release.
+No generated files are executed and no dependencies are installed by the service.
+Setup uses `composer install --no-plugins --no-scripts`. Existing downloads retain
+their recorded versions; a creation request is not an automatic upgrade of a ZIP
+already on a visitor's device.
+
+Native HTML, CSS and JavaScript provide the default frontend without an unnecessary
+Node build or external UI package. Unsupported explicit dependency choices require
+their missing compatibility evidence rather than a silent substitution. Responsive
+layout and complete useful behavior are required equally for frontend and backend;
+the package card does not claim a preview, deployment or executed test.
+
+Preparation reserves 4 KiB for verified dependency files. The engine separately
+reserves its handoff texts within the 32 KiB final project limit. Generation targets
+compact application files, documentation and isolated tests. The canonical PHP
+router handles asset requests too: a separate stylesheet needs an explicit fixed
+Stage route and a check for HTTP 200 with the correct content type.
 
 Increment the policy identifier when this contract changes. Existing browser files
 remain available as input to the next explicit creation click and are replaced
