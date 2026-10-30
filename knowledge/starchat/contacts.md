@@ -5,7 +5,7 @@ title: 'Offer verified email and phone contacts'
 source: 'https://stage.dev/resources/starchat-contacts'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat-contacts
 topic_terms:
   - 'contact actions'
@@ -46,20 +46,15 @@ keywords:
   - 'direct call'
   - 'contact expiry'
 links:
-  -
-    label: 'Offer verified email and phone contacts'
+  - label: 'Offer verified email and phone contacts'
     url: 'https://stage.dev/resources/starchat-contacts'
-  -
-    label: 'Offer a project, PDF summary, or email draft'
+  - label: 'Offer a project, PDF summary, or email draft'
     url: 'https://stage.dev/resources/starchat-assets'
-  -
-    label: 'Maintain an installation knowledge base with an agent'
+  - label: 'Maintain an installation knowledge base with an agent'
     url: 'https://stage.dev/resources/starchat-knowledge'
-  -
-    label: 'Read suggested replies and contacts from the answer API'
+  - label: 'Read suggested replies and contacts from the answer API'
     url: 'https://stage.dev/resources/starchat-answer-api'
-based_on: {  }
-follow_ups: {  }
+based_on: { }
 ---
 
 # Offer verified email and phone contacts

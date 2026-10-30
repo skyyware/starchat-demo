@@ -3,9 +3,9 @@ id: starchat-operations
 entity: stage
 title: 'Operate a Starchat installation'
 source: 'https://stage.dev/resources/starchat-operations'
-retrieved_at: '2026-10-22'
+retrieved_at: '2026-10-31'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat-operations
 topic_terms:
   - 'starchat operations'
@@ -49,13 +49,12 @@ links:
     label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # Operate a Starchat installation
 
-Deploy locked code with its reviewed index and separate private runtime.
-The operator owns hosting, model access, notices, and recovery.
+Deploy locked code and its reviewed index with private runtime. The operator
+owns hosting, model access, notices and recovery.
 
 `STARCHAT_ASSET_RUNTIME` selects a pre-created writable directory for temporary
 PDF and bundle work. It defaults to the application runtime. Keep it private,
@@ -64,16 +63,17 @@ and project archive paths remain unchanged, so the index can stay read-only.
 
 ## Check limits and privacy
 
-Chat, custom projects, and summaries share three concurrent requests per runtime. APCu enables an aggregate
-twenty-requests-per-minute limit per installation and PHP pool. Verify
+Chat, projects and summaries share three concurrent requests per runtime. APCu
+limits each installation and PHP pool to twenty requests per minute. Verify
 `aggregate_rate_limit: true` in `/health` and configure an appropriate edge
 limit for a public deployment. Rate limits are not a spending cap.
 
-Building shares chat's model profile and capacity. Its input allows 80 messages
-and 24 KiB of serialized conversation within a 192 KiB request. Ordinary chat
-allows 64 KiB. Oversized history is rejected without dropping requirements.
-See [project limits](https://stage.dev/resources/starchat-building) for file
-and archive bounds.
+Building shares chat's model, reasoning and capacity, with a separate service
+profile. Ordinary chat uses Default; projects and summaries request the fastest
+supported service. See [installation](https://stage.dev/resources/starchat-installation).
+Project input allows 80 messages and 24 KiB of conversation within 192 KiB.
+Ordinary chat allows 64 KiB. Oversized history is rejected without dropping requirements.
+See [project bounds](https://stage.dev/resources/starchat-building).
 
 Ordinary chat needs at least 55 seconds at the proxy and PHP worker.
 Selection, answering, and review have a 25-second limit within a shared
@@ -90,10 +90,9 @@ The model provider receives a bounded history and relevant knowledge. Verify
 the actual server, connector, and provider settings before making retention
 claims. Never put private records in public answering knowledge.
 
-Project generation sends the conversation and previous files to the model.
-Describe this and browser storage in your notices. Temporary ZIPs are removed.
-One cache retains the configured public starter, replaced atomically when changed.
-The service never executes generated code. Test it locally.
+Disclose conversation, previous-file processing and browser storage. Temporary
+ZIPs are removed. A cache retains the public starter, replaced atomically on
+change. The service never executes generated code. Test it locally.
 
 ## Recover an interrupted answer
 

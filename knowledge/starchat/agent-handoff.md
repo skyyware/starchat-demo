@@ -3,15 +3,15 @@ id: starchat-agent-handoff
 entity: stage
 title: 'Continue a downloaded project with an agent'
 source: 'https://stage.dev/resources/starchat-agent-handoff'
-retrieved_at: '2026-10-14'
+retrieved_at: '2026-10-31'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat-agent-handoff
 topic_terms:
   - 'agent handoff'
   - 'coding agent'
-  - AGENTS.md
-  - CLAUDE.md
+  - 'AGENTS.md'
+  - 'CLAUDE.md'
   - 'Claude Code'
   - 'Grok Build'
   - Codex
@@ -28,8 +28,8 @@ phrase_terms:
 keywords:
   - 'agent handoff'
   - 'coding agent'
-  - AGENTS.md
-  - CLAUDE.md
+  - 'AGENTS.md'
+  - 'CLAUDE.md'
   - 'Claude Code'
   - 'Grok Build'
   - Codex
@@ -40,20 +40,15 @@ keywords:
   - 'projekt weiterbauen'
   - 'local changes'
 links:
-  -
-    label: 'Continue a downloaded project with an agent'
+  - label: 'Continue a downloaded project with an agent'
     url: 'https://stage.dev/resources/starchat-agent-handoff'
-  -
-    label: 'Build and download a project'
+  - label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
-  -
-    label: Superpowers
+  - label: 'Superpowers'
     url: 'https://github.com/obra/superpowers'
-  -
-    label: 'pstack upstream'
+  - label: 'pstack upstream'
     url: 'https://github.com/cursor/plugins/tree/main/pstack'
-based_on: {  }
-follow_ups: {  }
+based_on: { }
 ---
 
 # Continue a downloaded project with an agent

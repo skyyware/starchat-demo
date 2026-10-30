@@ -3,9 +3,9 @@ id: starchat-assets
 entity: stage
 title: 'Offer a project, PDF summary, or email draft'
 source: 'https://stage.dev/resources/starchat-assets'
-retrieved_at: '2026-10-20'
+retrieved_at: '2026-10-31'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat-assets
 topic_terms:
   - 'conversation assets'
@@ -35,7 +35,7 @@ phrase_terms:
 keywords:
   - 'conversation assets'
   - 'optional assets'
-  - asset.type
+  - 'asset.type'
   - 'PDF summary'
   - 'conversation summary'
   - 'email draft'
@@ -53,20 +53,15 @@ keywords:
   - 'PDF preview'
   - 'contact language'
 links:
-  -
-    label: 'Offer a project, PDF summary, or email draft'
+  - label: 'Offer a project, PDF summary, or email draft'
     url: 'https://stage.dev/resources/starchat-assets'
-  -
-    label: 'Install Starchat'
+  - label: 'Install Starchat'
     url: 'https://stage.dev/resources/starchat-installation'
-  -
-    label: 'Build and download a project'
+  - label: 'Build and download a project'
     url: 'https://stage.dev/resources/starchat-building'
-  -
-    label: 'Offer verified email and phone contacts'
+  - label: 'Offer verified email and phone contacts'
     url: 'https://stage.dev/resources/starchat-contacts'
-based_on: {  }
-follow_ups: {  }
+based_on: { }
 ---
 
 # Offer something to take away
@@ -90,15 +85,15 @@ independently enabled project-building API; remove `asset` and `building` to dis
 ## Keep the result current
 
 Answers appear before preparation. Regular text-only action buttons sit below
-questions without a heading. Each area allows four controls.
+questions without a heading. Each area allows four.
 Clicks start preparation.
 Answers and preparation use three animated dots and a status line in the
 conversation; reviewed cards appear only when ready.
 Loading, restored history and completed answers never prepare assets. Transient
-failures offer manual retry aligned with the answer. Ready cards hide actions they cover for this
-answer; a PDF with an email card also hides email creation. Other formats and
-later answers remain eligible.
-Cards respect reduced motion. Downloads have contrasting fills and make no model call.
+failures retain questions and manual retry. Ready cards hide covered actions and
+preceding questions; the composer stays. A PDF with an email card also hides email
+creation. Other formats and later answers remain eligible.
+Cards respect reduced motion. Downloads use contrasting fills and call no model.
 PDFs have no inline preview; their button opens the prepared file.
 
 PDF actions skip a first clarification without useful content. Nonempty steps

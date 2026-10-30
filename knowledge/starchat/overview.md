@@ -3,9 +3,9 @@ id: starchat
 entity: stage
 title: 'What Starchat provides'
 source: 'https://stage.dev/resources/starchat'
-retrieved_at: '2026-10-22'
+retrieved_at: '2026-10-31'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat
 topic_terms:
   - starchat
@@ -51,7 +51,6 @@ links:
     label: 'Continue a downloaded project with an agent'
     url: 'https://stage.dev/resources/starchat-agent-handoff'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # What Starchat provides
@@ -109,10 +108,10 @@ the latest requirements and previous files. It cannot reset a custom project to
 the starter. `PROJECT.md` separates provisional choices from confirmed decisions.
 Final downloads start no further model request. Saved files remain on the device.
 
-Each archive includes a documented entry point for people and coding agents.
-The README explains setup and checks. AGENTS.md, a CLAUDE.md import, and optional
+Each archive documents an entry point for people and coding agents.
+README explains setup and checks. AGENTS.md, a CLAUDE.md import, and optional
 tool guidance help the next agent continue from the recorded requirements.
-Plugins are optional and are not installed by downloading the project.
+Downloading installs no plugins; they remain optional.
 
 Building is off by default. The operator defines permitted technologies; the
 engine allows non-PHP projects. The Stage demo requires real Stage web applications
@@ -145,10 +144,11 @@ off the resources page does not make its contents private.
 
 ## Model and operating limits
 
-The default model configuration requests Astra with low reasoning and Fast. The operator
-must have suitable provider access and configure the supported connector.
-Prepared knowledge narrows the task and supplies evidence; it does not establish
-a performance advantage over other models or guarantee a correct answer.
+The default model is Astra with low reasoning. Ordinary chat uses Default
+service; projects and summaries select the fastest supported service. Configure
+the supported connector with suitable provider access. Prepared knowledge
+supplies evidence, not a speed or correctness guarantee. See
+[installation](https://stage.dev/resources/starchat-installation).
 
 An independent review call checks the candidate before the complete answer is
 shown. The model and reviewer can still share mistakes. No candidate is released

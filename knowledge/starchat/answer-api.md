@@ -5,7 +5,7 @@ title: 'Read suggested replies and contacts from the answer API'
 source: 'https://stage.dev/resources/starchat-answer-api'
 retrieved_at: '2026-10-20'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat-answer-api
 topic_terms:
   - 'answer API'
@@ -30,20 +30,15 @@ keywords:
   - midnight
   - tel
 links:
-  -
-    label: 'Read suggested replies and contacts from the answer API'
+  - label: 'Read suggested replies and contacts from the answer API'
     url: 'https://stage.dev/resources/starchat-answer-api'
-  -
-    label: 'Install Starchat'
+  - label: 'Install Starchat'
     url: 'https://stage.dev/resources/starchat-installation'
-  -
-    label: 'Offer verified email and phone contacts'
+  - label: 'Offer verified email and phone contacts'
     url: 'https://stage.dev/resources/starchat-contacts'
-  -
-    label: 'Offer a project, PDF summary, or email draft'
+  - label: 'Offer a project, PDF summary, or email draft'
     url: 'https://stage.dev/resources/starchat-assets'
-based_on: {  }
-follow_ups: {  }
+based_on: { }
 ---
 
 # Read suggested replies and contacts from the answer API

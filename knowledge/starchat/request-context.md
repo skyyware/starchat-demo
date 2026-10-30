@@ -5,13 +5,13 @@ title: 'Use verified session context'
 source: 'https://stage.dev/resources/starchat-request-context'
 retrieved_at: '2026-10-14'
 review_status: reviewed
-source_version: 'skyyware/starchat v0.11.3'
+source_version: 'skyyware/starchat v0.12.0'
 public_path: /resources/starchat-request-context
 topic_terms:
   - 'request context'
   - 'session context'
   - 'signed session'
-  - signed-in
+  - 'signed-in'
   - 'account facts'
   - 'context privacy'
   - 'account switch'
@@ -29,7 +29,7 @@ keywords:
   - 'request context'
   - 'session context'
   - 'signed session'
-  - signed-in
+  - 'signed-in'
   - 'account facts'
   - 'context privacy'
   - 'account switch'
@@ -51,7 +51,6 @@ links:
     label: 'Operate Starchat'
     url: 'https://stage.dev/resources/starchat-operations'
 based_on: {  }
-follow_ups: {  }
 ---
 
 # Use verified session context
