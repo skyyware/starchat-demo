@@ -1,5 +1,19 @@
 # Operate an installation
 
+## Dependency patch preparation, 30 October 2026
+
+The candidate lock updates CommonMark to 2.10.6, Nette Schema to 1.3.7,
+Nette Utils to 4.1.6 and Symfony YAML to 7.4.22. Starchat remains exactly
+0.11.7; application code, public guides and provider settings are unchanged.
+Composer audits report no advisories and the final patch-only comparison is
+empty. `composer check` passes. All 29 guides produce identical metadata,
+bodies and rendered Markdown with the previous and candidate dependencies.
+
+Build 52 remains deployed. The native Browser is unavailable for the required
+delivery check; no new release or public activation is claimed. Resume that
+check before the normal release process and retain the conditional rollback.
+No model request or project generation was performed for this patch pass.
+
 ## Faster startup: Build 52, 28 October 2026
 
 Build 52 serves `f68bba3563f1c7257938c138880f1844b69d95a5` with Starchat
