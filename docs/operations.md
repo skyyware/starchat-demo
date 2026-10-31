@@ -1,5 +1,41 @@
 # Operate an installation
 
+## Verified release: Build 53, 31 October 2026
+
+Build 53 serves `665d96b8fb731648a7343daaf0f91fe7ea825d89` with Starchat
+0.12.0 and 30 reviewed public guides. The snapshot matches website source
+`971a017b5187c0a2fb34de6b479beda6b138cc8f`, published as website Build 45.
+Seventeen unchanged guides retain their previous bytes. Build 52 and its index
+remain available for conditional rollback.
+
+The prepared artifact passes platform, file-hash and installation checks. The
+actual service identity selects Default for source selection, answers and answer
+review, and Fast for asset creation and review. A fresh capability catalogue
+replaces the stale account-era reference; the account, model, reasoning level
+and access stay unchanged. Only its catalogue pointer changes in the chat pool.
+
+Live health, module hashes and headers on chat, legal and missing pages match.
+Private source, vendor and runtime paths remain inaccessible. A real question
+about version verification returns a reviewed answer with the new source links,
+`composer.lock` and `docs/technology.json` in 15.8 seconds. This is one observed
+request, not a guaranteed time or a before-and-after speed comparison. The
+separate project-generation and application checks are recorded below.
+
+Native browser checks at 1,280 and 390 CSS pixels pass without overflow or
+console warnings or errors. Actions retain regular 15px text without icons;
+the legal footer remains 13px and suggestions have no trailing full stops.
+The existing four-message conversation and empty draft are unchanged. The
+owned tab is closed and the temporary viewport reset. No project or email is
+created during the live check. Physical iPhone acceptance is separate.
+
+Activation preserves credentials, the previous catalogue, starter cache and
+unchanged application configuration. Protected deployment evidence retains the
+original pool and index, exact after-values and conditional inverse. The website
+owner separately verified its approved Apache/index changes and CMS invariance.
+The prepared check runtime and request evidence stay private; no test producer
+or automatic job remains. This receipt changes documentation only, not the
+deployed source.
+
 ## Verified project candidate, 31 October 2026
 
 Starchat 0.12.0 separates Default chat from the fastest currently supported asset
